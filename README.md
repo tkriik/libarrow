@@ -349,8 +349,8 @@ GCC with support for vector extensions.
 | `mat3d_y_rotation(float)`			| `mat3d`	| Returns a 3x3 double-precision rotation matrix about the y-axis by an angle.
 | `mat3f_z_rotation(float)`			| `mat3f`	| Returns a 3x3 single-precision rotation matrix about the z-axis by an angle.
 | `mat3d_z_rotation(float)`			| `mat3d`	| Returns a 3x3 double-precision rotation matrix about the z-axis by an angle.
-| `mat3f_v_rotation(vec3f, float)`		| `mat3f`	| Returns a 3x3 single-precision rotation matrix about an axis by an angle. (UNAVAILABLE)
-| `mat3d_v_rotation(vec3d, double)`		| `mat3d`	| Returns a 3x3 double-precision rotation matrix about an axis by an angle. (UNAVAILABLE)
+| `mat3f_v_rotation(vec3f, float)`		| `mat3f`	| Returns a 3x3 single-precision rotation matrix about a vector by an angle. (UNAVAILABLE)
+| `mat3d_v_rotation(vec3d, double)`		| `mat3d`	| Returns a 3x3 double-precision rotation matrix about a vector by an angle. (UNAVAILABLE)
 
 ### Matrix type conversion functions
 | Function prototype				| Return value	| Description
