@@ -100,10 +100,10 @@ GCC with support for vector extensions.
 ### Vector indexing macros
 | Macro definition      | Description
 | --------              | --------
-| `vec_x(v)`            | Index the x-component of a vector.
-| `vec_y(v)`            | Index the y-component of a vector.
-| `vec_z(v)`            | Index the z-component of a vector.
-| `vec_w(v)`            | Index the w-component of a vector.
+| `vec_x(v)`            | Index to the x-component of a vector.
+| `vec_y(v)`            | Index to the y-component of a vector.
+| `vec_z(v)`            | Index to the z-component of a vector.
+| `vec_w(v)`            | Index to the w-component of a vector.
 
 ### Vector constructors
 | Function prototype				| Return value	| Description
@@ -225,46 +225,46 @@ GCC with support for vector extensions.
 ### 2x2 matrix indexing macros
 | Macro definition      | Description
 | --------              | --------
-| `mat2_i(m, i, j)`     | Index the value at row `i`, column `j` in a 2x2 matrix `m`.
-| `mat2_11(m)`          | Index the value at row 1, column 1 in a 2x2 matrix `m`.
-| `mat2_12(m)`          | Index the value at row 1, column 2 in a 2x2 matrix `m`.
-| `mat2_21(m)`          | Index the value at row 2, column 1 in a 2x2 matrix `m`.
-| `mat2_22(m)`          | Index the value at row 2, column 2 in a 2x2 matrix `m`.
+| `mat2_i(m, i, j)`     | Index to the value at row `i`, column `j` in a 2x2 matrix `m`.
+| `mat2_11(m)`          | Index to the value at row 1, column 1 in a 2x2 matrix `m`.
+| `mat2_12(m)`          | Index to the value at row 1, column 2 in a 2x2 matrix `m`.
+| `mat2_21(m)`          | Index to the value at row 2, column 1 in a 2x2 matrix `m`.
+| `mat2_22(m)`          | Index to the value at row 2, column 2 in a 2x2 matrix `m`.
 
 ### 3x3 matrix indexing macros
 | Macro definition      | Description
 | --------              | --------
-| `mat3_i(m, i, j)`     | Index the value at row `i`, column `j` in a 3x3 matrix `m`.
-| `mat3_11(m)`          | Index the value at row 1, column 1 in a 3x3 matrix `m`.
-| `mat3_12(m)`          | Index the value at row 1, column 2 in a 3x3 matrix `m`.
-| `mat3_13(m)`          | Index the value at row 1, column 3 in a 3x3 matrix `m`.
-| `mat3_21(m)`          | Index the value at row 2, column 1 in a 3x3 matrix `m`.
-| `mat3_22(m)`          | Index the value at row 2, column 2 in a 3x3 matrix `m`.
-| `mat3_23(m)`          | Index the value at row 2, column 3 in a 3x3 matrix `m`.
-| `mat3_31(m)`          | Index the value at row 3, column 1 in a 3x3 matrix `m`.
-| `mat3_32(m)`          | Index the value at row 3, column 2 in a 3x3 matrix `m`.
-| `mat3_33(m)`          | Index the value at row 3, column 3 in a 3x3 matrix `m`.
+| `mat3_i(m, i, j)`     | Index to the value at row `i`, column `j` in a 3x3 matrix `m`.
+| `mat3_11(m)`          | Index to the value at row 1, column 1 in a 3x3 matrix `m`.
+| `mat3_12(m)`          | Index to the value at row 1, column 2 in a 3x3 matrix `m`.
+| `mat3_13(m)`          | Index to the value at row 1, column 3 in a 3x3 matrix `m`.
+| `mat3_21(m)`          | Index to the value at row 2, column 1 in a 3x3 matrix `m`.
+| `mat3_22(m)`          | Index to the value at row 2, column 2 in a 3x3 matrix `m`.
+| `mat3_23(m)`          | Index to the value at row 2, column 3 in a 3x3 matrix `m`.
+| `mat3_31(m)`          | Index to the value at row 3, column 1 in a 3x3 matrix `m`.
+| `mat3_32(m)`          | Index to the value at row 3, column 2 in a 3x3 matrix `m`.
+| `mat3_33(m)`          | Index to the value at row 3, column 3 in a 3x3 matrix `m`.
 
 ### 4x4 matrix indexing macros
 | Macro definition      | Description
 | --------              | --------
-| `mat4_i(m, i, j)`     | Index the value at row `i`, column `j` in a 4x4 matrix `m`.
-| `mat4_11(m)`          | Index the value at row 1, column 1 in a 4x4 matrix `m`.
-| `mat4_12(m)`          | Index the value at row 1, column 2 in a 4x4 matrix `m`.
-| `mat4_13(m)`          | Index the value at row 1, column 3 in a 4x4 matrix `m`.
-| `mat4_14(m)`          | Index the value at row 1, column 4 in a 4x4 matrix `m`.
-| `mat4_21(m)`          | Index the value at row 2, column 1 in a 4x4 matrix `m`.
-| `mat4_22(m)`          | Index the value at row 2, column 2 in a 4x4 matrix `m`.
-| `mat4_23(m)`          | Index the value at row 2, column 3 in a 4x4 matrix `m`.
-| `mat4_24(m)`          | Index the value at row 2, column 4 in a 4x4 matrix `m`.
-| `mat4_31(m)`          | Index the value at row 3, column 1 in a 4x4 matrix `m`.
-| `mat4_32(m)`          | Index the value at row 3, column 2 in a 4x4 matrix `m`.
-| `mat4_33(m)`          | Index the value at row 3, column 3 in a 4x4 matrix `m`.
-| `mat4_34(m)`          | Index the value at row 3, column 4 in a 4x4 matrix `m`.
-| `mat4_41(m)`          | Index the value at row 4, column 1 in a 4x4 matrix `m`.
-| `mat4_42(m)`          | Index the value at row 4, column 2 in a 4x4 matrix `m`.
-| `mat4_43(m)`          | Index the value at row 4, column 3 in a 4x4 matrix `m`.
-| `mat4_44(m)`          | Index the value at row 4, column 4 in a 4x4 matrix `m`.
+| `mat4_i(m, i, j)`     | Index to the value at row `i`, column `j` in a 4x4 matrix `m`.
+| `mat4_11(m)`          | Index to the value at row 1, column 1 in a 4x4 matrix `m`.
+| `mat4_12(m)`          | Index to the value at row 1, column 2 in a 4x4 matrix `m`.
+| `mat4_13(m)`          | Index to the value at row 1, column 3 in a 4x4 matrix `m`.
+| `mat4_14(m)`          | Index to the value at row 1, column 4 in a 4x4 matrix `m`.
+| `mat4_21(m)`          | Index to the value at row 2, column 1 in a 4x4 matrix `m`.
+| `mat4_22(m)`          | Index to the value at row 2, column 2 in a 4x4 matrix `m`.
+| `mat4_23(m)`          | Index to the value at row 2, column 3 in a 4x4 matrix `m`.
+| `mat4_24(m)`          | Index to the value at row 2, column 4 in a 4x4 matrix `m`.
+| `mat4_31(m)`          | Index to the value at row 3, column 1 in a 4x4 matrix `m`.
+| `mat4_32(m)`          | Index to the value at row 3, column 2 in a 4x4 matrix `m`.
+| `mat4_33(m)`          | Index to the value at row 3, column 3 in a 4x4 matrix `m`.
+| `mat4_34(m)`          | Index to the value at row 3, column 4 in a 4x4 matrix `m`.
+| `mat4_41(m)`          | Index to the value at row 4, column 1 in a 4x4 matrix `m`.
+| `mat4_42(m)`          | Index to the value at row 4, column 2 in a 4x4 matrix `m`.
+| `mat4_43(m)`          | Index to the value at row 4, column 3 in a 4x4 matrix `m`.
+| `mat4_44(m)`          | Index to the value at row 4, column 4 in a 4x4 matrix `m`.
 
 ### Matrix constructors
 | Function prototype				| Return value	| Description
@@ -375,10 +375,10 @@ corresponding to the imaginary part and the w-component equal to the real part.
 ### Quaternion indexing macros
 | Macro definition      | Description
 | --------              | --------
-| `quat_x(q)`		| Index the x-component of a quaternion.
-| `quat_y(q)`		| Index the y-component of a quaternion.
-| `quat_z(q)`		| Index the z-component of a quaternion.
-| `quat_w(v)`		| Index the w-component of a quaternion.
+| `quat_x(q)`		| Index to the x-component of a quaternion.
+| `quat_y(q)`		| Index to the y-component of a quaternion.
+| `quat_z(q)`		| Index to the z-component of a quaternion.
+| `quat_w(v)`		| Index to the w-component of a quaternion.
 
 ### Quaternion constructors
 | Function prototype				| Return value	| Description
