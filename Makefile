@@ -1,5 +1,5 @@
 CC=		gcc
-CFLAGS=		-O2 -std=gnu99 -g -march=native -mtune=native		\
+CFLAGS=		-O2 -std=gnu89 -g -march=native -mtune=native		\
 		-Wall -Wextra -Werror -Wno-psabi
 LDFLAGS=	-lm
 MODULES=	vector matrix quaternion

@@ -219,7 +219,7 @@ mat4d_ident(void)
 }
 
 mat2f
-mat2f_trans(mat2f m)
+mat2f_transpose(mat2f m)
 {
 	return (mat2f){
 	    mat2_11(m), mat2_21(m),
@@ -228,7 +228,7 @@ mat2f_trans(mat2f m)
 }
 
 mat2d
-mat2d_trans(mat2d m)
+mat2d_transpose(mat2d m)
 {
 	return (mat2d){
 	    mat2_11(m), mat2_21(m),
@@ -237,7 +237,7 @@ mat2d_trans(mat2d m)
 }
 
 mat3f
-mat3f_trans(mat3f m)
+mat3f_transpose(mat3f m)
 {
 	return (mat3f){
 	    mat3_11(m), mat3_21(m), mat3_31(m),
@@ -247,7 +247,7 @@ mat3f_trans(mat3f m)
 }
 
 mat3d
-mat3d_trans(mat3d m)
+mat3d_transpose(mat3d m)
 {
 	return (mat3d){
 	    mat3_11(m), mat3_21(m), mat3_31(m),
@@ -257,7 +257,7 @@ mat3d_trans(mat3d m)
 }
 
 mat4f
-mat4f_trans(mat4f m)
+mat4f_transpose(mat4f m)
 {
 	return (mat4f){
 	    mat4_11(m), mat4_21(m), mat4_31(m), mat4_41(m),
@@ -268,7 +268,7 @@ mat4f_trans(mat4f m)
 }
 
 mat4d
-mat4d_trans(mat4d m)
+mat4d_transpose(mat4d m)
 {
 	return (mat4d){
 	    mat4_11(m), mat4_21(m), mat4_31(m), mat4_41(m),

@@ -297,12 +297,12 @@ GCC with support for vector extensions.
 ### General matrix functions
 | Function prototype				| Return value	| Description
 | --------					| --------	| --------
-| `mat2f_trans(mat2f)`				| `mat2f`	| Returns the transpose of a 2x2 single-precision matrix.
-| `mat2d_trans(mat2d)`				| `mat2d`	| Returns the transpose of a 2x2 double-precision matrix.
-| `mat3f_trans(mat3f)`				| `mat3f`	| Returns the transpose of a 3x3 single-precision matrix.
-| `mat3d_trans(mat3d)`				| `mat3d`	| Returns the transpose of a 3x3 double-precision matrix.
-| `mat4f_trans(mat4f)`				| `mat4f`	| Returns the transpose of a 4x4 single-precision matrix.
-| `mat4d_trans(mat4d)`				| `mat4d`	| Returns the transpose of a 4x4 double-precision matrix.
+| `mat2f_transpose(mat2f)`			| `mat2f`	| Returns the transpose of a 2x2 single-precision matrix.
+| `mat2d_transpose(mat2d)`			| `mat2d`	| Returns the transpose of a 2x2 double-precision matrix.
+| `mat3f_transpose(mat3f)`			| `mat3f`	| Returns the transpose of a 3x3 single-precision matrix.
+| `mat3d_transpose(mat3d)`			| `mat3d`	| Returns the transpose of a 3x3 double-precision matrix.
+| `mat4f_transpose(mat4f)`			| `mat4f`	| Returns the transpose of a 4x4 single-precision matrix.
+| `mat4d_transpose(mat4d)`			| `mat4d`	| Returns the transpose of a 4x4 double-precision matrix.
 | `mat2f_trace(mat2f)`				| `float`	| Returns the trace of a 2x2 single-precision matrix.
 | `mat2d_trace(mat2d)`				| `double`	| Returns the trace of a 2x2 double-precision matrix.
 | `mat3f_trace(mat3f)`				| `float`	| Returns the trace of a 3x3 single-precision matrix.

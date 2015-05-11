@@ -80,12 +80,12 @@ mat4f	mat4f_ident(void);
 mat4d	mat4d_ident(void);
 
 /* General matrix functions. */
-mat2f	mat2f_trans(mat2f);
-mat2d 	mat2d_trans(mat2d);
-mat3f 	mat3f_trans(mat3f);
-mat3d 	mat3d_trans(mat3d);
-mat4f 	mat4f_trans(mat4f);
-mat4d 	mat4d_trans(mat4d);
+mat2f	mat2f_transpose(mat2f);
+mat2d 	mat2d_transpose(mat2d);
+mat3f 	mat3f_transpose(mat3f);
+mat3d 	mat3d_transpose(mat3d);
+mat4f 	mat4f_transpose(mat4f);
+mat4d 	mat4d_transpose(mat4d);
 
 float	mat2f_trace(mat2f);
 double	mat2d_trace(mat2d);
