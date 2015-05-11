@@ -97,10 +97,5 @@ main(void)
 	    29, 30, 31, 32
 	};
 
-	vec2f point = vec2f_make(10, 0);
-	vec2f_print(point);
-	point = vec2f_rotate(point, deg_to_rad(45));
-	vec2f_print(point);
-
 	return 0;
 }

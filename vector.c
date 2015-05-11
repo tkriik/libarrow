@@ -333,24 +333,24 @@ vec4d_sproject(vec4d v, vec4d w)
 }
 
 vec2f
-vec2f_rotate(vec2f v, float r)
+vec2f_rotate(vec2f v, float a)
 {
-	float sinr = sin(r);
-	float cosr = cos(r);
+	float sin_a = sin(a);
+	float cos_a = cos(a);
 	return vec2f_make(
-	    vec_x(v) * cosr - vec_y(v) * sinr,
-	    vec_x(v) * sinr + vec_y(v) * cosr
+	    vec_x(v) * cos_a - vec_y(v) * sin_a,
+	    vec_x(v) * sin_a + vec_y(v) * cos_a
 	);
 }
 
 vec2d
-vec2d_rotate(vec2d v, double r)
+vec2d_rotate(vec2d v, double a)
 {
-	double sinr = sin(r);
-	double cosr = cos(r);
+	double sin_a = sin(a);
+	double cos_a = cos(a);
 	return vec2d_make(
-	    vec_x(v) * cosr - vec_y(v) * sinr,
-	    vec_x(v) * sinr + vec_y(v) * cosr
+	    vec_x(v) * cos_a - vec_y(v) * sin_a,
+	    vec_x(v) * sin_a + vec_y(v) * cos_a
 	);
 }
 

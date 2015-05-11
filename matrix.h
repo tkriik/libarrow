@@ -126,8 +126,14 @@ mat4d	mat4d_tensor(vec4d, vec4d);
 /* 2x2 and 3x3 rotation matrix constructors. */
 mat2f	mat2f_rotation(float);
 mat2d	mat2d_rotation(double);
-mat3f	mat3f_rotation(vec3f, float);	// TODO
-mat3d	mat3d_rotation(vec3d, double);	// TODO
+mat3f	mat3f_x_rotation(float);
+mat3d	mat3d_x_rotation(double);
+mat3f	mat3f_y_rotation(float);
+mat3d	mat3d_y_rotation(double);
+mat3f	mat3f_z_rotation(float);
+mat3d	mat3d_z_rotation(double);
+mat3f	mat3f_v_rotation(vec3f, float);		// TODO
+mat3d	mat3d_v_rotation(vec3d, double);	// TODO
 
 /* Matrix type conversion functions. */
 mat2f	mat2d_to_f(mat2d);

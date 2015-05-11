@@ -425,28 +425,6 @@ mat4d_det(mat4d m)
 }
 
 mat2f
-mat2f_rotation(float r)
-{
-	float cosr = cos(r);
-	float sinr = sin(r);
-	return (mat2f){	    
-	    cosr, -sinr,
-	    sinr, cosr
-	};
-}
-
-mat2d
-mat2d_rotation(double r)
-{
-	double cosr = cos(r);
-	double sinr = sin(r);
-	return (mat2d){	    
-	    cosr, -sinr,
-	    sinr, cosr
-	};
-}
-
-mat2f
 mat2f_mul_mat(mat2f a, mat2f b)
 {
 	return (mat2f){
@@ -787,6 +765,100 @@ mat4d_tensor(vec4d v, vec4d w)
 
 	    vec_w(v) * vec_x(w), vec_w(v) * vec_y(w),
 	    vec_w(v) * vec_z(w), vec_w(v) * vec_w(w)
+	};
+}
+
+mat2f
+mat2f_rotation(float a)
+{
+	float sin_a = sin(a);
+	float cos_a = cos(a);
+	return (mat2f){	    
+	    cos_a,	-sin_a,
+	    sin_a,	cos_a
+	};
+}
+
+mat2d
+mat2d_rotation(double a)
+{
+	double sin_a = sin(a);
+	double cos_a = cos(a);
+	return (mat2d){	    
+	    cos_a,	-sin_a,
+	    sin_a,	cos_a
+	};
+}
+
+mat3f
+mat3f_x_rotation(float a)
+{
+	float sin_a = sin(a);
+	float cos_a = cos(a);
+	return (mat3f){
+	    1,		0,	0,
+	    0,		cos_a,	-sin_a,
+	    0,		sin_a,	cos_a
+	};
+}
+
+mat3d
+mat3d_x_rotation(double a)
+{
+	double sin_a = sin(a);
+	double cos_a = cos(a);
+	return (mat3d){
+	    1,		0,	0,
+	    0,		cos_a,	-sin_a,
+	    0,		sin_a,	cos_a
+	};
+}
+
+mat3f
+mat3f_y_rotation(float a)
+{
+	float sin_a = sin(a);
+	float cos_a = cos(a);
+	return (mat3f){
+	    cos_a,	0,	sin_a,
+	    0,		1,	0,
+	    -sin_a,	0,	cos_a
+	};
+}
+
+mat3d
+mat3d_y_rotation(double a)
+{
+	double sin_a = sin(a);
+	double cos_a = cos(a);
+	return (mat3d){
+	    cos_a,	0,	sin_a,
+	    0,		1,	0,
+	    -sin_a,	0,	cos_a
+	};
+}
+
+mat3f
+mat3f_z_rotation(float a)
+{
+	float sin_a = sin(a);
+	float cos_a = cos(a);
+	return (mat3f){
+	    cos_a,	-sin_a,	0,
+	    sin_a,	cos_a,	0,
+	    0,		0,	1,
+	};
+}
+
+mat3d
+mat3d_z_rotation(double a)
+{
+	double sin_a = sin(a);
+	double cos_a = cos(a);
+	return (mat3d){
+	    cos_a,	-sin_a,	0,
+	    sin_a,	cos_a,	0,
+	    0,		0,	1,
 	};
 }
 
