@@ -2,7 +2,6 @@
 - [Introduction](#introduction)
 - [Status](#status)
 - [Requirements](#requirements)
-- [Usage](#usage)
 - [Reference](#reference)
 	- [Vector](#vector)
 		- [Vector types](#vector-types)
@@ -172,7 +171,7 @@ GCC with support for vector extensions.
 | `vec3f_cross(vec3f, vec3f)`                   | `vec3f`       | Returns the cross product of two 3D single-precision vectors.
 | `vec3d_cross(vec3d, vec3d)`                   | `vec3d`       | Returns the cross product of two 3D double-precision vectors.
 | `vec3f_stp(vec3f, vec3f, vec3f)`              | `float`       | Returns the scalar triple product of three 3D single-precision vectors.
-| `vec3d_stp(vec3d, vec3d, vec3d)`              | `double`      | Returns the scalar triple product of three double-presicion 3D vectors.
+| `vec3d_stp(vec3d, vec3d, vec3d)`              | `double`      | Returns the scalar triple product of three 3D double-precision vectors.
 
 #### Vector type conversion functions
 | Function prototype				| Return value	| Description
@@ -282,3 +281,65 @@ GCC with support for vector extensions.
 | `mat3d_ident(void)`                           | `mat3d`       | Constructs a 3x3 double-precision identity matrix.
 | `mat4f_ident(void)`                           | `mat4f`       | Constructs a 4x4 single-precision identity matrix.
 | `mat4d_ident(void)`                           | `mat4d`       | Constructs a 4x4 double-precision identity matrix.
+
+#### General matrix functions
+| Function prototype				| Return value	| Description
+| --------					| --------	| --------
+| `mat2f_trans(mat2f)`				| `mat2f`	| Returns the transpose of a 2x2 single-precision matrix.
+| `mat2d_trans(mat2d)`				| `mat2d`	| Returns the transpose of a 2x2 double-precision matrix.
+| `mat3f_trans(mat3f)`				| `mat3f`	| Returns the transpose of a 3x3 single-precision matrix.
+| `mat3d_trans(mat3d)`				| `mat3d`	| Returns the transpose of a 3x3 double-precision matrix.
+| `mat4f_trans(mat4f)`				| `mat4f`	| Returns the transpose of a 4x4 single-precision matrix.
+| `mat4d_trans(mat4d)`				| `mat4d`	| Returns the transpose of a 4x4 double-precision matrix.
+| `mat2f_trace(mat2f)`				| `float`	| Returns the trace of a 2x2 single-precision matrix.
+| `mat2d_trace(mat2d)`				| `double`	| Returns the trace of a 2x2 double-precision matrix.
+| `mat3f_trace(mat3f)`				| `float`	| Returns the trace of a 3x3 single-precision matrix.
+| `mat3d_trace(mat3d)`				| `double`	| Returns the trace of a 3x3 double-precision matrix.
+| `mat4f_trace(mat4f)`				| `float`	| Returns the trace of a 4x4 single-precision matrix.
+| `mat4d_trace(mat4d)`				| `double`	| Returns the trace of a 4x4 double-precision matrix.
+| `mat2f_det(mat2f)`				| `float`	| Returns the trace of a 2x2 single-precision matrix.
+| `mat2d_det(mat2d)`				| `double`	| Returns the determinant of a 2x2 double-precision matrix.
+| `mat3f_det(mat3f)`				| `float`	| Returns the determinant of a 3x3 single-precision matrix.
+| `mat3d_det(mat3d)`				| `double`	| Returns the determinant of a 3x3 double-precision matrix.
+| `mat4f_det(mat4f)`				| `float`	| Returns the determinant of a 4x4 single-precision matrix.
+| `mat4d_det(mat4d)`				| `double`	| Returns the determinant of a 4x4 double-precision matrix.
+
+#### Matrix and vector product functions
+| Function prototype				| Return value	| Description
+| --------					| --------	| --------
+| `mat2f_mul_mat(mat2f, mat2f)`			| `mat2f`	| Returns the product between two 2x2 single-precision matrices.
+| `mat2d_mul_mat(mat2d, mat2d)`			| `mat2d`	| Returns the product between two 2x2 double-precision matrices.
+| `mat3f_mul_mat(mat3f, mat3f)`			| `mat3f`	| Returns the product between two 3x3 single-precision matrices.
+| `mat3d_mul_mat(mat3d, mat3d)`			| `mat3d`	| Returns the product between two 3x3 double-precision matrices.
+| `mat4f_mul_mat(mat4f, mat4f)`			| `mat4f`	| Returns the product between two 4x4 single-precision matrices.
+| `mat4d_mul_mat(mat4d, mat4d)`			| `mat4d`	| Returns the product between two 4x4 double-precision matrices.
+| `mat2f_mul_vec(mat2f, vec2f)`			| `vec2f`	| Returns the product between a 2x2 single-precision matrix and 2D vector.
+| `mat2d_mul_vec(mat2d, vec2d)`			| `vec2d`	| Returns the product between a 2x2 double-precision matrix and 2D vector.
+| `mat3f_mul_vec(mat3f, vec3f)`			| `vec3f`	| Returns the product between a 3x3 single-precision matrix and 3D vector.
+| `mat3d_mul_vec(mat3d, vec3d)`			| `vec3d`	| Returns the product between a 3x3 double-precision matrix and 3D vector.
+| `mat4f_mul_vec(mat4f, vec4f)`			| `vec4f`	| Returns the product between a 4x4 single-precision matrix and 4D vector.
+| `mat4d_mul_vec(mat4d, vec4d)`			| `vec4d`	| Returns the product between a 4x4 double-precision matrix and 4D vector.
+| `mat2f_tensor(vec2f, vec2f)`			| `mat2f`	| Returns the tensor product between two 2D single-precision vectors.
+| `mat2d_tensor(vec2d, vec2d)`			| `mat2d`	| Returns the tensor product between two 2D double-precision vectors.
+| `mat3f_tensor(vec3f, vec3f)`			| `mat3f`	| Returns the tensor product between two 3D single-precision vectors.
+| `mat3d_tensor(vec3d, vec3d)`			| `mat3d`	| Returns the tensor product between two 3D double-precision vectors.
+| `mat4f_tensor(vec4f, vec4f)`			| `mat4f`	| Returns the tensor product between two 4D single-precision vectors.
+| `mat4d_tensor(vec4d, vec4d)`			| `mat4d`	| Returns the tensor product between two 4D double-precision vectors.
+
+#### 2x2 and 3x3 rotation matrix constructors
+| Function prototype				| Return value	| Description
+| --------					| --------	| --------
+| `mat2f_rotation(float)`			| `mat2f`	| Returns a 2x2 single-precision rotation matrix from an angle.
+| `mat2d_rotation(double)`			| `mat2d`	| Returns a 2x2 double-precision rotation matrix from an angle.
+| `mat3f_rotation(vec3f, float)`		| `mat3f`	| Returns a 3x3 single-precision rotation matrix about an axis by an angle. (UNAVAILABLE)
+| `mat3d_rotation(vec3d, double)`		| `mat3d`	| Returns a 3x3 double-precision rotation matrix about an axis by an angle. (UNAVAILABLE)
+
+#### Matrix type conversion functions
+| Function prototype				| Return value	| Description
+| --------					| --------	| --------
+| `mat2d_to_f(mat2d)`				| `mat2f`	| Converts a 2x2 matrix from double- to single-precision.
+| `mat2f_to_d(mat2f)`				| `mat2d`	| Converts a 2x2 matrix from single- to double-precision.
+| `mat3d_to_f(mat3d)`				| `mat3f`	| Converts a 3x3 matrix from double- to single-precision.
+| `mat3f_to_d(mat3f)`				| `mat3d`	| Converts a 3x3 matrix from single- to double-precision.
+| `mat4d_to_f(mat4d)`				| `mat4f`	| Converts a 4x4 matrix from double- to single-precision.
+| `mat4f_to_d(mat4f)`				| `mat4d`	| Converts a 4x4 matrix from single- to double-precision.
