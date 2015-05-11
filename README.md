@@ -1,7 +1,12 @@
 # libarrow
 This library aims to implement fast linear algebra computations on small fixed size floating-point vectors, matrices and quaternions.
+
 ## Status
 The vector and matrix modules are nearing completion while the quaternion module is still well underway. No comprehensive tests and benchmarks have been written either. I would not recommend using this library yet.
+
+## Requirements
+GCC with support for vector extensions.
+
 ## Usage
 The following table describes the data types available in this library:
 
@@ -49,4 +54,27 @@ w -= v;		// w = {-24, -6.5, -20}
 q *= q;		// q = {0.25, 0.25, 0.25, 1}
 m += 3;		// m = {4, 5, 6, 7, 8, 9, 10, 11, 12}
 ```
-See [GCC's documentation on vector extensions](https://gcc.gnu.org/onlinedocs/gcc/Vector-Extensions.html) for more information how you can operate on vectorized data types.
+See [GCC's documentation on vector extensions](https://gcc.gnu.org/onlinedocs/gcc/Vector-Extensions.html) for more information on operating on vectorized data types.
+
+## Reference
+### Vector
+| Function prototype				| Return value	| Description
+| --------					| --------	| --------
+| `vec2f_make(float, float)`			| `vec2f`	| Constructs a single-precision 2D vector.
+| `vec2d_make(double, double)`			| `vec2d`	| Constructs a double-precision 2D vector.
+| `vec3f_make(float, float, float)`		| `vec3f`	| Constructs a single-precision 3D vector.
+| `vec3d_make(double, double, double)`		| `vec3d`	| Constructs a double-precision 3D vector.
+| `vec4f_make(float, float, float, float)`	| `vec4f`	| Constructs a single-precision 4D vector.
+| `vec4d_make(double, double, double, double)`	| `vec4d`	| Constructs a double-precision 4D vector.
+| `vec2f_with(float)`				| `vec2f`	| Constructs a single-precision 2D vector with a default value.
+| `vec2d_with(double)`				| `vec2d`	| Constructs a double-precision 2D vector with a default value.
+| `vec3f_with(float)`				| `vec3f`	| Constructs a single-precision 3D vector with a default value.
+| `vec3d_with(double)`				| `vec3d`	| Constructs a double-precision 3D vector with a default value.
+| `vec4f_with(float)`				| `vec4f`	| Constructs a single-precision 4D vector with a default value.
+| `vec4d_with(double)`				| `vec4d`	| Constructs a double-precision 4D vector with a default value.
+| `vec2f_zero(void)`				| `vec2f`	| Constructs an empty single-precision 2D vector.
+| `vec2d_zero(void)`				| `vec2d`	| Constructs an empty double-precision 2D vector.
+| `vec3f_zero(void)`				| `vec3f`	| Constructs an empty single-precision 3D vector.
+| `vec3d_zero(void)`				| `vec3d`	| Constructs an empty double-precision 3D vector.
+| `vec4f_zero(void)`				| `vec4f`	| Constructs an empty single-precision 4D vector.
+| `vec4d_zero(void)`				| `vec4d`	| Constructs an empty double-precision 4D vector.
