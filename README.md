@@ -26,20 +26,20 @@ The following table describes the data types available in this library:
 
 | Type name	| Size (bytes)	| Description
 | --------	| --------	| --------
-| vec2f		| 8		| 2D single-precision vector.
-| vec2d		| 16		| 2D double-precision vector.
-| vec3f		| 16		| 3D single-precision vector.
-| vec3d		| 32		| 3D double-precision vector.
-| vec4f		| 16		| 4D single-precision vector.
-| vec4d		| 32		| 4D double-precision vector.
-| mat2f		| 16		| 2x2 single-precision matrix.
-| mat2d		| 32		| 2x2 double-precision matrix.
-| mat3f		| 64		| 3x3 single-precision matrix.
-| mat3d		| 128		| 3x3 double-precision matrix.
-| mat4f		| 64		| 4x4 single-precision matrix.
-| mat4d		| 128		| 4x4 double-precision matrix.
-| quatf		| 16		| Single-precision quaternion (XYZW).
-| quatd		| 32		| Double-precision quaternion (XYZW).
+| `vec2f`       | 8		| 2D single-precision vector.
+| `vec2d`	| 16		| 2D double-precision vector.
+| `vec3f`	| 16		| 3D single-precision vector.
+| `vec3d`	| 32		| 3D double-precision vector.
+| `vec4f`	| 16		| 4D single-precision vector.
+| `vec4d`	| 32		| 4D double-precision vector.
+| `mat2f`	| 16		| 2x2 single-precision matrix.
+| `mat2d`	| 32		| 2x2 double-precision matrix.
+| `mat3f`	| 64		| 3x3 single-precision matrix.
+| `mat3d`	| 128		| 3x3 double-precision matrix.
+| `mat4f`	| 64		| 4x4 single-precision matrix.
+| `mat4d`	| 128		| 4x4 double-precision matrix.
+| `quatf`	| 16		| Single-precision quaternion (XYZW).
+| `quatd`	| 32		| Double-precision quaternion (XYZW).
 
 Single-precision data types take half the space and tend to offer faster computation speed. Double-precision data types should be used if more accuracy is required.
 
