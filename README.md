@@ -18,6 +18,10 @@
 		- [3x3 matrix indexing macros](#3x3-matrix-indexing-macros)
 		- [4x4 matrix indexing macros](#4x4-matrix-indexing-macros)
 		- [Matrix constructors](#matrix-constructors)
+		- [General matrix functions](#general-matrix-functions)
+		- [Matrix and vector product functions](#matrix-and-vector-product-functions)
+		- [2x2 and 3x3 rotation matrix constructors](#2x2-and-3x3-rotation-matrix-constructors)
+		- [Matrix type conversion functions](#matrix-type-conversion-functions)
 
 ## Introduction
 This library aims to implement fast linear algebra computations on small fixed size floating-point vectors, matrices and quaternions.
