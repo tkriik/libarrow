@@ -18,6 +18,7 @@
 		- [2x2 matrix indexing macros](#2x2-matrix-indexing-macros)
 		- [3x3 matrix indexing macros](#3x3-matrix-indexing-macros)
 		- [4x4 matrix indexing macros](#4x4-matrix-indexing-macros)
+		- [Matrix constructors](#matrix-constructors)
 
 ## Introduction
 This library aims to implement fast linear algebra computations on small fixed size floating-point vectors, matrices and quaternions.
@@ -259,10 +260,10 @@ GCC with support for vector extensions.
 | --------					| --------	| --------
 | `mat2f_make(vec2f, vec2f)`                    | `mat2f`       | Constructs a 2x2 single-precision matrix from two row vectors.
 | `mat2d_make(vec2d, vec2d)`                    | `mat2d`       | Constructs a 2x2 double-precision matrix from two row vectors.
-| `mat3f_make(vec2f, vec2f)`                    | `mat3f`       | Constructs a 3x3 single-precision matrix from three row vectors.
-| `mat3d_make(vec2d, vec2d)`                    | `mat3d`       | Constructs a 3x3 double-precision matrix from three row vectors.
-| `mat4f_make(vec2f, vec2f)`                    | `mat4f`       | Constructs a 4x4 single-precision matrix from four row vectors.
-| `mat4d_make(vec2d, vec2d)`                    | `mat4d`       | Constructs a 4x4 double-precision matrix from four row vectors.
+| `mat3f_make(vec3f, vec3f, vec3f)`		| `mat3f`       | Constructs a 3x3 single-precision matrix from three row vectors.
+| `mat3d_make(vec3d, vec3d, vec3d)`		| `mat3d`       | Constructs a 3x3 double-precision matrix from three row vectors.
+| `mat4f_make(vec4f, vec4f, vec4f, vec4f)`	| `mat4f`       | Constructs a 4x4 single-precision matrix from four row vectors.
+| `mat4d_make(vec4d, vec4d, vec4d, vec4d)`	| `mat4d`       | Constructs a 4x4 double-precision matrix from four row vectors.
 | `mat2f_with(float)`                           | `mat2f`       | Constructs a 2x2 single-precision matrix with an initial value.
 | `mat2d_with(double)`                          | `mat2d`       | Constructs a 2x2 double-precision matrix with an initial value.
 | `mat3f_with(float)`                           | `mat3f`       | Constructs a 3x3 single-precision matrix with an initial value.
