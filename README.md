@@ -5,13 +5,19 @@
 - [Usage](#usage)
 - [Reference](#reference)
 	- [Vector](#vector)
-		- [Vector accessor macros](#vector-accessor-macros)
+	        - [Vector types](#vector-types)
+		- [Vector indexing macros](#vector-indexing-macros)
 		- [Vector constructors](#vector-constructors)
 		- [General vector functions](#general-vector-functions)
 		- [2D vector functions](#2d-vector-functions)
 		- [3D vector functions](#3d-vector-functions)
 		- [Vector type conversion functions](#vector-type-conversion-functions)
 		- [Vector size conversion functions](#vector-type-conversion-functions)
+	- [Matrix](#matrix)
+	        - [Matrix types](#matrix-types)
+	        - [2x2 matrix indexing macros](#2x2-matrix-indexing-macros)
+	        - [3x3 matrix indexing macros](#3x3-matrix-indexing-macros)
+	        - [4x4 matrix indexing macros](#4x4-matrix-indexing-macros)
 
 ## Introduction
 This library aims to implement fast linear algebra computations on small fixed size floating-point vectors, matrices and quaternions.
@@ -73,13 +79,23 @@ See [GCC's documentation on vector extensions](https://gcc.gnu.org/onlinedocs/gc
 
 ## Reference
 ### Vector
-#### Vector accessor macros
+#### Vector types
+| Type name             | Size (bytes)  | Description
+| --------              | --------      | --------
+| `vec2f`               | 8             | 2D single-precision vector type.
+| `vec2d`               | 16            | 2D double-precision vector type.
+| `vec3f`               | 16            | 3D single-precision vector type.
+| `vec3d`               | 32            | 3D double-precision vector type.
+| `vec4f`               | 16            | 4D single-precision vector type.
+| `vec4d`               | 32            | 4D double-precision vector type.
+
+#### Vector indexing macros
 | Macro definition      | Description
 | --------              | --------
-| `vec_x(v)`            | Reads from/writes to the X-component of a vector.
-| `vec_y(v)`            | Reads from/writes to the Y-component of a vector.
-| `vec_z(v)`            | Reads from/writes to the Z-component of a vector.
-| `vec_w(v)`            | Reads from/writes to the W-component of a vector.
+| `vec_x(v)`            | Index the X-component of a vector.
+| `vec_y(v)`            | Index the Y-component of a vector.
+| `vec_z(v)`            | Index the Z-component of a vector.
+| `vec_w(v)`            | Index the W-component of a vector.
 
 #### Vector constructors
 | Function prototype				| Return value	| Description
@@ -186,3 +202,58 @@ See [GCC's documentation on vector extensions](https://gcc.gnu.org/onlinedocs/gc
 | `vec3f_to_4(vec3f)`                           | `vec4f`       | Converts a single-precision 3D vector to a 4D vector.
 | `vec2d_to_4(vec2d)`                           | `vec4d`       | Converts a double-precision 2D vector to a 4D vector.
 | `vec3d_to_4(vec3d)`                           | `vec4d`       | Converts a double-precision 3D vector to a 4D vector.
+
+### Matrix
+#### Matrix types
+| Type name             | Size (bytes)  | Description
+| --------              | --------      | --------
+| `mat2f`               | 16            | 2x2 single-precision matrix.
+| `mat2d`               | 32            | 2x2 double-precision matrix.
+| `mat3f`               | 64            | 3x3 single-precision matrix.
+| `mat3d`               | 128           | 3x3 double-precision matrix.
+| `mat4f`               | 64            | 4x4 single-precision matrix.
+| `mat4d`               | 128           | 4x4 double-precision matrix.
+
+#### 2x2 matrix indexing macros
+| Macro definition      | Description
+| --------              | --------
+| `mat2_i(m, i, j)`     | Index the value at row `i`, column `j` in a 2x2 matrix `m`.
+| `mat2_11(m)`          | Index the value at row 1, column 1 in a 2x2 matrix `m`.
+| `mat2_12(m)`          | Index the value at row 1, column 2 in a 2x2 matrix `m`.
+| `mat2_21(m)`          | Index the value at row 2, column 1 in a 2x2 matrix `m`.
+| `mat2_22(m)`          | Index the value at row 2, column 2 in a 2x2 matrix `m`.
+
+#### 3x3 matrix indexing macros
+| Macro definition      | Description
+| --------              | --------
+| `mat3_i(m, i, j)`     | Index the value at row `i`, column `j` in a 3x3 matrix `m`.
+| `mat3_11(m)`          | Index the value at row 1, column 1 in a 3x3 matrix `m`.
+| `mat3_12(m)`          | Index the value at row 1, column 2 in a 3x3 matrix `m`.
+| `mat3_13(m)`          | Index the value at row 1, column 3 in a 3x3 matrix `m`.
+| `mat3_21(m)`          | Index the value at row 2, column 1 in a 3x3 matrix `m`.
+| `mat3_22(m)`          | Index the value at row 2, column 2 in a 3x3 matrix `m`.
+| `mat3_23(m)`          | Index the value at row 2, column 3 in a 3x3 matrix `m`.
+| `mat3_31(m)`          | Index the value at row 3, column 1 in a 3x3 matrix `m`.
+| `mat3_32(m)`          | Index the value at row 3, column 2 in a 3x3 matrix `m`.
+| `mat3_33(m)`          | Index the value at row 3, column 3 in a 3x3 matrix `m`.
+
+#### 4x4 matrix indexing macros
+| Macro definition      | Description
+| --------              | --------
+| `mat4_i(m, i, j)`     | Index the value at row `i`, column `j` in a 4x4 matrix `m`.
+| `mat4_11(m)`          | Index the value at row 1, column 1 in a 4x4 matrix `m`.
+| `mat4_12(m)`          | Index the value at row 1, column 2 in a 4x4 matrix `m`.
+| `mat4_13(m)`          | Index the value at row 1, column 3 in a 4x4 matrix `m`.
+| `mat4_14(m)`          | Index the value at row 1, column 4 in a 4x4 matrix `m`.
+| `mat4_21(m)`          | Index the value at row 2, column 1 in a 4x4 matrix `m`.
+| `mat4_22(m)`          | Index the value at row 2, column 2 in a 4x4 matrix `m`.
+| `mat4_23(m)`          | Index the value at row 2, column 3 in a 4x4 matrix `m`.
+| `mat4_24(m)`          | Index the value at row 2, column 4 in a 4x4 matrix `m`.
+| `mat4_31(m)`          | Index the value at row 3, column 1 in a 4x4 matrix `m`.
+| `mat4_32(m)`          | Index the value at row 3, column 2 in a 4x4 matrix `m`.
+| `mat4_33(m)`          | Index the value at row 3, column 3 in a 4x4 matrix `m`.
+| `mat4_34(m)`          | Index the value at row 3, column 4 in a 4x4 matrix `m`.
+| `mat4_41(m)`          | Index the value at row 4, column 1 in a 4x4 matrix `m`.
+| `mat4_42(m)`          | Index the value at row 4, column 2 in a 4x4 matrix `m`.
+| `mat4_43(m)`          | Index the value at row 4, column 3 in a 4x4 matrix `m`.
+| `mat4_44(m)`          | Index the value at row 4, column 4 in a 4x4 matrix `m`.

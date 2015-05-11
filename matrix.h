@@ -14,9 +14,9 @@ typedef double mat3d __attribute__((vector_size(128)));
 typedef double mat4d __attribute__((vector_size(128)));
 
 /* Accessor macros. */
-#define mat2_i(m, r, c) ((m)[(r) * 2 + (c)])
-#define mat3_i(m, r, c) ((m)[(r) * 3 + (c)])
-#define mat4_i(m, r, c) ((m)[(r) * 4 + (c)])
+#define mat2_i(m, i, j) ((m)[(i) * 2 + (j)])
+#define mat3_i(m, i, j) ((m)[(i) * 3 + (j)])
+#define mat4_i(m, i, j) ((m)[(i) * 4 + (j)])
 
 #define mat2_11(m) ((m)[0])
 #define mat2_12(m) ((m)[1])
