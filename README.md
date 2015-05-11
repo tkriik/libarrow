@@ -22,6 +22,8 @@ The following table describes the data types available in this library:
 | quatf		| single-precision quaternion
 | quatd		| double-precision quaternion
 
+Single-precision data types take half the space and tend to offer faster computation speed. Double-precision data types should be used if more accuracy is required.
+
 Vector and quaternion values can be initialized either directly at declaration or with the `vec*_make/quat*_make` functions:
 ```C
 vec3f v = {4, -4.5, 3};
