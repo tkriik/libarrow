@@ -96,7 +96,7 @@ vec3d	vec3d_cross(vec3d, vec3d);
 float	vec3f_stp(vec3f, vec3f, vec3f);
 double	vec3d_stp(vec3d, vec3d, vec3d);
 
-/* Vector type and size conversion functions. */
+/* Vector type conversion functions. */
 vec2f	vec2d_to_f(vec2d);
 vec2d	vec2f_to_d(vec2f);
 vec3f	vec3d_to_f(vec3d);
@@ -104,17 +104,18 @@ vec3d	vec3f_to_d(vec3f);
 vec4f	vec4d_to_f(vec4d);
 vec4d	vec4f_to_d(vec4f);
 
-vec2f	vec3f_to_2f(vec3f);
-vec2f	vec4f_to_2f(vec4f);
-vec2d	vec3d_to_2d(vec3d);
-vec2d	vec4d_to_2d(vec4d);
-vec3f	vec2f_to_3f(vec2f);
-vec3f	vec4f_to_3f(vec4f);
-vec3d	vec2d_to_3d(vec2d);
-vec3d	vec4d_to_3d(vec4d);
-vec4f	vec2f_to_4f(vec2f);
-vec4f	vec3f_to_4f(vec3f);
-vec4d	vec2d_to_4d(vec2d);
-vec4d	vec3d_to_4d(vec3d);
+/* Vector size conversion functions. */
+vec2f	vec3f_to_2(vec3f);
+vec2f	vec4f_to_2(vec4f);
+vec2d	vec3d_to_2(vec3d);
+vec2d	vec4d_to_2(vec4d);
+vec3f	vec2f_to_3(vec2f);
+vec3f	vec4f_to_3(vec4f);
+vec3d	vec2d_to_3(vec2d);
+vec3d	vec4d_to_3(vec4d);
+vec4f	vec2f_to_4(vec2f);
+vec4f	vec3f_to_4(vec3f);
+vec4d	vec2d_to_4(vec2d);
+vec4d	vec3d_to_4(vec3d);
 
 #endif

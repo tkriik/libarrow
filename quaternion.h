@@ -44,10 +44,11 @@ quatd	quatd_inv(quatd);
 quatf	quatf_mul(quatf, quatf); // TODO
 quatd	quatd_mul(quatd, quatd); // TODO
 
-/* Quaternion size and vector conversion functions. */
+/* Quaternion size conversion functions. */
 quatf	quatd_to_f(quatd);
 quatd	quatf_to_d(quatf);
 
+/* Quaternion-vector conversion functions. */
 quatf	vec3f_to_quat(vec3f);
 quatd	vec3d_to_quat(vec3d);
 

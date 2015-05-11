@@ -447,73 +447,73 @@ vec4f_to_d(vec4f v)
 }
 
 vec2f
-vec3f_to_2f(vec3f v)
+vec3f_to_2(vec3f v)
 {
 	return vec2f_make(vec_x(v), vec_y(v));
 }
 
 vec2d
-vec3d_to_2d(vec3d v)
+vec3d_to_2(vec3d v)
 {
 	return vec2d_make(vec_x(v), vec_y(v));
 }
 
 vec2f
-vec4f_to_2f(vec4f v)
+vec4f_to_2(vec4f v)
 {
 	return vec2f_make(vec_x(v), vec_y(v));
 }
 
 vec2d
-vec4d_to_2d(vec4d v)
+vec4d_to_2(vec4d v)
 {
 	return vec2d_make(vec_x(v), vec_y(v));
 }
 
 vec3f
-vec2f_to_3f(vec2f v)
+vec2f_to_3(vec2f v)
 {
 	return vec3f_make(vec_x(v), vec_y(v), 0);
 }
 
 vec3d
-vec2d_to_3d(vec2d v)
+vec2d_to_3(vec2d v)
 {
 	return vec3d_make(vec_x(v), vec_y(v), 0);
 }
 
 vec3f
-vec4f_to_3f(vec4f v)
+vec4f_to_3(vec4f v)
 {
 	return vec3f_make(vec_x(v), vec_y(v), vec_z(v));
 }
 
 vec3d
-vec4d_to_3d(vec4d v)
+vec4d_to_3(vec4d v)
 {
 	return vec3d_make(vec_x(v), vec_y(v), vec_z(v));
 }
 
 vec4f
-vec2f_to_4f(vec2f v)
+vec2f_to_4(vec2f v)
 {
 	return vec4f_make(vec_x(v), vec_y(v), 0, 0);
 }
 
 vec4d
-vec2d_to_4d(vec2d v)
+vec2d_to_4(vec2d v)
 {
 	return vec4d_make(vec_x(v), vec_y(v), 0, 0);
 }
 
 vec4f
-vec3f_to_4f(vec3f v)
+vec3f_to_4(vec3f v)
 {
 	return vec4f_make(vec_x(v), vec_y(v), vec_z(v), 0);
 }
 
 vec4d
-vec3d_to_4d(vec3d v)
+vec3d_to_4(vec3d v)
 {
 	return vec4d_make(vec_x(v), vec_y(v), vec_z(v), 0);
 }

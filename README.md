@@ -89,6 +89,8 @@ See [GCC's documentation on vector extensions](https://gcc.gnu.org/onlinedocs/gc
 | `vec4d_zero(void)`				| `vec4d`	| Constructs an empty double-precision 4D vector.
 
 #### General vector functions
+| Function prototype				| Return value	| Description
+| --------					| --------	| --------
 | `vec2f_dot(vec2f, vec2f)`                     | `float`       | Returns the dot product of two single-precision 2D vectors.
 | `vec2d_dot(vec2d, vec2d)`                     | `double`      | Returns the dot product of two double-precision 2D vectors.
 | `vec3f_dot(vec3f, vec3f)`                     | `float`       | Returns the dot product of two single-precision 3D vectors.
@@ -127,6 +129,8 @@ See [GCC's documentation on vector extensions](https://gcc.gnu.org/onlinedocs/gc
 | `vec4d_sproject(vec4d, vec4d)`                | `double`      | Returns the scalar projection of the first double-precision 4D vector onto the second.
 
 #### 2D vector functions
+| Function prototype				| Return value	| Description
+| --------					| --------	| --------
 | `vec2f_rotate(vec2f, float)`                  | `vec2f`       | Returns the single-precision 2D vector rotated by an angle around the origin.
 | `vec2d_rotate(vec2d, double)`                 | `vec2d`       | Returns the double-precision 2D vector rotated by an angle around the origin.
 | `vec2f_perp(vec2f)`                           | `vec2f`       | Returns the vector counter-clockwise perpendicular to a single-precision 2D vector.
@@ -135,15 +139,35 @@ See [GCC's documentation on vector extensions](https://gcc.gnu.org/onlinedocs/gc
 | `vec2d_cperp(vec2d)`                          | `vec2d`       | Returns the vector clockwise perpendicular to a double-precision 2D vector.
 
 #### 3D vector functions
+| Function prototype				| Return value	| Description
+| --------					| --------	| --------
 | `vec3f_cross(vec3f, vec3f)`                   | `vec3f`       | Returns the cross product of two single-precision 3D vectors.
 | `vec3d_cross(vec3d, vec3d)`                   | `vec3d`       | Returns the cross product of two double-precision 3D vectors.
 | `vec3f_stp(vec3f, vec3f, vec3f)`              | `float`       | Returns the scalar triple product of three single-precision 3D vectors.
 | `vec3d_stp(vec3d, vec3d, vec3d)`              | `double`      | Returns the scalar triple product of three double-presicion 3D vectors.
 
 #### Vector type conversion functions
+| Function prototype				| Return value	| Description
+| --------					| --------	| --------
 | `vec2d_to_f(vec2d)`                           | `vec2f`       | Converts a 2D vector from double- to single-precision.
 | `vec2f_to_d(vec2f)`                           | `vec2d`       | Converts a 2D vector from single- to double-precision.
 | `vec3d_to_f(vec3d)`                           | `vec3f`       | Converts a 3D vector from double- to single-precision.
 | `vec3f_to_d(vec3f)`                           | `vec3d`       | Converts a 3D vector from single- to double-precision.
 | `vec4d_to_f(vec4d)`                           | `vec4f`       | Converts a 4D vector from double- to single-precision.
 | `vec4f_to_d(vec4f)`                           | `vec4d`       | Converts a 4D vector from single- to double-precision.
+
+#### Vector size conversion functions
+| Function prototype				| Return value	| Description
+| --------					| --------	| --------
+| `vec3f_to_2(vec3f)`                           | `vec2f`       | Converts a single-precision 3D vector to a 2D vector.
+| `vec4f_to_2(vec4f)`                           | `vec2f`       | Converts a single-precision 4D vector to a 2D vector.
+| `vec3d_to_2(vec3d)`                           | `vec2d`       | Converts a double-precision 3D vector to a 2D vector.
+| `vec4d_to_2(vec4d)`                           | `vec2d`       | Converts a double-precision 4D vector to a 2D vector.
+| `vec2f_to_3(vec2f)`                           | `vec3f`       | Converts a single-precision 2D vector to a 3D vector.
+| `vec4f_to_3(vec4f)`                           | `vec3f`       | Converts a single-precision 4D vector to a 3D vector.
+| `vec2d_to_3(vec2d)`                           | `vec3d`       | Converts a double-precision 2D vector to a 3D vector.
+| `vec4d_to_3(vec4d)`                           | `vec3d`       | Converts a double-precision 4D vector to a 3D vector.
+| `vec2f_to_4(vec2f)`                           | `vec4f`       | Converts a single-precision 2D vector to a 4D vector.
+| `vec3f_to_4(vec3f)`                           | `vec4f`       | Converts a single-precision 3D vector to a 4D vector.
+| `vec2d_to_4(vec2d)`                           | `vec4d`       | Converts a double-precision 2D vector to a 4D vector.
+| `vec3d_to_4(vec3d)`                           | `vec4d`       | Converts a double-precision 3D vector to a 4D vector.
