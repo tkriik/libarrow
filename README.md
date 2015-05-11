@@ -5,7 +5,7 @@
 - [Usage](#usage)
 - [Reference](#reference)
 	- [Vector](#vector)
-	        - [Vector types](#vector-types)
+		- [Vector types](#vector-types)
 		- [Vector indexing macros](#vector-indexing-macros)
 		- [Vector constructors](#vector-constructors)
 		- [General vector functions](#general-vector-functions)
@@ -14,50 +14,40 @@
 		- [Vector type conversion functions](#vector-type-conversion-functions)
 		- [Vector size conversion functions](#vector-type-conversion-functions)
 	- [Matrix](#matrix)
-	        - [Matrix types](#matrix-types)
-	        - [2x2 matrix indexing macros](#2x2-matrix-indexing-macros)
-	        - [3x3 matrix indexing macros](#3x3-matrix-indexing-macros)
-	        - [4x4 matrix indexing macros](#4x4-matrix-indexing-macros)
+		- [Matrix types](#matrix-types)
+		- [2x2 matrix indexing macros](#2x2-matrix-indexing-macros)
+		- [3x3 matrix indexing macros](#3x3-matrix-indexing-macros)
+		- [4x4 matrix indexing macros](#4x4-matrix-indexing-macros)
 
 ## Introduction
 This library aims to implement fast linear algebra computations on small fixed size floating-point vectors, matrices and quaternions.
 
-## Status
-The vector and matrix modules are nearing completion while the quaternion module is still well underway. No comprehensive tests and benchmarks have been written either. I would not recommend using this library yet.
-
-## Requirements
-GCC with support for vector extensions.
-
-## Usage
 The following table describes the data types available in this library:
 
-| Type name	| Description
-| --------	| --------
-| vec2f		| 2D single-precision vector
-| vec2d		| 2D double-precision vector
-| vec3f		| 3D single-precision vector
-| vec3d		| 3D double-precision vector
-| vec4f		| 4D single-precision vector
-| vec4d		| 4D double-precision vector
-| mat2f		| 2x2 single-precision matrix
-| mat2d		| 2x2 double-precision matrix
-| mat3f		| 3x3 single-precision matrix
-| mat3d		| 3x3 double-precision matrix
-| mat4f		| 4x4 single-precision matrix
-| mat4d		| 4x4 double-precision matrix
-| quatf		| single-precision quaternion
-| quatd		| double-precision quaternion
+| Type name	| Size (bytes)	| Description
+| --------	| --------	| --------
+| vec2f		| 8		| 2D single-precision vector.
+| vec2d		| 16		| 2D double-precision vector.
+| vec3f		| 16		| 3D single-precision vector.
+| vec3d		| 32		| 3D double-precision vector.
+| vec4f		| 16		| 4D single-precision vector
+| vec4d		| 32		| 4D double-precision vector
+| mat2f		| 16		| 2x2 single-precision matrix
+| mat2d		| 32		| 2x2 double-precision matrix
+| mat3f		| 64		| 3x3 single-precision matrix
+| mat3d		| 128		| 3x3 double-precision matrix
+| mat4f		| 64		| 4x4 single-precision matrix
+| mat4d		| 128		| 4x4 double-precision matrix
+| quatf		| 16		| Single-precision quaternion (XYZW)
+| quatd		| 32		| Double-precision quaternion (XYZW)
 
 Single-precision data types take half the space and tend to offer faster computation speed. Double-precision data types should be used if more accuracy is required.
 
-Vector and quaternion values can be initialized either directly at declaration or with the `vec*_make/quat*_make` functions:
+All data types can be initialized directly:
 ```C
 vec3f v = {4, -4.5, 3};
-vec3f w = vec3f_make(3, 1.5, -2);
-quatd q = quatd_make(0.5, 0.5, 0.5, 1);
-```
-Matrix values can also be initialized directly at declaration:
-```C
+vec3f w =  {3, 1.5, -2};
+quatd q = {0.5, 0.5, 0.5, 1};
 mat3f m = {
     1, 2, 3,
     4, 5, 6,
@@ -76,6 +66,12 @@ q *= q;		// q = {0.25, 0.25, 0.25, 1}
 m += 3;		// m = {4, 5, 6, 7, 8, 9, 10, 11, 12}
 ```
 See [GCC's documentation on vector extensions](https://gcc.gnu.org/onlinedocs/gcc/Vector-Extensions.html) for more information on operating on vectorized data types.
+
+## Status
+The vector and matrix modules are nearing completion while the quaternion module is still well underway. No comprehensive tests and benchmarks have been written either. I would not recommend using this library yet.
+
+## Requirements
+GCC with support for vector extensions.
 
 ## Reference
 ### Vector
