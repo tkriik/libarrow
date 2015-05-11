@@ -22,6 +22,13 @@
 		- [Matrix and vector product functions](#matrix-and-vector-product-functions)
 		- [2x2 and 3x3 rotation matrix constructors](#2x2-and-3x3-rotation-matrix-constructors)
 		- [Matrix type conversion functions](#matrix-type-conversion-functions)
+	- [Quaternion](#quaternion)
+		- [Quaternion types](#quaternion-types)
+		- [Quaternion indexing macros](#quaternion-indexing-macros)
+		- [Quaternion constructors](#quaternion-constructors)
+		- [General quaternion functions](#general-quaternion-functions)
+		- [Quaternion size conversion functions](#quaternion-size-conversion-functions)
+		- [Quaternion type conversion functions](#quaternion-vector-conversion-functions)
 
 ## Introduction
 This library aims to implement fast linear algebra computations on small fixed size floating-point vectors, matrices and quaternions.
@@ -375,7 +382,7 @@ corresponding to the imaginary part and the w-component equal to the real part.
 | `quatf_zero(void)`				| `quatf`	| Constructs a zero single-precision quaternion.
 | `quatd_zero(void`				| `quatd`	| Constructs a zero double-precision quaternion.
 
-### Quaternion functions
+### General quaternion functions
 | Function prototype				| Return value	| Description
 | --------					| --------	| --------
 | `quatf_dot(quatf)`				| `float`	| Returns the dot product of a single-precision quaternion.
