@@ -4,14 +4,14 @@
 #include "vector.h"
 
 /* Single-precision floating-point matrix types. */
-typedef float mat2f __attribute__((vector_size(16)));
-typedef float mat3f __attribute__((vector_size(64)));
-typedef float mat4f __attribute__((vector_size(64)));
+typedef float mat2f __attribute__ ((vector_size(16)));
+typedef float mat3f __attribute__ ((vector_size(64)));
+typedef float mat4f __attribute__ ((vector_size(64)));
 
 /* Double-precision floating-point matrix types. */
-typedef double mat2d __attribute__((vector_size(32)));
-typedef double mat3d __attribute__((vector_size(128)));
-typedef double mat4d __attribute__((vector_size(128)));
+typedef double mat2d __attribute__ ((vector_size(32)));
+typedef double mat3d __attribute__ ((vector_size(128)));
+typedef double mat4d __attribute__ ((vector_size(128)));
 
 /* Accessor macros. */
 #define mat2_i(m, i, j) ((m)[(i) * 2 + (j)])

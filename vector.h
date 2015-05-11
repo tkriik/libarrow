@@ -2,14 +2,14 @@
 #define _ARROW_VECTOR_H_
 
 /* Single-precision floating-point vector types. */
-typedef float vec2f __attribute__((vector_size(8)));
-typedef float vec3f __attribute__((vector_size(16)));
-typedef float vec4f __attribute__((vector_size(16)));
+typedef float vec2f __attribute__ ((vector_size(8)));
+typedef float vec3f __attribute__ ((vector_size(16)));
+typedef float vec4f __attribute__ ((vector_size(16)));
 
 /* Double-precision floating-point vector types. */
-typedef double vec2d __attribute__((vector_size(16)));
-typedef double vec3d __attribute__((vector_size(32)));
-typedef double vec4d __attribute__((vector_size(32)));
+typedef double vec2d __attribute__ ((vector_size(16)));
+typedef double vec3d __attribute__ ((vector_size(32)));
+typedef double vec4d __attribute__ ((vector_size(32)));
 
 /* Vector accessor macros. */
 #define vec_x(v) ((v)[0])
@@ -83,8 +83,8 @@ float	vec4f_sproject(vec4f, vec4f);
 double	vec4d_sproject(vec4d, vec4d);
 
 /* 2D vector functions. */
-vec2f	vec2f_rotate(vec2f, float);	// TODO
-vec2d	vec2d_rotate(vec2d, double);	// TODO
+vec2f	vec2f_rotate(vec2f, float);
+vec2d	vec2d_rotate(vec2d, double);
 vec2f	vec2f_perp(vec2f);
 vec2d	vec2d_perp(vec2d);
 vec2f	vec2f_cperp(vec2f);

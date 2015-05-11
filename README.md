@@ -38,10 +38,11 @@ The following table describes the data types available in this library:
 | `mat3d`	| 128		| 3x3 double-precision matrix.
 | `mat4f`	| 64		| 4x4 single-precision matrix.
 | `mat4d`	| 128		| 4x4 double-precision matrix.
-| `quatf`	| 16		| Single-precision quaternion (XYZW).
-| `quatd`	| 32		| Double-precision quaternion (XYZW).
+| `quatf`	| 16		| Single-precision quaternion.
+| `quatd`	| 32		| Double-precision quaternion.
 
-Single-precision data types take half the space and tend to offer faster computation speed. Double-precision data types should be used if more accuracy is required.
+Single-precision data types take half the space and tend to offer faster computation speed.
+Double-precision data types should be used if more accuracy is required.
 
 All data types can be initialized directly:
 ```C
@@ -88,10 +89,10 @@ GCC with support for vector extensions.
 #### Vector indexing macros
 | Macro definition      | Description
 | --------              | --------
-| `vec_x(v)`            | Index the X-component of a vector.
-| `vec_y(v)`            | Index the Y-component of a vector.
-| `vec_z(v)`            | Index the Z-component of a vector.
-| `vec_w(v)`            | Index the W-component of a vector.
+| `vec_x(v)`            | Index the x-component of a vector.
+| `vec_y(v)`            | Index the y-component of a vector.
+| `vec_z(v)`            | Index the z-component of a vector.
+| `vec_w(v)`            | Index the w-component of a vector.
 
 #### Vector constructors
 | Function prototype				| Return value	| Description
@@ -108,12 +109,12 @@ GCC with support for vector extensions.
 | `vec3d_with(double)`				| `vec3d`	| Constructs a 3D double-precision vector with an initial value.
 | `vec4f_with(float)`				| `vec4f`	| Constructs a 4D single-precision vector with an initial value.
 | `vec4d_with(double)`				| `vec4d`	| Constructs a 4D double-precision vector with an initial value.
-| `vec2f_zero(void)`				| `vec2f`	| Constructs an empty 2D single-precision vector.
-| `vec2d_zero(void)`				| `vec2d`	| Constructs an empty 2D double-precision vector.
-| `vec3f_zero(void)`				| `vec3f`	| Constructs an empty 3D single-precision vector.
-| `vec3d_zero(void)`				| `vec3d`	| Constructs an empty 3D double-precision vector.
-| `vec4f_zero(void)`				| `vec4f`	| Constructs an empty 4D single-precision vector.
-| `vec4d_zero(void)`				| `vec4d`	| Constructs an empty 4D double-precision vector.
+| `vec2f_zero(void)`				| `vec2f`	| Constructs a zero 2D single-precision vector.
+| `vec2d_zero(void)`				| `vec2d`	| Constructs a zero 2D double-precision vector.
+| `vec3f_zero(void)`				| `vec3f`	| Constructs a zero 3D single-precision vector.
+| `vec3d_zero(void)`				| `vec3d`	| Constructs a zero 3D double-precision vector.
+| `vec4f_zero(void)`				| `vec4f`	| Constructs a zero 4D single-precision vector.
+| `vec4d_zero(void)`				| `vec4d`	| Constructs a zero 4D double-precision vector.
 
 #### General vector functions
 | Function prototype				| Return value	| Description
@@ -130,12 +131,12 @@ GCC with support for vector extensions.
 | `vec3d_norm(vec3d)`                           | `double`      | Returns the length of a 3D double-precision vector.
 | `vec4f_norm(vec4f)`                           | `float`       | Returns the length of a 4D single-precision vector.
 | `vec4d_norm(vec4d)`                           | `double`      | Returns the length of a 4D double-precision vector.
-| `vec2f_unit(vec2f)`                           | `vec2f`       | Returns the normalized vector of a 2D single-precision vector.
-| `vec2d_unit(vec2d)`                           | `vec2d`       | Returns the normalized vector of a 2D double-precision vector.
-| `vec3f_unit(vec3f)`                           | `vec3f`       | Returns the normalized vector of a 3D single-precision vector.
-| `vec3d_unit(vec3d)`                           | `vec3d`       | Returns the normalized vector of a 3D double-precision vector.
-| `vec4f_unit(vec4f)`                           | `vec4f`       | Returns the normalized vector of a 4D single-precision vector.
-| `vec4d_unit(vec4d)`                           | `vec4d`       | Returns the normalized vector of a 4D double-precision vector.
+| `vec2f_unit(vec2f)`                           | `vec2f`       | Returns a normalized vector from a 2D single-precision vector.
+| `vec2d_unit(vec2d)`                           | `vec2d`       | Returns a normalized vector from a 2D double-precision vector.
+| `vec3f_unit(vec3f)`                           | `vec3f`       | Returns a normalized vector from a 3D single-precision vector.
+| `vec3d_unit(vec3d)`                           | `vec3d`       | Returns a normalized vector from a 3D double-precision vector.
+| `vec4f_unit(vec4f)`                           | `vec4f`       | Returns a normalized vector from a 4D single-precision vector.
+| `vec4d_unit(vec4d)`                           | `vec4d`       | Returns a normalized vector from a 4D double-precision vector.
 | `vec2f_angle(vec2f, vec2f)`                   | `float`       | Returns the angle between two 2D single-precision vectors.
 | `vec2d_angle(vec2d, vec2d)`                   | `double`      | Returns the angle between two 2D double-precision vectors.
 | `vec3f_angle(vec3f, vec3f)`                   | `float`       | Returns the angle between two 3D single-precision vectors.
@@ -269,12 +270,12 @@ GCC with support for vector extensions.
 | `mat3d_with(double)`                          | `mat3d`       | Constructs a 3x3 double-precision matrix with an initial value.
 | `mat4f_with(float)`                           | `mat4f`       | Constructs a 4x4 single-precision matrix with an initial value.
 | `mat4d_with(double)`                          | `mat4d`       | Constructs a 4x4 double-precision matrix with an initial value.
-| `mat2f_zero(void)`                            | `mat2f`       | Constructs an empty 2x2 single-precision matrix.
-| `mat2d_zero(void)`                            | `mat2d`       | Constructs an empty 2x2 double-precision matrix.
-| `mat3f_zero(void)`                            | `mat3f`       | Constructs an empty 3x3 single-precision matrix.
-| `mat3d_zero(void)`                            | `mat3d`       | Constructs an empty 3x3 double-precision matrix.
-| `mat4f_zero(void)`                            | `mat4f`       | Constructs an empty 4x4 single-precision matrix.
-| `mat4d_zero(void)`                            | `mat4d`       | Constructs an empty 4x4 double-precision matrix.
+| `mat2f_zero(void)`                            | `mat2f`       | Constructs a zero 2x2 single-precision matrix.
+| `mat2d_zero(void)`                            | `mat2d`       | Constructs a zero 2x2 double-precision matrix.
+| `mat3f_zero(void)`                            | `mat3f`       | Constructs a zero 3x3 single-precision matrix.
+| `mat3d_zero(void)`                            | `mat3d`       | Constructs a zero 3x3 double-precision matrix.
+| `mat4f_zero(void)`                            | `mat4f`       | Constructs a zero 4x4 single-precision matrix.
+| `mat4d_zero(void)`                            | `mat4d`       | Constructs a zero 4x4 double-precision matrix.
 | `mat2f_ident(void)`                           | `mat2f`       | Constructs a 2x2 single-precision identity matrix.
 | `mat2d_ident(void)`                           | `mat2d`       | Constructs a 2x2 double-precision identity matrix.
 | `mat3f_ident(void)`                           | `mat3f`       | Constructs a 3x3 single-precision identity matrix.
@@ -329,8 +330,8 @@ GCC with support for vector extensions.
 #### 2x2 and 3x3 rotation matrix constructors
 | Function prototype				| Return value	| Description
 | --------					| --------	| --------
-| `mat2f_rotation(float)`			| `mat2f`	| Returns a 2x2 single-precision rotation matrix from an angle.
-| `mat2d_rotation(double)`			| `mat2d`	| Returns a 2x2 double-precision rotation matrix from an angle.
+| `mat2f_rotation(float)`			| `mat2f`	| Returns a 2x2 single-precision rotation matrix by an angle.
+| `mat2d_rotation(double)`			| `mat2d`	| Returns a 2x2 double-precision rotation matrix by an angle.
 | `mat3f_rotation(vec3f, float)`		| `mat3f`	| Returns a 3x3 single-precision rotation matrix about an axis by an angle. (UNAVAILABLE)
 | `mat3d_rotation(vec3d, double)`		| `mat3d`	| Returns a 3x3 double-precision rotation matrix about an axis by an angle. (UNAVAILABLE)
 
@@ -343,3 +344,69 @@ GCC with support for vector extensions.
 | `mat3f_to_d(mat3f)`				| `mat3d`	| Converts a 3x3 matrix from single- to double-precision.
 | `mat4d_to_f(mat4d)`				| `mat4f`	| Converts a 4x4 matrix from double- to single-precision.
 | `mat4f_to_d(mat4f)`				| `mat4d`	| Converts a 4x4 matrix from single- to double-precision.
+
+### Quaternion
+This library implements the quaternion as a 4D vector with the x-, y- and z-components
+corresponding to the imaginary part and the w-component equal to the real part.
+
+#### Quaternion types
+| Type name		| Size (bytes)  | Description
+| --------		| --------      | --------
+| `quatf`		| 16		| Single-precision quaternion.
+| `quatd`		| 32		| Double-precision quaternion.
+
+#### Quaternion indexing macros
+| Macro definition      | Description
+| --------              | --------
+| `quat_x(q)`		| Index the x-component of a quaternion.
+| `quat_y(q)`		| Index the y-component of a quaternion.
+| `quat_z(q)`		| Index the z-component of a quaternion.
+| `quat_w(v)`		| Index the w-component of a quaternion.
+
+## Quaternion constructors
+| Function prototype				| Return value	| Description
+| --------					| --------	| --------
+| `quatf_make(float, float, float, float)`	| `quatf`	| Constructs a single-precision quaternion.
+| `quatd_make(double, double, double, double)`	| `quatd`	| Constructs a double-precision quaternion.
+| `quatf_zero(void)`				| `quatf`	| Constructs a zero single-precision quaternion.
+| `quatd_zero(void`				| `quatd`	| Constructs a zero double-precision quaternion.
+
+### Quaternion functions
+| Function prototype				| Return value	| Description
+| --------					| --------	| --------
+| `quatf_dot(quatf)`				| `float`	| Returns the dot product of a single-precision quaternion.
+| `quatd_dot(quatd)`				| `double`	| Returns the dot product of a double-precision quaternion.
+| `quatf_conj(quatf)`				| `quatf`	| Returns the conjugate of a single-precision quaternion.
+| `quatd_conj(quatd)`				| `quatd`	| Returns the conjugate of a double-precision quaternion.
+| `quatf_inv(quatf)`				| `quatf`	| Returns the inverse of a single-precision quaternion.
+| `quatd_inv(quatd)`				| `quatd`	| Returns the inverse of a double-precision quaternion.
+| `quatf_norm(quatf)`				| `float`	| Returns the norm of a single-precision quaternion.
+| `quatd_norm(quatd)`				| `double`	| Returns the norm of a double-precision quaternion.
+| `quatf_unit(quatf)`				| `quatf`	| Returns a normalized quaternion from a single-precision quaternion.
+| `quatd_unit(quatd)`				| `quatd`	| Returns a normalized quaternion from a double-precision quaternion.
+| `quatf_mul(quatf, quatf)`			| `quatf`	| Returns the product between two single-precision quaternions. (UNAVAILABLE)
+| `quatd_mul(quatd, quatd)`			| `quatd`	| Returns the product between two double-precision quaternions. (UNAVAILABLE)
+| `quatf_exp(quatf)`				| `quatf`	| Returns the exponential of a single-precision quaternion. (UNAVAILABLE)
+| `quatd_exp(quatd)`				| `quatd`	| Returns the exponential of a double-precision quaternion. (UNAVAILABLE)
+| `quatf_log(quatf)`				| `quatf`	| Returns the logarithm of a single-precision quaternion. (UNAVAILABLE)
+| `quatd_log(quatd)`				| `quatd`	| Returns the logarithm of a double-precision quaternion. (UNAVAILABLE)
+| `quatf_pow(quatf, float)`			| `quatf`	| Returns a single-precision quaternion raised to an arbitrary real exponent. (UNAVAILABLE)
+| `quatd_pow(quatd, double)`			| `quatd`	| Returns a double-precision quaternion raised to an arbitrary real exponent. (UNAVAILABLE)
+
+### Quaternion size conversion functions
+| Function prototype				| Return value	| Description
+| --------					| --------	| --------
+| `quatd_to_f(quatd)`				| `quatd`	| Converts a quaternion from double- to single-precision.
+| `quatf_to_d(quatf)`				| `quatf`	| Converts a quaternion from single- to double-precision.
+
+### Quaternion-vector conversion functions
+| Function prototype				| Return value	| Description
+| --------					| --------	| --------
+| `quatf_to_vec3(quatf)`			| `vec3f`	| Converts a single-precision quaternion to a 3D vector.
+| `quatd_to_vec3(quatd)`			| `vec3d`	| Converts a double-precision quaternion to a 3D vector.
+| `quatf_to_vec4(quatf)`			| `vec4f`	| Converts a single-precision quaternion to a 4D vector.
+| `quatd_to_vec4(quatd)`			| `vec4d`	| Converts a double-precision quaternion to a 4D vector.
+| `vec3f_to_quat(vec3f)`			| `quatf`	| Converts a 3D single-precision vector to a quaternion.
+| `vec3d_to_quat(vec3d)`			| `quatd`	| Converts a 3D double-precision vector to a quaternion.
+| `vec4f_to_quat(vec4f)`			| `quatf`	| Converts a 4D single-precision vector to a quaternion.
+| `vec4d_to_quat(vec4d)`			| `quatd`	| Converts a 4D double-precision vector to a quaternion.
