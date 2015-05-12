@@ -85,9 +85,9 @@ The vector and matrix modules are nearing completion while the quaternion module
 ## Requirements
 GCC with support for vector extensions.
 
-# Reference
-## Vector
-### Vector types
+## Reference
+### Vector
+#### Vector types
 | Type name             | Size (bytes)  | Description
 | --------              | --------      | --------
 | `vec2f`               | 8             | 2D single-precision vector.
@@ -97,7 +97,7 @@ GCC with support for vector extensions.
 | `vec4f`               | 16            | 4D single-precision vector.
 | `vec4d`               | 32            | 4D double-precision vector.
 
-### Vector indexing macros
+#### Vector indexing macros
 | Macro definition      | Description
 | --------              | --------
 | `vec_x(v)`            | Index to the x-component of a vector.
@@ -105,7 +105,7 @@ GCC with support for vector extensions.
 | `vec_z(v)`            | Index to the z-component of a vector.
 | `vec_w(v)`            | Index to the w-component of a vector.
 
-### Vector constructors
+#### Vector constructors
 | Function prototype				| Return value	| Description
 | --------					| --------	| --------
 | `vec2f_make(float, float)`			| `vec2f`	| Constructs a 2D single-precision vector.
@@ -127,7 +127,7 @@ GCC with support for vector extensions.
 | `vec4f_zero(void)`				| `vec4f`	| Constructs a zero 4D single-precision vector.
 | `vec4d_zero(void)`				| `vec4d`	| Constructs a zero 4D double-precision vector.
 
-### General vector functions
+#### General vector functions
 | Function prototype				| Return value	| Description
 | --------					| --------	| --------
 | `vec2f_dot(vec2f, vec2f)`                     | `float`       | Returns the dot product of two 2D single-precision vectors.
@@ -167,7 +167,7 @@ GCC with support for vector extensions.
 | `vec4f_sproject(vec4f, vec4f)`                | `float`       | Returns the scalar projection of the first 4D single-precision vector onto the second.
 | `vec4d_sproject(vec4d, vec4d)`                | `double`      | Returns the scalar projection of the first 4D double-precision vector onto the second.
 
-### 2D vector functions
+#### 2D vector functions
 | Function prototype				| Return value	| Description
 | --------					| --------	| --------
 | `vec2f_rotate(vec2f, float)`                  | `vec2f`       | Returns the 2D single-precision vector rotated by an angle around the origin.
@@ -185,7 +185,7 @@ GCC with support for vector extensions.
 | `vec3f_stp(vec3f, vec3f, vec3f)`              | `float`       | Returns the scalar triple product of three 3D single-precision vectors.
 | `vec3d_stp(vec3d, vec3d, vec3d)`              | `double`      | Returns the scalar triple product of three 3D double-precision vectors.
 
-### Vector type conversion functions
+#### Vector type conversion functions
 | Function prototype				| Return value	| Description
 | --------					| --------	| --------
 | `vec2d_to_f(vec2d)`                           | `vec2f`       | Converts a 2D vector from double- to single-precision.
@@ -195,7 +195,7 @@ GCC with support for vector extensions.
 | `vec4d_to_f(vec4d)`                           | `vec4f`       | Converts a 4D vector from double- to single-precision.
 | `vec4f_to_d(vec4f)`                           | `vec4d`       | Converts a 4D vector from single- to double-precision.
 
-### Vector size conversion functions
+#### Vector size conversion functions
 | Function prototype				| Return value	| Description
 | --------					| --------	| --------
 | `vec3f_to_2(vec3f)`                           | `vec2f`       | Converts a 3D single-precision vector to a 2D vector.
@@ -211,8 +211,8 @@ GCC with support for vector extensions.
 | `vec2d_to_4(vec2d)`                           | `vec4d`       | Converts a 2D double-precision vector to a 4D vector.
 | `vec3d_to_4(vec3d)`                           | `vec4d`       | Converts a 3D double-precision vector to a 4D vector.
 
-## Matrix
-### Matrix types
+### Matrix
+#### Matrix types
 | Type name             | Size (bytes)  | Description
 | --------              | --------      | --------
 | `mat2f`               | 16            | 2x2 single-precision matrix.
@@ -222,7 +222,7 @@ GCC with support for vector extensions.
 | `mat4f`               | 64            | 4x4 single-precision matrix.
 | `mat4d`               | 128           | 4x4 double-precision matrix.
 
-### 2x2 matrix indexing macros
+#### 2x2 matrix indexing macros
 | Macro definition      | Description
 | --------              | --------
 | `mat2_i(m, i, j)`     | Index to the value at row `i`, column `j` in a 2x2 matrix `m`.
@@ -231,7 +231,7 @@ GCC with support for vector extensions.
 | `mat2_21(m)`          | Index to the value at row 2, column 1 in a 2x2 matrix `m`.
 | `mat2_22(m)`          | Index to the value at row 2, column 2 in a 2x2 matrix `m`.
 
-### 3x3 matrix indexing macros
+#### 3x3 matrix indexing macros
 | Macro definition      | Description
 | --------              | --------
 | `mat3_i(m, i, j)`     | Index to the value at row `i`, column `j` in a 3x3 matrix `m`.
@@ -245,7 +245,7 @@ GCC with support for vector extensions.
 | `mat3_32(m)`          | Index to the value at row 3, column 2 in a 3x3 matrix `m`.
 | `mat3_33(m)`          | Index to the value at row 3, column 3 in a 3x3 matrix `m`.
 
-### 4x4 matrix indexing macros
+#### 4x4 matrix indexing macros
 | Macro definition      | Description
 | --------              | --------
 | `mat4_i(m, i, j)`     | Index to the value at row `i`, column `j` in a 4x4 matrix `m`.
@@ -266,7 +266,7 @@ GCC with support for vector extensions.
 | `mat4_43(m)`          | Index to the value at row 4, column 3 in a 4x4 matrix `m`.
 | `mat4_44(m)`          | Index to the value at row 4, column 4 in a 4x4 matrix `m`.
 
-### Matrix constructors
+#### Matrix constructors
 | Function prototype				| Return value	| Description
 | --------					| --------	| --------
 | `mat2f_make(vec2f, vec2f)`                    | `mat2f`       | Constructs a 2x2 single-precision matrix from two row vectors.
@@ -294,7 +294,7 @@ GCC with support for vector extensions.
 | `mat4f_ident(void)`                           | `mat4f`       | Constructs a 4x4 single-precision identity matrix.
 | `mat4d_ident(void)`                           | `mat4d`       | Constructs a 4x4 double-precision identity matrix.
 
-### General matrix functions
+#### General matrix functions
 | Function prototype				| Return value	| Description
 | --------					| --------	| --------
 | `mat2f_transpose(mat2f)`			| `mat2f`	| Returns the transpose of a 2x2 single-precision matrix.
@@ -316,7 +316,7 @@ GCC with support for vector extensions.
 | `mat4f_det(mat4f)`				| `float`	| Returns the determinant of a 4x4 single-precision matrix.
 | `mat4d_det(mat4d)`				| `double`	| Returns the determinant of a 4x4 double-precision matrix.
 
-### Matrix and vector product functions
+#### Matrix and vector product functions
 | Function prototype				| Return value	| Description
 | --------					| --------	| --------
 | `mat2f_mul_mat(mat2f, mat2f)`			| `mat2f`	| Returns the product between two 2x2 single-precision matrices.
@@ -338,7 +338,7 @@ GCC with support for vector extensions.
 | `mat4f_tensor(vec4f, vec4f)`			| `mat4f`	| Returns the tensor product between two 4D single-precision vectors.
 | `mat4d_tensor(vec4d, vec4d)`			| `mat4d`	| Returns the tensor product between two 4D double-precision vectors.
 
-### 2x2 and 3x3 rotation matrix constructors
+#### 2x2 and 3x3 rotation matrix constructors
 | Function prototype				| Return value	| Description
 | --------					| --------	| --------
 | `mat2f_rotation(float)`			| `mat2f`	| Returns a 2x2 single-precision rotation matrix by an angle.
@@ -352,7 +352,7 @@ GCC with support for vector extensions.
 | `mat3f_v_rotation(vec3f, float)`		| `mat3f`	| Returns a 3x3 single-precision rotation matrix about a vector by an angle. (UNAVAILABLE)
 | `mat3d_v_rotation(vec3d, double)`		| `mat3d`	| Returns a 3x3 double-precision rotation matrix about a vector by an angle. (UNAVAILABLE)
 
-### Matrix type conversion functions
+#### Matrix type conversion functions
 | Function prototype				| Return value	| Description
 | --------					| --------	| --------
 | `mat2d_to_f(mat2d)`				| `mat2f`	| Converts a 2x2 matrix from double- to single-precision.
@@ -362,17 +362,17 @@ GCC with support for vector extensions.
 | `mat4d_to_f(mat4d)`				| `mat4f`	| Converts a 4x4 matrix from double- to single-precision.
 | `mat4f_to_d(mat4f)`				| `mat4d`	| Converts a 4x4 matrix from single- to double-precision.
 
-## Quaternion
+### Quaternion
 This library implements the quaternion as a 4D vector with the x-, y- and z-components
 corresponding to the imaginary part and the w-component equal to the real part.
 
-### Quaternion types
+#### Quaternion types
 | Type name		| Size (bytes)  | Description
 | --------		| --------      | --------
 | `quatf`		| 16		| Single-precision quaternion.
 | `quatd`		| 32		| Double-precision quaternion.
 
-### Quaternion indexing macros
+#### Quaternion indexing macros
 | Macro definition      | Description
 | --------              | --------
 | `quat_x(q)`		| Index to the x-component of a quaternion.
@@ -380,7 +380,7 @@ corresponding to the imaginary part and the w-component equal to the real part.
 | `quat_z(q)`		| Index to the z-component of a quaternion.
 | `quat_w(v)`		| Index to the w-component of a quaternion.
 
-### Quaternion constructors
+#### Quaternion constructors
 | Function prototype				| Return value	| Description
 | --------					| --------	| --------
 | `quatf_make(float, float, float, float)`	| `quatf`	| Constructs a single-precision quaternion.
@@ -388,7 +388,7 @@ corresponding to the imaginary part and the w-component equal to the real part.
 | `quatf_zero(void)`				| `quatf`	| Constructs a zero single-precision quaternion.
 | `quatd_zero(void`				| `quatd`	| Constructs a zero double-precision quaternion.
 
-### General quaternion functions
+#### General quaternion functions
 | Function prototype				| Return value	| Description
 | --------					| --------	| --------
 | `quatf_dot(quatf)`				| `float`	| Returns the dot product of a single-precision quaternion.
@@ -410,13 +410,13 @@ corresponding to the imaginary part and the w-component equal to the real part.
 | `quatf_pow(quatf, float)`			| `quatf`	| Returns a single-precision quaternion raised to an arbitrary real exponent. (UNAVAILABLE)
 | `quatd_pow(quatd, double)`			| `quatd`	| Returns a double-precision quaternion raised to an arbitrary real exponent. (UNAVAILABLE)
 
-### Quaternion size conversion functions
+#### Quaternion size conversion functions
 | Function prototype				| Return value	| Description
 | --------					| --------	| --------
 | `quatd_to_f(quatd)`				| `quatd`	| Converts a quaternion from double- to single-precision.
 | `quatf_to_d(quatf)`				| `quatf`	| Converts a quaternion from single- to double-precision.
 
-### Quaternion-vector conversion functions
+#### Quaternion-vector conversion functions
 | Function prototype				| Return value	| Description
 | --------					| --------	| --------
 | `quatf_to_vec3(quatf)`			| `vec3f`	| Converts a single-precision quaternion to a 3D vector.
