@@ -45,7 +45,7 @@ typedef float	quatf __attribute__ ((vector_size(16)));
 typedef double	quatd __attribute__ ((vector_size(32)));
 
 #else
-#error Clang or GCC required.
+#error Clang or GCC with vector extensions required.
 #endif /* __clang__ */
 
 #endif /* _ARROW_TYPES_H_ */
