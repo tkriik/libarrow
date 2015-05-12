@@ -2,7 +2,7 @@
 #define _ARROW_VECTOR_H_
 
 /* Single-precision floating-point vector types. */
-typedef float vec2f __attribute__ ((vector_size(8)));
+typedef float vec2f __attribute__ ((vector_size(16)));
 typedef float vec3f __attribute__ ((vector_size(16)));
 typedef float vec4f __attribute__ ((vector_size(16)));
 

@@ -96,6 +96,20 @@ main(void)
 	    25, 26, 27, 28,
 	    29, 30, 31, 32
 	};
+	
+	vec2f_print(v2fa);
+	vec2f_print(v2fb);
+	vec3f_print(v3fa);
+	vec3f_print(v3fb);
+	vec4f_print(v4fa);
+	vec4f_print(v4fb);
+
+	mat2f_print(m2fa);
+	mat2f_print(m2fb);
+	mat3f_print(m3fa);
+	mat3f_print(m3fb);
+	mat4f_print(m4fa);
+	mat4f_print(m4fb);
 
 	return 0;
 }
