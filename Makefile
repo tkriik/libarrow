@@ -1,9 +1,7 @@
-CC=		gcc
-CFLAGS=		-O2 -std=gnu89 -g -march=native \
-		-Wall -Wextra -Werror -Wno-psabi
-LDFLAGS=	-lm
+CC=		clang
+CFLAGS=		-O2 -g -march=native -Wall -Wextra -Werror
+LDFLAGS=	-Wl,-lm
 
-MODULES=	vector matrix quaternion
 SRCS=		vector.c matrix.c quaternion.c
 OBJS=		vector.o matrix.o quaternion.o
 
@@ -16,11 +14,11 @@ TESTFLAGS=	-Wno-unused-function -Wno-unused-variable
 all: $(DLIB) $(SLIB)
 
 $(DLIB): $(SRCS)
-	$(CC) $(CFLAGS) -c -fpic $(SRCS) $(LDFLAGS)
+	$(CC) $(CFLAGS) -c -fpic $(SRCS)
 	$(CC) -shared -o $(DLIB) $(OBJS)
 
 $(SLIB): $(SRCS)
-	$(CC) $(CFLAGS) -c $(SRCS) $(LDFLAGS)
+	$(CC) $(CFLAGS) -c $(SRCS)
 	ar cr $(SLIB) $(OBJS)
 
 test: $(SRCS)

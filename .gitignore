@@ -1,3 +1,7 @@
+# Custom
+Makefile
+arrow_test*
+
 # Object files
 *.o
 *.ko

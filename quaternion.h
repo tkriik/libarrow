@@ -3,11 +3,19 @@
 
 #include "vector.h"
 
-/* Single-precision quaternion type. */
-typedef float quatf __attribute__ ((vector_size(16)));
+#ifdef __clang__
 
-/* Double-precision quaternion type. */
-typedef double quatd __attribute__ ((vector_size(32)));
+typedef float	quatf __attribute__ ((ext_vector_type(4)));
+typedef double	quatd __attribute__ ((ext_vector_type(4)));
+
+#elif defined(__GNUC__)
+
+typedef float	quatf __attribute__ ((vector_size(16)));
+typedef double	quatd __attribute__ ((vector_size(32)));
+
+#else
+#error Clang or GCC required.
+#endif /* __clang__ */
 
 /* Quaternion indexing macros. */
 #define quat_x(q) ((q)[0])

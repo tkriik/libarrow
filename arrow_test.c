@@ -97,19 +97,11 @@ main(void)
 	    29, 30, 31, 32
 	};
 
-	vec2f_print(v2fa);
-	vec2f_print(v2fb);
-	vec3f_print(v3fa);
-	vec3f_print(v3fb);
-	vec4f_print(v4fa);
-	vec4f_print(v4fb);
-
-	mat2f_print(m2fa);
-	mat2f_print(m2fb);
-	mat3f_print(m3fa);
-	mat3f_print(m3fb);
-	mat4f_print(m4fa);
-	mat4f_print(m4fb);
+	vec3f point = vec3f_make(1, 0, 1);
+	mat3f rot45 = mat3f_z_rotation(deg_to_rad(45));
+	vec3f_print(point);
+	point = mat3f_mul_vec(rot45, point);
+	vec3f_print(point);
 
 	return 0;
 }
