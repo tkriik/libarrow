@@ -96,7 +96,7 @@ main(void)
 	    25, 26, 27, 28,
 	    29, 30, 31, 32
 	};
-	
+
 	vec2f_print(v2fa);
 	vec2f_print(v2fb);
 	vec3f_print(v3fa);
