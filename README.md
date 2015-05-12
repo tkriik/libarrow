@@ -86,7 +86,7 @@ The vector and matrix modules are nearing completion while the quaternion module
 GCC with support for vector extensions.
 
 ## Reference
-### Vector	`<arrow/vector.h>`
+### Vector
 #### Vector types
 | Type name             | Size (bytes)  | Description
 | --------              | --------      | --------
@@ -211,7 +211,7 @@ GCC with support for vector extensions.
 | `vec2d_to_4(vec2d)`                           | `vec4d`       | Converts a 2D double-precision vector to a 4D vector.
 | `vec3d_to_4(vec3d)`                           | `vec4d`       | Converts a 3D double-precision vector to a 4D vector.
 
-### Matrix	`<arrow/matrix.h>`
+### Matrix
 #### Matrix types
 | Type name             | Size (bytes)  | Description
 | --------              | --------      | --------
@@ -362,7 +362,7 @@ GCC with support for vector extensions.
 | `mat4d_to_f(mat4d)`				| `mat4f`	| Converts a 4x4 matrix from double- to single-precision.
 | `mat4f_to_d(mat4f)`				| `mat4d`	| Converts a 4x4 matrix from single- to double-precision.
 
-### Quaternion	`<arrow/quaternion.h>`
+### Quaternion
 This library implements the quaternion as a 4D vector with the x-, y- and z-components
 corresponding to the imaginary part and the w-component equal to the real part.
 
