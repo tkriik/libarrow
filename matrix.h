@@ -144,8 +144,8 @@ mat3f	mat3f_y_rotation(float);
 mat3d	mat3d_y_rotation(double);
 mat3f	mat3f_z_rotation(float);
 mat3d	mat3d_z_rotation(double);
-mat3f	mat3f_v_rotation(vec3f, float);		// TODO
-mat3d	mat3d_v_rotation(vec3d, double);	// TODO
+mat3f	mat3f_v_rotation(vec3f, float);
+mat3d	mat3d_v_rotation(vec3d, double);
 
 /* Matrix type conversion functions. */
 mat2f	mat2d_to_f(mat2d);

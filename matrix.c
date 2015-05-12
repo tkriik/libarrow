@@ -862,6 +862,50 @@ mat3d_z_rotation(double a)
 	};
 }
 
+mat3f
+mat3f_v_rotation(vec3f v, float a)
+{
+	float sin_a = sin(a);
+	float cos_a = cos(a);
+	float cos_b = 1 - cos_a;
+	v = vec3f_unit(v);
+	return (mat3f){
+	    cos_a + vec_x(v) * vec_x(v) * cos_b,
+	    vec_x(v) * vec_y(v) * cos_b - vec_z(v) * sin_a,
+	    vec_x(v) * vec_z(v) * cos_b + vec_y(v) * sin_a,
+
+	    vec_x(v) * vec_y(v) * cos_b + vec_z(v) * sin_a,
+	    cos_a + vec_y(v) * vec_y(v) * cos_b,
+	    vec_y(v) * vec_z(v) * cos_b - vec_x(v) * sin_a,
+
+	    vec_x(v) * vec_z(v) * cos_b - vec_y(v) * sin_a,
+	    vec_y(v) * vec_z(v) * cos_b + vec_x(v) * sin_a,
+	    cos_a + vec_z(v) * vec_z(v) * cos_b
+	};
+}
+
+mat3d
+mat3d_v_rotation(vec3d v, double a)
+{
+	double sin_a = sin(a);
+	double cos_a = cos(a);
+	double cos_b = 1 - cos_a;
+	v = vec3d_unit(v);
+	return (mat3d){
+	    cos_a + vec_x(v) * vec_x(v) * cos_b,
+	    vec_x(v) * vec_y(v) * cos_b - vec_z(v) * sin_a,
+	    vec_x(v) * vec_z(v) * cos_b + vec_y(v) * sin_a,
+
+	    vec_x(v) * vec_y(v) * cos_b + vec_z(v) * sin_a,
+	    cos_a + vec_y(v) * vec_y(v) * cos_b,
+	    vec_y(v) * vec_z(v) * cos_b - vec_x(v) * sin_a,
+
+	    vec_x(v) * vec_z(v) * cos_b - vec_y(v) * sin_a,
+	    vec_y(v) * vec_z(v) * cos_b + vec_x(v) * sin_a,
+	    cos_a + vec_z(v) * vec_z(v) * cos_b
+	};
+}
+
 mat2f
 mat2d_to_f(mat2d m)
 {
