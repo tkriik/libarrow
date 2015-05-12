@@ -37,7 +37,7 @@ The following table describes the data types available in this library:
 
 | Type name	| Size (bytes)	| Description
 | --------	| --------	| --------
-| `vec2f`       | 16		| 2D single-precision vector.
+| `vec2f`       | 8/16		| 2D single-precision vector.
 | `vec2d`	| 16		| 2D double-precision vector.
 | `vec3f`	| 16		| 3D single-precision vector.
 | `vec3d`	| 32		| 3D double-precision vector.
@@ -77,13 +77,17 @@ w -= v;		// w = {-24, -6.5, -20}
 q *= q;		// q = {0.25, 0.25, 0.25, 1}
 m += 3;		// m = {4, 5, 6, 7, 8, 9, 10, 11, 12}
 ```
-See [GCC's documentation on vector extensions](https://gcc.gnu.org/onlinedocs/gcc/Vector-Extensions.html) for more information on operating on vectorized data types.
+See [Clang's](http://clang.llvm.org/docs/LanguageExtensions.html#vectors-and-extended-vectors) or [GCC's](https://gcc.gnu.org/onlinedocs/gcc/Vector-Extensions.html) respective documentation pages for more information about vectorized data types.
 
 ## Status
 The vector and matrix modules are nearing completion while the quaternion module is still well underway. No comprehensive tests and benchmarks have been written either. I would not recommend using this library yet.
 
 ## Requirements
-GCC with support for vector extensions.
+Clang or GCC with support for vector extensions.
+
+## Notes
+* The 2D single-precision vector takes 16 bytes when compiled with GCC on a 32-bit platform due to certain x86-specific floating-point conventions.
+* I am by no means an expert on linear algebra. Let me know if you find errors and/or have any suggestions on improving this library.
 
 ## Reference
 ### Vector
