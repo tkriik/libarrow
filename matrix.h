@@ -1,29 +1,8 @@
 #ifndef _ARROW_MATRIX_H_
 #define _ARROW_MATRIX_H_
 
+#include "types.h"
 #include "vector.h"
-
-#ifdef __clang__
-
-typedef float	mat2f __attribute__ ((ext_vector_type(4)));
-typedef double	mat2d __attribute__ ((ext_vector_type(4)));
-typedef float	mat3f __attribute__ ((ext_vector_type(9)));
-typedef double	mat3d __attribute__ ((ext_vector_type(9)));
-typedef float	mat4f __attribute__ ((ext_vector_type(16)));
-typedef double	mat4d __attribute__ ((ext_vector_type(16)));
-
-#elif defined(__GNUC__)
-
-typedef float	mat2f __attribute__ ((vector_size(16)));
-typedef double	mat2d __attribute__ ((vector_size(32)));
-typedef float	mat3f __attribute__ ((vector_size(64)));
-typedef double	mat3d __attribute__ ((vector_size(128)));
-typedef float	mat4f __attribute__ ((vector_size(64)));
-typedef double	mat4d __attribute__ ((vector_size(128)));
-
-#else
-#error Clang or GCC required.
-#endif /* __clang__ */
 
 /* Matrix indexing macros. */
 #define mat2_i(m, i, j) ((m)[(i) * 2 + (j)])

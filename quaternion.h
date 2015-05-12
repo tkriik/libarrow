@@ -1,21 +1,8 @@
-#ifndef _ARROW_QUATERNION_H
-#define _ARROW_QUATERNION_H
+#ifndef _ARROW_QUATERNION_H_
+#define _ARROW_QUATERNION_H_
 
+#include "types.h"
 #include "vector.h"
-
-#ifdef __clang__
-
-typedef float	quatf __attribute__ ((ext_vector_type(4)));
-typedef double	quatd __attribute__ ((ext_vector_type(4)));
-
-#elif defined(__GNUC__)
-
-typedef float	quatf __attribute__ ((vector_size(16)));
-typedef double	quatd __attribute__ ((vector_size(32)));
-
-#else
-#error Clang or GCC required.
-#endif /* __clang__ */
 
 /* Quaternion indexing macros. */
 #define quat_x(q) ((q)[0])
@@ -46,8 +33,8 @@ double	quatd_norm(quatd);
 quatf	quatf_unit(quatf);
 quatd	quatd_unit(quatd);
 
-quatf	quatf_mul(quatf, quatf); // TODO
-quatd	quatd_mul(quatd, quatd); // TODO
+quatf	quatf_mul(quatf, quatf);
+quatd	quatd_mul(quatd, quatd);
 
 /* Quaternion size conversion functions. */
 quatf	quatd_to_f(quatd);

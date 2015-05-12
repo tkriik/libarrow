@@ -1,32 +1,7 @@
 #ifndef _ARROW_VECTOR_H_
 #define _ARROW_VECTOR_H_
 
-#ifdef __clang__
-
-typedef float	vec2f __attribute__ ((ext_vector_type(2)));
-typedef double	vec2d __attribute__ ((ext_vector_type(2)));
-typedef float 	vec3f __attribute__ ((ext_vector_type(3)));
-typedef double 	vec3d __attribute__ ((ext_vector_type(3)));
-typedef float 	vec4f __attribute__ ((ext_vector_type(4)));
-typedef double 	vec4d __attribute__ ((ext_vector_type(4)));
-
-#elif defined(__GNUC__)
-
-/* GCC vector size of 8 bytes doesn't behave correctly on 32-bit platforms. */
-#if defined(__i386__) || defined(_X86_)
-typedef float	vec2f __attribute__ ((vector_size(16)));
-#else
-typedef float	vec2f __attribute__ ((vector_size(8)));
-#endif /* __i386 || _X86__ */
-typedef double	vec2d __attribute__ ((vector_size(16)));
-typedef float	vec3f __attribute__ ((vector_size(16)));
-typedef double	vec3d __attribute__ ((vector_size(32)));
-typedef float	vec4f __attribute__ ((vector_size(16)));
-typedef double	vec4d __attribute__ ((vector_size(32)));
-
-#else
-#error Clang or GCC required.
-#endif /* __clang__ */
+#include "types.h"
 
 /* Vector indexing macros. */
 #define vec_x(v) ((v)[0])
