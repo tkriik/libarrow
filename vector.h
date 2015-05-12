@@ -2,12 +2,12 @@
 #define _ARROW_VECTOR_H_
 
 /* Single-precision floating-point vector types. */
-/* Vector size under 16 bytes doesn't work properly on 32-bit platforms. */
+/* Vector size of 8 bytes doesn't work properly on 32-bit platforms. */
 #if defined(__i386__) || defined(_X86_)
 typedef float vec2f __attribute__ ((vector_size(16)));
 #else
 typedef float vec2f __attribute__ ((vector_size(8)));
-#endif /* __i386__ */
+#endif
 typedef float vec3f __attribute__ ((vector_size(16)));
 typedef float vec4f __attribute__ ((vector_size(16)));
 
