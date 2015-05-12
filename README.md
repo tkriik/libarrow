@@ -94,7 +94,7 @@ Clang or GCC with support for vector extensions.
 #### Vector types
 | Type name             | Size (bytes)  | Description
 | --------              | --------      | --------
-| `vec2f`               | 8             | 2D single-precision vector.
+| `vec2f`               | 8/16		| 2D single-precision vector.
 | `vec2d`               | 16            | 2D double-precision vector.
 | `vec3f`               | 16            | 3D single-precision vector.
 | `vec3d`               | 32            | 3D double-precision vector.
