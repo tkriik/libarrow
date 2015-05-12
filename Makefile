@@ -2,11 +2,14 @@ CC=		gcc
 CFLAGS=		-O2 -std=gnu89 -g -march=native \
 		-Wall -Wextra -Werror -Wno-psabi
 LDFLAGS=	-lm
+
 MODULES=	vector matrix quaternion
-SRCS=		$(addsuffix .c, $(MODULES))
-OBJS=		$(addsuffix .o, $(MODULES))
+SRCS=		vector.c matrix.c quaternion.c
+OBJS=		vector.o matrix.o quaternion.o
+
 SLIB=		libarrow.a
 DLIB=		libarrow.so
+
 TEST=		arrow_test
 TESTFLAGS=	-Wno-unused-function -Wno-unused-variable
 
