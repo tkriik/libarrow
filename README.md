@@ -181,7 +181,7 @@ Clang or GCC with support for vector extensions.
 | `vec2f_cperp(vec2f)`                          | `vec2f`       | Returns the vector clockwise perpendicular to a 2D single-precision vector.
 | `vec2d_cperp(vec2d)`                          | `vec2d`       | Returns the vector clockwise perpendicular to a 2D double-precision vector.
 
-### 3D vector functions
+#### 3D vector functions
 | Function prototype				| Return value	| Description
 | --------					| --------	| --------
 | `vec3f_cross(vec3f, vec3f)`                   | `vec3f`       | Returns the cross product of two 3D single-precision vectors.
