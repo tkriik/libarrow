@@ -697,75 +697,55 @@ mat4d_mul_vec(mat4d m, vec4d v)
 mat2f
 mat2f_tensor(vec2f v, vec2f w)
 {
-	return (mat2f){
-	    vec_x(v) * vec_x(w), vec_x(v) * vec_y(w),
-	    vec_y(v) * vec_x(w), vec_y(v) * vec_y(w)
-	};
+	vec2f wx = w * vec_x(v);
+	vec2f wy = w * vec_y(v);
+	return mat2f_make(wx, wy);
 }
 
 mat2d
 mat2d_tensor(vec2d v, vec2d w)
 {
-	return (mat2d){
-	    vec_x(v) * vec_x(w), vec_x(v) * vec_y(w),
-	    vec_y(v) * vec_x(w), vec_y(v) * vec_y(w)
-	};
+	vec2d wx = w * vec_x(v);
+	vec2d wy = w * vec_y(v);
+	return mat2d_make(wx, wy);
 }
 
 mat3f
 mat3f_tensor(vec3f v, vec3f w)
 {
-	return (mat3f){
-	    vec_x(v) * vec_x(w), vec_x(v) * vec_y(w), vec_x(v) * vec_z(w),
-	    vec_y(v) * vec_x(w), vec_y(v) * vec_y(w), vec_y(v) * vec_z(w),
-	    vec_z(v) * vec_x(w), vec_z(v) * vec_y(w), vec_z(v) * vec_z(w)
-	};
+	vec3f wx = w * vec_x(v);
+	vec3f wy = w * vec_y(v);
+	vec3f wz = w * vec_z(v);
+	return mat3f_make(wx, wy, wz);
 }
 
 mat3d
 mat3d_tensor(vec3d v, vec3d w)
 {
-	return (mat3d){
-	    vec_x(v) * vec_x(w), vec_x(v) * vec_y(w), vec_x(v) * vec_z(w),
-	    vec_y(v) * vec_x(w), vec_y(v) * vec_y(w), vec_y(v) * vec_z(w),
-	    vec_z(v) * vec_x(w), vec_z(v) * vec_y(w), vec_z(v) * vec_z(w)
-	};
+	vec3d wx = w * vec_x(v);
+	vec3d wy = w * vec_y(v);
+	vec3d wz = w * vec_z(v);
+	return mat3d_make(wx, wy, wz);
 }
 
 mat4f
 mat4f_tensor(vec4f v, vec4f w)
 {
-	return (mat4f){
-	    vec_x(v) * vec_x(w), vec_x(v) * vec_y(w),
-	    vec_x(v) * vec_z(w), vec_x(v) * vec_w(w),
-
-	    vec_y(v) * vec_x(w), vec_y(v) * vec_y(w),
-	    vec_y(v) * vec_z(w), vec_y(v) * vec_w(w),
-
-	    vec_z(v) * vec_x(w), vec_z(v) * vec_y(w),
-	    vec_z(v) * vec_z(w), vec_z(v) * vec_w(w),
-
-	    vec_w(v) * vec_x(w), vec_w(v) * vec_y(w),
-	    vec_w(v) * vec_z(w), vec_w(v) * vec_w(w)
-	};
+	vec4f wx = w * vec_x(v);
+	vec4f wy = w * vec_y(v);
+	vec4f wz = w * vec_z(v);
+	vec4f ww = w * vec_w(v);
+	return mat4f_make(wx, wy, wz, ww);
 }
 
 mat4d
 mat4d_tensor(vec4d v, vec4d w)
 {
-	return (mat4d){
-	    vec_x(v) * vec_x(w), vec_x(v) * vec_y(w),
-	    vec_x(v) * vec_z(w), vec_x(v) * vec_w(w),
-
-	    vec_y(v) * vec_x(w), vec_y(v) * vec_y(w),
-	    vec_y(v) * vec_z(w), vec_y(v) * vec_w(w),
-
-	    vec_z(v) * vec_x(w), vec_z(v) * vec_y(w),
-	    vec_z(v) * vec_z(w), vec_z(v) * vec_w(w),
-
-	    vec_w(v) * vec_x(w), vec_w(v) * vec_y(w),
-	    vec_w(v) * vec_z(w), vec_w(v) * vec_w(w)
-	};
+	vec4d wx = w * vec_x(v);
+	vec4d wy = w * vec_y(v);
+	vec4d wz = w * vec_z(v);
+	vec4d ww = w * vec_w(v);
+	return mat4d_make(wx, wy, wz, ww);
 }
 
 mat2f
@@ -870,17 +850,17 @@ mat3f_v_rotation(vec3f v, float a)
 	float cos_b = 1 - cos_a;
 	v = vec3f_unit(v);
 	return (mat3f){
-	    cos_a + vec_x(v) * vec_x(v) * cos_b,
+	    vec_x(v) * vec_x(v) * cos_b + cos_a,
 	    vec_x(v) * vec_y(v) * cos_b - vec_z(v) * sin_a,
 	    vec_x(v) * vec_z(v) * cos_b + vec_y(v) * sin_a,
 
 	    vec_x(v) * vec_y(v) * cos_b + vec_z(v) * sin_a,
-	    cos_a + vec_y(v) * vec_y(v) * cos_b,
+	    vec_y(v) * vec_y(v) * cos_b + cos_a,
 	    vec_y(v) * vec_z(v) * cos_b - vec_x(v) * sin_a,
 
 	    vec_x(v) * vec_z(v) * cos_b - vec_y(v) * sin_a,
 	    vec_y(v) * vec_z(v) * cos_b + vec_x(v) * sin_a,
-	    cos_a + vec_z(v) * vec_z(v) * cos_b
+	    vec_z(v) * vec_z(v) * cos_b + cos_a
 	};
 }
 
@@ -892,17 +872,17 @@ mat3d_v_rotation(vec3d v, double a)
 	double cos_b = 1 - cos_a;
 	v = vec3d_unit(v);
 	return (mat3d){
-	    cos_a + vec_x(v) * vec_x(v) * cos_b,
+	    vec_x(v) * vec_x(v) * cos_b + cos_a,
 	    vec_x(v) * vec_y(v) * cos_b - vec_z(v) * sin_a,
 	    vec_x(v) * vec_z(v) * cos_b + vec_y(v) * sin_a,
 
 	    vec_x(v) * vec_y(v) * cos_b + vec_z(v) * sin_a,
-	    cos_a + vec_y(v) * vec_y(v) * cos_b,
+	    vec_y(v) * vec_y(v) * cos_b + cos_a,
 	    vec_y(v) * vec_z(v) * cos_b - vec_x(v) * sin_a,
 
 	    vec_x(v) * vec_z(v) * cos_b - vec_y(v) * sin_a,
 	    vec_y(v) * vec_z(v) * cos_b + vec_x(v) * sin_a,
-	    cos_a + vec_z(v) * vec_z(v) * cos_b
+	    vec_z(v) * vec_z(v) * cos_b + cos_a
 	};
 }
 
