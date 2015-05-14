@@ -83,7 +83,8 @@ See [Clang's](http://clang.llvm.org/docs/LanguageExtensions.html#vectors-and-ext
 The vector and matrix modules are nearing completion while the quaternion module is still well underway. No comprehensive tests and benchmarks have been written either. I would not recommend using this library yet.
 
 ## Requirements
-Clang or GCC with support for vector extensions.
+* GNU Make
+* Clang or GCC with support for vector extensions.
 
 ## Notes
 * The 2D single-precision vector takes 16 bytes when compiled with GCC on a 32-bit platform due to certain x86-specific floating-point conventions.
