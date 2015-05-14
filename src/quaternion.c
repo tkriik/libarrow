@@ -1,5 +1,6 @@
 #include <math.h>
 
+#include "matrix.h"
 #include "quaternion.h"
 #include "vector.h"
 
@@ -99,6 +100,42 @@ quatd_unit(quatd q)
 	if (d == 0)
 		return quatd_zero();
 	return q / d;
+}
+
+quatf
+quatf_mul(quatf q, quatf p)
+{
+	return quatf_make(
+	    quat_w(q) * quat_x(p) + quat_x(q) * quat_w(p) +
+	    quat_y(q) * quat_z(p) - quat_z(q) * quat_y(p),
+
+	    quat_w(q) * quat_y(p) - quat_x(q) * quat_z(p) +
+	    quat_y(q) * quat_w(p) + quat_z(q) * quat_x(p),
+
+	    quat_w(q) * quat_z(p) + quat_x(q) * quat_y(p) -
+	    quat_y(q) * quat_x(p) + quat_z(q) * quat_w(p),
+
+	    quat_w(q) * quat_w(p) - quat_x(q) * quat_x(p) -
+	    quat_y(q) * quat_y(p) - quat_z(q) * quat_z(p)
+	);
+}
+
+quatd
+quatd_mul(quatd q, quatd p)
+{
+	return quatd_make(
+	    quat_w(q) * quat_x(p) + quat_x(q) * quat_w(p) +
+	    quat_y(q) * quat_z(p) - quat_z(q) * quat_y(p),
+
+	    quat_w(q) * quat_y(p) - quat_x(q) * quat_z(p) +
+	    quat_y(q) * quat_w(p) + quat_z(q) * quat_x(p),
+
+	    quat_w(q) * quat_z(p) + quat_x(q) * quat_y(p) -
+	    quat_y(q) * quat_x(p) + quat_z(q) * quat_w(p),
+
+	    quat_w(q) * quat_w(p) - quat_x(q) * quat_x(p) -
+	    quat_y(q) * quat_y(p) - quat_z(q) * quat_z(p)
+	);
 }
 
 quatf

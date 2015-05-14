@@ -44,5 +44,5 @@ $(BINDIR)/%: $(TESTDIR)/%.c $(OBJECTS)
 test: $(TESTBINS)
 	find $(BINDIR) -iname "*_test" -execdir ./{} \;
 
-make clean:
+clean:
 	rm -f $(OBJECTS) $(LIBDIR)/$(DLIB) $(LIBDIR)/$(SLIB) $(TESTBINS)

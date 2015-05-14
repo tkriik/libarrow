@@ -406,8 +406,8 @@ corresponding to the imaginary part and the w-component equal to the real part.
 | `quatd_norm(quatd)`				| `double`	| Returns the norm of a double-precision quaternion.
 | `quatf_unit(quatf)`				| `quatf`	| Returns a normalized quaternion from a single-precision quaternion.
 | `quatd_unit(quatd)`				| `quatd`	| Returns a normalized quaternion from a double-precision quaternion.
-| `quatf_mul(quatf, quatf)`			| `quatf`	| Returns the product between two single-precision quaternions. (UNAVAILABLE)
-| `quatd_mul(quatd, quatd)`			| `quatd`	| Returns the product between two double-precision quaternions. (UNAVAILABLE)
+| `quatf_mul(quatf, quatf)`			| `quatf`	| Returns the product between two single-precision quaternions.
+| `quatd_mul(quatd, quatd)`			| `quatd`	| Returns the product between two double-precision quaternions.
 | `quatf_exp(quatf)`				| `quatf`	| Returns the exponential of a single-precision quaternion. (UNAVAILABLE)
 | `quatd_exp(quatd)`				| `quatd`	| Returns the exponential of a double-precision quaternion. (UNAVAILABLE)
 | `quatf_log(quatf)`				| `quatf`	| Returns the logarithm of a single-precision quaternion. (UNAVAILABLE)
