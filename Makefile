@@ -17,7 +17,7 @@ SOURCES=	$(wildcard $(SRCDIR)/*.c)
 OBJECTS=	$(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o, $(SOURCES))
 
 SLIB=		lib$(NAME).a
-DLIB=		lib$(NAME).so
+DLIB=		lib$(NAME).so.$(VERSION)
 
 TESTSOURCES=	$(wildcard $(TESTDIR)/*_test.c)
 TESTBINS=	$(patsubst $(TESTDIR)/%.c,$(BINDIR)/%, $(TESTSOURCES))
@@ -31,7 +31,7 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c
 
 $(DLIB): $(OBJECTS)
 	mkdir -p $(LIBDIR)
-	$(CC) -shared -o $(LIBDIR)/$(DLIB).$(VERSION) $(OBJECTS)
+	$(CC) -shared -o $(LIBDIR)/$(DLIB) $(OBJECTS)
 
 $(SLIB): $(OBJECTS)
 	mkdir -p $(LIBDIR)
@@ -45,4 +45,4 @@ test: $(TESTBINS)
 	find $(BINDIR) -iname "*_test" -execdir ./{} \;
 
 make clean:
-	rm -f $(OBJECTS) $(LIBDIR)/$(DLIB).$(VERSION) $(LIBDIR)/$(SLIB) $(TESTBINS)
+	rm -f $(OBJECTS) $(LIBDIR)/$(DLIB) $(LIBDIR)/$(SLIB) $(TESTBINS)
