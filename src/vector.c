@@ -142,14 +142,14 @@ float
 vec4f_dot(vec4f v, vec4f w)
 {
 	vec4f u = v * w;
-	return (vec_x(u) + vec_y(u)) + (vec_z(u) + vec_w(u));
+	return vec_x(u) + vec_y(u) + vec_z(u) + vec_w(u);
 }
 
 double
 vec4d_dot(vec4d v, vec4d w)
 {
 	vec4d u = v * w;
-	return (vec_x(u) + vec_y(u)) + (vec_z(u) + vec_w(u));
+	return vec_x(u) + vec_y(u) + vec_z(u) + vec_w(u);
 }
 
 float

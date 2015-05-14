@@ -32,14 +32,14 @@ float
 quatf_dot(quatf q, quatf r)
 {
 	q *= r;
-	return (quat_x(q) + quat_y(q)) + (quat_z(q) + quat_w(q));
+	return quat_x(q) + quat_y(q) + quat_z(q) + quat_w(q);
 }
 
 double
 quatd_dot(quatd q, quatd r)
 {
 	q *= r;
-	return (quat_x(q) + quat_y(q)) + (quat_z(q) + quat_w(q));
+	return quat_x(q) + quat_y(q) + quat_z(q) + quat_w(q);
 }
 
 quatf
