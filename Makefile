@@ -4,7 +4,7 @@ MINOR=		1
 VERSION=	$(MAJOR).$(MINOR)
 
 CC=		clang
-CFLAGS=		-O2 -std=c99 -march=native -Wall -Wextra -Werror
+CFLAGS=		-O2 -std=gnu89 -march=native -Wall -Wextra -Werror
 LDFLAGS=	-Wl,-lm
 
 SRCDIR=		src
