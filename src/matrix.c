@@ -695,7 +695,7 @@ mat4d_mul_vec(mat4d m, vec4d v)
 }
 
 mat2f
-mat2f_tensor(vec2f v, vec2f w)
+vec2f_tensor(vec2f v, vec2f w)
 {
 	vec2f wx = w * vec_x(v);
 	vec2f wy = w * vec_y(v);
@@ -703,7 +703,7 @@ mat2f_tensor(vec2f v, vec2f w)
 }
 
 mat2d
-mat2d_tensor(vec2d v, vec2d w)
+vec2d_tensor(vec2d v, vec2d w)
 {
 	vec2d wx = w * vec_x(v);
 	vec2d wy = w * vec_y(v);
@@ -711,7 +711,7 @@ mat2d_tensor(vec2d v, vec2d w)
 }
 
 mat3f
-mat3f_tensor(vec3f v, vec3f w)
+vec3f_tensor(vec3f v, vec3f w)
 {
 	vec3f wx = w * vec_x(v);
 	vec3f wy = w * vec_y(v);
@@ -720,7 +720,7 @@ mat3f_tensor(vec3f v, vec3f w)
 }
 
 mat3d
-mat3d_tensor(vec3d v, vec3d w)
+vec3d_tensor(vec3d v, vec3d w)
 {
 	vec3d wx = w * vec_x(v);
 	vec3d wy = w * vec_y(v);
@@ -729,7 +729,7 @@ mat3d_tensor(vec3d v, vec3d w)
 }
 
 mat4f
-mat4f_tensor(vec4f v, vec4f w)
+vec4f_tensor(vec4f v, vec4f w)
 {
 	vec4f wx = w * vec_x(v);
 	vec4f wy = w * vec_y(v);
@@ -739,7 +739,7 @@ mat4f_tensor(vec4f v, vec4f w)
 }
 
 mat4d
-mat4d_tensor(vec4d v, vec4d w)
+vec4d_tensor(vec4d v, vec4d w)
 {
 	vec4d wx = w * vec_x(v);
 	vec4d wy = w * vec_y(v);

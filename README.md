@@ -336,12 +336,12 @@ The vector and matrix modules are nearing completion while the quaternion module
 | `mat3d_mul_vec(mat3d, vec3d)`			| `vec3d`	| Returns the product between a 3x3 double-precision matrix and 3D vector.
 | `mat4f_mul_vec(mat4f, vec4f)`			| `vec4f`	| Returns the product between a 4x4 single-precision matrix and 4D vector.
 | `mat4d_mul_vec(mat4d, vec4d)`			| `vec4d`	| Returns the product between a 4x4 double-precision matrix and 4D vector.
-| `mat2f_tensor(vec2f, vec2f)`			| `mat2f`	| Returns the tensor product between two 2D single-precision vectors.
-| `mat2d_tensor(vec2d, vec2d)`			| `mat2d`	| Returns the tensor product between two 2D double-precision vectors.
-| `mat3f_tensor(vec3f, vec3f)`			| `mat3f`	| Returns the tensor product between two 3D single-precision vectors.
-| `mat3d_tensor(vec3d, vec3d)`			| `mat3d`	| Returns the tensor product between two 3D double-precision vectors.
-| `mat4f_tensor(vec4f, vec4f)`			| `mat4f`	| Returns the tensor product between two 4D single-precision vectors.
-| `mat4d_tensor(vec4d, vec4d)`			| `mat4d`	| Returns the tensor product between two 4D double-precision vectors.
+| `vec2f_tensor(vec2f, vec2f)`			| `mat2f`	| Returns the tensor product between two 2D single-precision vectors.
+| `vec2d_tensor(vec2d, vec2d)`			| `mat2d`	| Returns the tensor product between two 2D double-precision vectors.
+| `vec3f_tensor(vec3f, vec3f)`			| `mat3f`	| Returns the tensor product between two 3D single-precision vectors.
+| `vec3d_tensor(vec3d, vec3d)`			| `mat3d`	| Returns the tensor product between two 3D double-precision vectors.
+| `vec4f_tensor(vec4f, vec4f)`			| `mat4f`	| Returns the tensor product between two 4D single-precision vectors.
+| `vec4d_tensor(vec4d, vec4d)`			| `mat4d`	| Returns the tensor product between two 4D double-precision vectors.
 
 #### 2x2 and 3x3 rotation matrix constructors
 | Function prototype				| Return value	| Description
@@ -391,7 +391,7 @@ corresponding to the imaginary part and the w-component equal to the real part.
 | `quatf_make(float, float, float, float)`	| `quatf`	| Constructs a single-precision quaternion.
 | `quatd_make(double, double, double, double)`	| `quatd`	| Constructs a double-precision quaternion.
 | `quatf_zero(void)`				| `quatf`	| Constructs a zero single-precision quaternion.
-| `quatd_zero(void`				| `quatd`	| Constructs a zero double-precision quaternion.
+| `quatd_zero(void)`				| `quatd`	| Constructs a zero double-precision quaternion.
 
 #### General quaternion functions
 | Function prototype				| Return value	| Description
