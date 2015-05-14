@@ -1,6 +1,8 @@
 # Custom
-Makefile
 arrow_test*
+obj/
+lib/
+bin/
 
 # Object files
 *.o
