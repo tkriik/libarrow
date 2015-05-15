@@ -10,18 +10,12 @@ LDFLAGS=	-Wl,-lm
 SRCDIR=		src
 OBJDIR=		obj
 LIBDIR=		lib
-TESTDIR=	test
-BINDIR=		bin
 
 SOURCES=	$(wildcard $(SRCDIR)/*.c)
 OBJECTS=	$(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o, $(SOURCES))
 
 SLIB=		lib$(NAME).a
 DLIB=		lib$(NAME).so.$(VERSION)
-
-TESTSOURCES=	$(wildcard $(TESTDIR)/*_test.c)
-TESTBINS=	$(patsubst $(TESTDIR)/%.c,$(BINDIR)/%, $(TESTSOURCES))
-TESTCFLAGS=	$(CFLAGS) -Isrc/ -Wno-unused-function -Wno-unused-variable
 
 all: $(DLIB) $(SLIB)
 
@@ -37,12 +31,5 @@ $(SLIB): $(OBJECTS)
 	mkdir -p $(LIBDIR)
 	ar cr $(LIBDIR)/$(SLIB) $(OBJECTS)
 
-$(BINDIR)/%: $(TESTDIR)/%.c $(OBJECTS)
-	mkdir -p $(BINDIR)
-	$(CC) $(TESTCFLAGS) -o $@ $< $(OBJECTS) $(LDFLAGS)
-
-test: $(TESTBINS)
-	find $(BINDIR) -iname "*_test" -execdir ./{} \;
-
 clean:
-	rm -f $(OBJECTS) $(LIBDIR)/$(DLIB) $(LIBDIR)/$(SLIB) $(TESTBINS)
+	rm -f $(OBJECTS) $(LIBDIR)/$(DLIB) $(LIBDIR)/$(SLIB)
