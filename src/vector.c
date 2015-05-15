@@ -191,145 +191,217 @@ vec4d_norm(vec4d v)
 float
 vec2f_angle(vec2f v, vec2f w)
 {
-	return acos(vec2f_dot(v, w) / (vec2f_norm(v) * vec2f_norm(w)));
+	float n = vec2f_norm(v) * vec2f_norm(w);
+	if (n == 0)
+		return 0;
+	return acos(vec2f_dot(v, w) / n);
 }
 
 double
 vec2d_angle(vec2d v, vec2d w)
 {
-	return acos(vec2d_dot(v, w) / (vec2d_norm(v) * vec2d_norm(w)));
+	double n = vec2d_norm(v) * vec2d_norm(w);
+	if (n == 0)
+		return 0;
+	return acos(vec2d_dot(v, w) / n);
 }
 
 float
 vec3f_angle(vec3f v, vec3f w)
 {
-	return acos(vec3f_dot(v, w) / (vec3f_norm(v) * vec3f_norm(w)));
+	float n = vec3f_norm(v) * vec3f_norm(w);
+	if (n == 0)
+		return 0;
+	return acos(vec3f_dot(v, w) / n);
 }
 
 double
 vec3d_angle(vec3d v, vec3d w)
 {
-	return acos(vec3d_dot(v, w) / (vec3d_norm(v) * vec3d_norm(w)));
+	double n = vec3d_norm(v) * vec3d_norm(w);
+	if (n == 0)
+		return 0;
+	return acos(vec3d_dot(v, w) / n);
 }
 
 float
 vec4f_angle(vec4f v, vec4f w)
 {
-	return acos(vec4f_dot(v, w) / (vec4f_norm(v) * vec4f_norm(w)));
+	float n = vec4f_norm(v) * vec4f_norm(w);
+	if (n == 0)
+		return 0;
+	return acos(vec4f_dot(v, w) / n);
 }
 
 double
 vec4d_angle(vec4d v, vec4d w)
 {
-	return acos(vec4d_dot(v, w) / (vec4d_norm(v) * vec4d_norm(w)));
+	double n = vec4d_norm(v) * vec4d_norm(w);
+	if (n == 0)
+		return 0;
+	return acos(vec4d_dot(v, w) / n);
 }
 
 vec2f
 vec2f_unit(vec2f v)
 {
-	return v / vec2f_norm(v);
+	float n = vec2f_norm(v);
+	if (n == 0)
+		return v;
+	return v / n;
 }
 
 vec2d
 vec2d_unit(vec2d v)
 {
-	return v / vec2d_norm(v);
+	double n = vec2d_norm(v);
+	if (n == 0)
+		return v;
+	return v / n;
 }
 
 vec3f
 vec3f_unit(vec3f v)
 {
-	return v / vec3f_norm(v);
+	float n = vec3f_norm(v);
+	if (n == 0)
+		return v;
+	return v / n;
 }
 
 vec3d
 vec3d_unit(vec3d v)
 {
-	return v / vec3d_norm(v);
+	double n = vec3d_norm(v);
+	if (n == 0)
+		return v;
+	return v / n;
 }
 
 vec4f
 vec4f_unit(vec4f v)
 {
-	return v / vec4f_norm(v);
+	float n = vec4f_norm(v);
+	if (n == 0)
+		return v;
+	return v / n;
 }
 
 vec4d
 vec4d_unit(vec4d v)
 {
-	return v / vec4d_norm(v);
+	double n = vec4d_norm(v);
+	if (n == 0)
+		return v;
+	return v / n;
 }
 
 vec2f
 vec2f_vproject(vec2f v, vec2f w)
 {
-	return w * (vec2f_dot(v, w) / vec2f_dot(w, w));
+	float d = vec2f_dot(w, w);
+	if (d == 0)
+		return w;
+	return w * (vec2f_dot(v, w) / d);
 }
 
 vec2d
 vec2d_vproject(vec2d v, vec2d w)
 {
-	return w * (vec2d_dot(v, w) / vec2d_dot(w, w));
+	double d = vec2d_dot(w, w);
+	if (d == 0)
+		return w;
+	return w * (vec2d_dot(v, w) / d);
 }
 
 vec3f
 vec3f_vproject(vec3f v, vec3f w)
 {
-	return w * (vec3f_dot(v, w) / vec3f_dot(w, w));
+	float d = vec3f_dot(w, w);
+	if (d == 0)
+		return w;
+	return w * (vec3f_dot(v, w) / d);
 }
 
 vec3d
 vec3d_vproject(vec3d v, vec3d w)
 {
-	return w * (vec3d_dot(v, w) / vec3d_dot(w, w));
+	double d = vec3d_dot(w, w);
+	if (d == 0)
+		return w;
+	return w * (vec3d_dot(v, w) / d);
 }
 
 vec4f
 vec4f_vproject(vec4f v, vec4f w)
 {
-	return w * (vec4f_dot(v, w) / vec4f_dot(w, w));
+	float d = vec4f_dot(w, w);
+	if (d == 0)
+		return w;
+	return w * (vec4f_dot(v, w) / d);
 }
 
 vec4d
 vec4d_vproject(vec4d v, vec4d w)
 {
-	return w * (vec4d_dot(v, w) / vec4d_dot(w, w));
+	double d = vec4d_dot(w, w);
+	if (d == 0)
+		return w;
+	return w * (vec4d_dot(v, w) / d);
 }
 
 float
 vec2f_sproject(vec2f v, vec2f w)
 {
-	return vec2f_dot(v, w) / vec2f_norm(w);
+	float n = vec2f_norm(w);
+	if (n == 0)
+		return 0;
+	return vec2f_dot(v, w) / n;
 }
 
 double
 vec2d_sproject(vec2d v, vec2d w)
 {
-	return vec2d_dot(v, w) / vec2d_norm(w);
+	double n = vec2d_norm(w);
+	if (n == 0)
+		return 0;
+	return vec2d_dot(v, w) / n;
 }
 
 float
 vec3f_sproject(vec3f v, vec3f w)
 {
-	return vec3f_dot(v, w) / vec3f_norm(w);
+	float n = vec3f_norm(w);
+	if (n == 0)
+		return 0;
+	return vec3f_dot(v, w) / n;
 }
 
 double
 vec3d_sproject(vec3d v, vec3d w)
 {
-	return vec3d_dot(v, w) / vec3d_norm(w);
+	double n = vec3d_norm(w);
+	if (n == 0)
+		return 0;
+	return vec3d_dot(v, w) / n;
 }
 
 float
 vec4f_sproject(vec4f v, vec4f w)
 {
-	return vec4f_dot(v, w) / vec4f_norm(w);
+	float n = vec4f_norm(w);
+	if (n == 0)
+		return 0;
+	return vec4f_dot(v, w) / n;
 }
 
 double
 vec4d_sproject(vec4d v, vec4d w)
 {
-	return vec4d_dot(v, w) / vec4d_norm(w);
+	double n = vec4d_norm(w);
+	if (n == 0)
+		return 0;
+	return vec4d_dot(v, w) / n;
 }
 
 vec2f
