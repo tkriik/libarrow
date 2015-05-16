@@ -93,12 +93,12 @@ float	mat4f_det(mat4f);
 double	mat4d_det(mat4d);
 
 /* Matrix and vector product functions. */
-mat2f	mat2f_mul_mat(mat2f, mat2f);
-mat2d	mat2d_mul_mat(mat2d, mat2d);
-mat3f	mat3f_mul_mat(mat3f, mat3f);
-mat3d	mat3d_mul_mat(mat3d, mat3d);
-mat4f	mat4f_mul_mat(mat4f, mat4f);
-mat4d	mat4d_mul_mat(mat4d, mat4d);
+mat2f	mat2f_mul(mat2f, mat2f);
+mat2d	mat2d_mul(mat2d, mat2d);
+mat3f	mat3f_mul(mat3f, mat3f);
+mat3d	mat3d_mul(mat3d, mat3d);
+mat4f	mat4f_mul(mat4f, mat4f);
+mat4d	mat4d_mul(mat4d, mat4d);
 
 vec2f	mat2f_mul_vec(mat2f, vec2f);
 vec2d	mat2d_mul_vec(mat2d, vec2d);
@@ -107,12 +107,12 @@ vec3d	mat3d_mul_vec(mat3d, vec3d);
 vec4f	mat4f_mul_vec(mat4f, vec4f);
 vec4d	mat4d_mul_vec(mat4d, vec4d);
 
-mat2f	vec2f_tensor(vec2f, vec2f);
-mat2d	vec2d_tensor(vec2d, vec2d);
-mat3f	vec3f_tensor(vec3f, vec3f);
-mat3d	vec3d_tensor(vec3d, vec3d);
-mat4f	vec4f_tensor(vec4f, vec4f);
-mat4d	vec4d_tensor(vec4d, vec4d);
+mat2f	mat2f_tensor(vec2f, vec2f);
+mat2d	mat2d_tensor(vec2d, vec2d);
+mat3f	mat3f_tensor(vec3f, vec3f);
+mat3d	mat3d_tensor(vec3d, vec3d);
+mat4f	mat4f_tensor(vec4f, vec4f);
+mat4d	mat4d_tensor(vec4d, vec4d);
 
 /* 2x2 and 3x3 rotation matrix constructors. */
 mat2f	mat2f_rotation(float);
