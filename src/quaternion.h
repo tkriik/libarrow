@@ -21,14 +21,14 @@ quatd	quatd_zero(void);
 float	quatf_dot(quatf, quatf);
 double	quatd_dot(quatd, quatd);
 
+float	quatf_norm(quatf);
+double	quatd_norm(quatd);
+
 quatf	quatf_conj(quatf);
 quatd	quatd_conj(quatd);
 
 quatf	quatf_inv(quatf);
 quatd	quatd_inv(quatd);
-
-float	quatf_norm(quatf);
-double	quatd_norm(quatd);
 
 quatf	quatf_unit(quatf);
 quatd	quatd_unit(quatd);

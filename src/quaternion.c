@@ -42,6 +42,18 @@ quatd_dot(quatd q, quatd r)
 	return quat_x(q) + quat_y(q) + quat_z(q) + quat_w(q);
 }
 
+float
+quatf_norm(quatf q)
+{
+	return sqrt(quatf_dot(q, q));
+}
+
+double
+quatd_norm(quatd q)
+{
+	return sqrt(quatd_dot(q, q));
+}
+
 quatf
 quatf_conj(quatf q)
 {
@@ -70,18 +82,6 @@ quatd_inv(quatd q)
 	if (d == 0)
 		return quatd_zero();
 	return quatd_conj(q) / d;
-}
-
-float
-quatf_norm(quatf q)
-{
-	return sqrt(quatf_dot(q, q));
-}
-
-double
-quatd_norm(quatd q)
-{
-	return sqrt(quatd_dot(q, q));
 }
 
 quatf
