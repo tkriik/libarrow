@@ -121,7 +121,7 @@ mat4d_make(
 }
 
 mat2f
-mat2f_row_make(vec2f a, vec2f b)
+mat2f_from_rows(vec2f a, vec2f b)
 {
 	return mat2f_make(
 	    vec_x(a), vec_y(a),
@@ -130,7 +130,7 @@ mat2f_row_make(vec2f a, vec2f b)
 }
 
 mat2d
-mat2d_row_make(vec2d a, vec2d b)
+mat2d_from_rows(vec2d a, vec2d b)
 {
 	return mat2d_make(
 	    vec_x(a), vec_y(a),
@@ -139,7 +139,7 @@ mat2d_row_make(vec2d a, vec2d b)
 }
 
 mat3f
-mat3f_row_make(vec3f a, vec3f b, vec3f c)
+mat3f_from_rows(vec3f a, vec3f b, vec3f c)
 {
 	return mat3f_make(
 	    vec_x(a), vec_y(a), vec_z(a),
@@ -149,7 +149,7 @@ mat3f_row_make(vec3f a, vec3f b, vec3f c)
 }
 
 mat3d
-mat3d_row_make(vec3d a, vec3d b, vec3d c)
+mat3d_from_rows(vec3d a, vec3d b, vec3d c)
 {
 	return mat3d_make(
 	    vec_x(a), vec_y(a), vec_z(a),
@@ -159,7 +159,7 @@ mat3d_row_make(vec3d a, vec3d b, vec3d c)
 }
 
 mat4f
-mat4f_row_make(vec4f a, vec4f b, vec4f c, vec4f d)
+mat4f_from_rows(vec4f a, vec4f b, vec4f c, vec4f d)
 {
 	return mat4f_make(
 	    vec_x(a), vec_y(a), vec_z(a), vec_w(a),
@@ -170,13 +170,73 @@ mat4f_row_make(vec4f a, vec4f b, vec4f c, vec4f d)
 }
 
 mat4d
-mat4d_row_make(vec4d a, vec4d b, vec4d c, vec4d d)
+mat4d_from_rows(vec4d a, vec4d b, vec4d c, vec4d d)
 {
 	return mat4d_make(
 	    vec_x(a), vec_y(a), vec_z(a), vec_w(a),
 	    vec_x(b), vec_y(b), vec_z(b), vec_w(b),
 	    vec_x(c), vec_y(c), vec_z(c), vec_w(c),
 	    vec_x(d), vec_y(d), vec_z(d), vec_w(d)
+	);
+}
+
+mat2f
+mat2f_from_columns(vec2f a, vec2f b)
+{
+	return mat2f_make(
+	    vec_x(a), vec_x(b),
+	    vec_y(a), vec_y(b)
+	);
+}
+
+mat2d
+mat2d_from_columns(vec2d a, vec2d b)
+{
+	return mat2d_make(
+	    vec_x(a), vec_x(b),
+	    vec_y(a), vec_y(b)
+	);
+}
+
+mat3f
+mat3f_from_columns(vec3f a, vec3f b, vec3f c)
+{
+	return mat3f_make(
+	    vec_x(a), vec_x(b), vec_x(c),
+	    vec_y(a), vec_y(b), vec_y(c),
+	    vec_z(a), vec_z(b), vec_z(c)
+	);
+}
+
+mat3d
+mat3d_from_columns(vec3d a, vec3d b, vec3d c)
+{
+	return mat3d_make(
+	    vec_x(a), vec_x(b), vec_x(c),
+	    vec_y(a), vec_y(b), vec_y(c),
+	    vec_z(a), vec_z(b), vec_z(c)
+	);
+}
+
+mat4f
+mat4f_from_columns(vec4f a, vec4f b, vec4f c, vec4f d)
+{
+	return mat4f_make(
+	    vec_x(a), vec_x(b), vec_x(c), vec_x(d),
+	    vec_y(a), vec_y(b), vec_y(c), vec_y(d),
+	    vec_z(a), vec_z(b), vec_z(c), vec_z(d),
+	    vec_w(a), vec_w(b), vec_w(c), vec_w(d)
+	);
+}
+
+mat4d
+mat4d_from_columns(vec4d a, vec4d b, vec4d c, vec4d d)
+{
+	return mat4d_make(
+	    vec_x(a), vec_x(b), vec_x(c), vec_x(d),
+	    vec_y(a), vec_y(b), vec_y(c), vec_y(d),
+	    vec_z(a), vec_z(b), vec_z(c), vec_z(d),
+	    vec_w(a), vec_w(b), vec_w(c), vec_w(d)
 	);
 }
 
@@ -817,7 +877,7 @@ mat2f_tensor(vec2f v, vec2f w)
 {
 	vec2f wx = w * vec_x(v);
 	vec2f wy = w * vec_y(v);
-	return mat2f_row_make(wx, wy);
+	return mat2f_from_rows(wx, wy);
 }
 
 mat2d
@@ -825,7 +885,7 @@ mat2d_tensor(vec2d v, vec2d w)
 {
 	vec2d wx = w * vec_x(v);
 	vec2d wy = w * vec_y(v);
-	return mat2d_row_make(wx, wy);
+	return mat2d_from_rows(wx, wy);
 }
 
 mat3f
@@ -834,7 +894,7 @@ mat3f_tensor(vec3f v, vec3f w)
 	vec3f wx = w * vec_x(v);
 	vec3f wy = w * vec_y(v);
 	vec3f wz = w * vec_z(v);
-	return mat3f_row_make(wx, wy, wz);
+	return mat3f_from_rows(wx, wy, wz);
 }
 
 mat3d
@@ -843,7 +903,7 @@ mat3d_tensor(vec3d v, vec3d w)
 	vec3d wx = w * vec_x(v);
 	vec3d wy = w * vec_y(v);
 	vec3d wz = w * vec_z(v);
-	return mat3d_row_make(wx, wy, wz);
+	return mat3d_from_rows(wx, wy, wz);
 }
 
 mat4f
@@ -853,7 +913,7 @@ mat4f_tensor(vec4f v, vec4f w)
 	vec4f wy = w * vec_y(v);
 	vec4f wz = w * vec_z(v);
 	vec4f ww = w * vec_w(v);
-	return mat4f_row_make(wx, wy, wz, ww);
+	return mat4f_from_rows(wx, wy, wz, ww);
 }
 
 mat4d
@@ -863,7 +923,7 @@ mat4d_tensor(vec4d v, vec4d w)
 	vec4d wy = w * vec_y(v);
 	vec4d wz = w * vec_z(v);
 	vec4d ww = w * vec_w(v);
-	return mat4d_row_make(wx, wy, wz, ww);
+	return mat4d_from_rows(wx, wy, wz, ww);
 }
 
 mat2f
