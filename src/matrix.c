@@ -121,6 +121,66 @@ mat4d_make(
 }
 
 mat2f
+mat2f_with(float n)
+{
+	return mat2f_make(
+	    n, n,
+	    n, n
+	);
+}
+
+mat2d
+mat2d_with(double n)
+{
+	return mat2d_make(
+	    n, n,
+	    n, n
+	);
+}
+
+mat3f
+mat3f_with(float n)
+{
+	return mat3f_make(
+	    n, n, n,
+	    n, n, n,
+	    n, n, n
+	);
+}
+
+mat3d
+mat3d_with(double n)
+{
+	return mat3d_make(
+	    n, n, n,
+	    n, n, n,
+	    n, n, n
+	);
+}
+
+mat4f
+mat4f_with(float n)
+{
+	return mat4f_make(
+	    n, n, n, n,
+	    n, n, n, n,
+	    n, n, n, n,
+	    n, n, n, n
+	);
+}
+
+mat4d
+mat4d_with(double n)
+{
+	return mat4d_make(
+	    n, n, n, n,
+	    n, n, n, n,
+	    n, n, n, n,
+	    n, n, n, n
+	);
+}
+
+mat2f
 mat2f_from_rows(vec2f a, vec2f b)
 {
 	return mat2f_make(
@@ -237,66 +297,6 @@ mat4d_from_columns(vec4d a, vec4d b, vec4d c, vec4d d)
 	    vec_y(a), vec_y(b), vec_y(c), vec_y(d),
 	    vec_z(a), vec_z(b), vec_z(c), vec_z(d),
 	    vec_w(a), vec_w(b), vec_w(c), vec_w(d)
-	);
-}
-
-mat2f
-mat2f_with(float n)
-{
-	return mat2f_make(
-	    n, n,
-	    n, n
-	);
-}
-
-mat2d
-mat2d_with(double n)
-{
-	return mat2d_make(
-	    n, n,
-	    n, n
-	);
-}
-
-mat3f
-mat3f_with(float n)
-{
-	return mat3f_make(
-	    n, n, n,
-	    n, n, n,
-	    n, n, n
-	);
-}
-
-mat3d
-mat3d_with(double n)
-{
-	return mat3d_make(
-	    n, n, n,
-	    n, n, n,
-	    n, n, n
-	);
-}
-
-mat4f
-mat4f_with(float n)
-{
-	return mat4f_make(
-	    n, n, n, n,
-	    n, n, n, n,
-	    n, n, n, n,
-	    n, n, n, n
-	);
-}
-
-mat4d
-mat4d_with(double n)
-{
-	return mat4d_make(
-	    n, n, n, n,
-	    n, n, n, n,
-	    n, n, n, n,
-	    n, n, n, n
 	);
 }
 

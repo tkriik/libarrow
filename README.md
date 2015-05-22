@@ -272,32 +272,44 @@ The vector and matrix modules are nearing completion while the quaternion module
 | `mat4_44(m)`          | Index to the value at row 4, column 4 in a 4x4 matrix `m`.
 
 #### Matrix constructors
-| Function prototype				| Return value	| Description
-| --------					| --------	| --------
-| `mat2f_make(vec2f, vec2f)`                    | `mat2f`       | Constructs a 2x2 single-precision matrix from two row vectors.
-| `mat2d_make(vec2d, vec2d)`                    | `mat2d`       | Constructs a 2x2 double-precision matrix from two row vectors.
-| `mat3f_make(vec3f, vec3f, vec3f)`		| `mat3f`       | Constructs a 3x3 single-precision matrix from three row vectors.
-| `mat3d_make(vec3d, vec3d, vec3d)`		| `mat3d`       | Constructs a 3x3 double-precision matrix from three row vectors.
-| `mat4f_make(vec4f, vec4f, vec4f, vec4f)`	| `mat4f`       | Constructs a 4x4 single-precision matrix from four row vectors.
-| `mat4d_make(vec4d, vec4d, vec4d, vec4d)`	| `mat4d`       | Constructs a 4x4 double-precision matrix from four row vectors.
-| `mat2f_with(float)`                           | `mat2f`       | Constructs a 2x2 single-precision matrix with an initial value.
-| `mat2d_with(double)`                          | `mat2d`       | Constructs a 2x2 double-precision matrix with an initial value.
-| `mat3f_with(float)`                           | `mat3f`       | Constructs a 3x3 single-precision matrix with an initial value.
-| `mat3d_with(double)`                          | `mat3d`       | Constructs a 3x3 double-precision matrix with an initial value.
-| `mat4f_with(float)`                           | `mat4f`       | Constructs a 4x4 single-precision matrix with an initial value.
-| `mat4d_with(double)`                          | `mat4d`       | Constructs a 4x4 double-precision matrix with an initial value.
-| `mat2f_zero(void)`                            | `mat2f`       | Constructs a zero 2x2 single-precision matrix.
-| `mat2d_zero(void)`                            | `mat2d`       | Constructs a zero 2x2 double-precision matrix.
-| `mat3f_zero(void)`                            | `mat3f`       | Constructs a zero 3x3 single-precision matrix.
-| `mat3d_zero(void)`                            | `mat3d`       | Constructs a zero 3x3 double-precision matrix.
-| `mat4f_zero(void)`                            | `mat4f`       | Constructs a zero 4x4 single-precision matrix.
-| `mat4d_zero(void)`                            | `mat4d`       | Constructs a zero 4x4 double-precision matrix.
-| `mat2f_ident(void)`                           | `mat2f`       | Constructs a 2x2 single-precision identity matrix.
-| `mat2d_ident(void)`                           | `mat2d`       | Constructs a 2x2 double-precision identity matrix.
-| `mat3f_ident(void)`                           | `mat3f`       | Constructs a 3x3 single-precision identity matrix.
-| `mat3d_ident(void)`                           | `mat3d`       | Constructs a 3x3 double-precision identity matrix.
-| `mat4f_ident(void)`                           | `mat4f`       | Constructs a 4x4 single-precision identity matrix.
-| `mat4d_ident(void)`                           | `mat4d`       | Constructs a 4x4 double-precision identity matrix.
+| Function prototype					| Return value	| Description
+| --------						| --------	| --------
+| `mat2f_make(float...)`				| `mat2f`	| Constructs a 2x2 single-precision matrix from 4 floats.
+| `mat2d_make(double...)`				| `mat2d`	| Constructs a 2x2 double-precision matrix from 4 doubles.
+| `mat3f_make(float...)`				| `mat3f`	| Constructs a 3x3 single-precision matrix from 9 floats.
+| `mat3d_make(double...)`				| `mat3d`	| Constructs a 3x3 double-precision matrix from 9 doubles.
+| `mat4f_make(float...)`				| `mat4f`	| Constructs a 4x4 single-precision matrix from 16 floats.
+| `mat4d_make(double...)`				| `mat4d`	| Constructs a 4x4 double-precision matrix from 16 doubles.
+| `mat2f_with(float)`					| `mat2f`       | Constructs a 2x2 single-precision matrix with an initial value.
+| `mat2d_with(double)`                          	| `mat2d`       | Constructs a 2x2 double-precision matrix with an initial value.
+| `mat3f_with(float)`                           	| `mat3f`       | Constructs a 3x3 single-precision matrix with an initial value.
+| `mat3d_with(double)`                          	| `mat3d`       | Constructs a 3x3 double-precision matrix with an initial value.
+| `mat4f_with(float)`                           	| `mat4f`       | Constructs a 4x4 single-precision matrix with an initial value.
+| `mat4d_with(double)`                          	| `mat4d`       | Constructs a 4x4 double-precision matrix with an initial value.
+| `mat2f_from_rows(vec2f, vec2f)`			| `mat2f`       | Constructs a 2x2 single-precision matrix from two row vectors.
+| `mat2d_from_rows(vec2d, vec2d)`			| `mat2d`       | Constructs a 2x2 double-precision matrix from two row vectors.
+| `mat3f_from_rows(vec3f, vec3f, vec3f)`		| `mat3f`       | Constructs a 3x3 single-precision matrix from three row vectors.
+| `mat3d_from_rows(vec3d, vec3d, vec3d)`		| `mat3d`       | Constructs a 3x3 double-precision matrix from three row vectors.
+| `mat4f_from_rows(vec4f, vec4f, vec4f, vec4f)`		| `mat4f`       | Constructs a 4x4 single-precision matrix from four row vectors.
+| `mat4d_from_rows(vec4d, vec4d, vec4d, vec4d)`		| `mat4d`       | Constructs a 4x4 double-precision matrix from four row vectors.
+| `mat2f_from_columns(vec2f, vec2f)`			| `mat2f`       | Constructs a 2x2 single-precision matrix from two column vectors.
+| `mat2d_from_columns(vec2d, vec2d)`			| `mat2d`       | Constructs a 2x2 double-precision matrix from two column vectors.
+| `mat3f_from_columns(vec3f, vec3f, vec3f)`		| `mat3f`       | Constructs a 3x3 single-precision matrix from three column vectors.
+| `mat3d_from_columns(vec3d, vec3d, vec3d)`		| `mat3d`       | Constructs a 3x3 double-precision matrix from three column vectors.
+| `mat4f_from_columns(vec4f, vec4f, vec4f, vec4f)`	| `mat4f`       | Constructs a 4x4 single-precision matrix from four column vectors.
+| `mat4d_from_columns(vec4d, vec4d, vec4d, vec4d)`	| `mat4d`       | Constructs a 4x4 double-precision matrix from four column vectors.
+| `mat2f_zero(void)`                            	| `mat2f`       | Constructs a zero 2x2 single-precision matrix.
+| `mat2d_zero(void)`                            	| `mat2d`       | Constructs a zero 2x2 double-precision matrix.
+| `mat3f_zero(void)`                            	| `mat3f`       | Constructs a zero 3x3 single-precision matrix.
+| `mat3d_zero(void)`                            	| `mat3d`       | Constructs a zero 3x3 double-precision matrix.
+| `mat4f_zero(void)`                            	| `mat4f`       | Constructs a zero 4x4 single-precision matrix.
+| `mat4d_zero(void)`                            	| `mat4d`       | Constructs a zero 4x4 double-precision matrix.
+| `mat2f_ident(void)`                           	| `mat2f`       | Constructs a 2x2 single-precision identity matrix.
+| `mat2d_ident(void)`                           	| `mat2d`       | Constructs a 2x2 double-precision identity matrix.
+| `mat3f_ident(void)`                           	| `mat3f`       | Constructs a 3x3 single-precision identity matrix.
+| `mat3d_ident(void)`                           	| `mat3d`       | Constructs a 3x3 double-precision identity matrix.
+| `mat4f_ident(void)`                           	| `mat4f`       | Constructs a 4x4 single-precision identity matrix.
+| `mat4d_ident(void)`                           	| `mat4d`       | Constructs a 4x4 double-precision identity matrix.
 
 #### General matrix functions
 | Function prototype				| Return value	| Description
