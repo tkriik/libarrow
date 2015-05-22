@@ -42,12 +42,37 @@
 #define mat4_44(m) ((m)[15])
 
 /* Matrix constructors. */
-mat2f	mat2f_make(vec2f, vec2f);
-mat2d	mat2d_make(vec2d, vec2d);
-mat3f	mat3f_make(vec3f, vec3f, vec3f);
-mat3d	mat3d_make(vec3d, vec3d, vec3d);
-mat4f	mat4f_make(vec4f, vec4f, vec4f, vec4f);
-mat4d	mat4d_make(vec4d, vec4d, vec4d, vec4d);
+mat2f	mat2f_make(
+	    float, float,
+	    float, float);
+mat2d	mat2d_make(
+	    double, double,
+	    double, double);
+mat3f	mat3f_make(
+	    float, float, float,
+	    float, float, float,
+	    float, float, float);
+mat3d	mat3d_make(
+	    double, double, double,
+	    double, double, double,
+	    double, double, double);
+mat4f	mat4f_make(
+	    float, float, float, float,
+	    float, float, float, float,
+	    float, float, float, float,
+	    float, float, float, float);
+mat4d	mat4d_make(
+	    double, double, double, double,
+	    double, double, double, double,
+	    double, double, double, double,
+	    double, double, double, double);
+
+mat2f	mat2f_row_make(vec2f, vec2f);
+mat2d	mat2d_row_make(vec2d, vec2d);
+mat3f	mat3f_row_make(vec3f, vec3f, vec3f);
+mat3d	mat3d_row_make(vec3d, vec3d, vec3d);
+mat4f	mat4f_row_make(vec4f, vec4f, vec4f, vec4f);
+mat4d	mat4d_row_make(vec4d, vec4d, vec4d, vec4d);
 
 mat2f	mat2f_with(float);
 mat2d	mat2d_with(double);

@@ -5,37 +5,61 @@
 vec2f
 vec2f_make(float x, float y)
 {
-	return (vec2f){x, y};
+	vec2f v;
+	vec_x(v) = x;
+	vec_y(v) = y;
+	return v;
 }
 
 vec2d
 vec2d_make(double x, double y)
 {
-	return (vec2d){x, y};
+	vec2d v;
+	vec_x(v) = x;
+	vec_y(v) = y;
+	return v;
 }
 
 vec3f
 vec3f_make(float x, float y, float z)
 {
-	return (vec3f){x, y, z};
+	vec3f v;
+	vec_x(v) = x;
+	vec_y(v) = y;
+	vec_z(v) = z;
+	return v;
 }
 
 vec3d
 vec3d_make(double x, double y, double z)
 {
-	return (vec3d){x, y, z};
+	vec3d v;
+	vec_x(v) = x;
+	vec_y(v) = y;
+	vec_z(v) = z;
+	return v;
 }
 
 vec4f
 vec4f_make(float x, float y, float z, float w)
 {
-	return (vec4f){x, y, z, w};
+	vec4f v;
+	vec_x(v) = x;
+	vec_y(v) = y;
+	vec_z(v) = z;
+	vec_w(v) = w;
+	return v;
 }
 
 vec4d
 vec4d_make(double x, double y, double z, double w)
 {
-	return (vec4d){x, y, z, w};
+	vec4d v;
+	vec_x(v) = x;
+	vec_y(v) = y;
+	vec_z(v) = z;
+	vec_w(v) = w;
+	return v;
 }
 
 vec2f

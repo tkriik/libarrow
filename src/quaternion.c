@@ -7,13 +7,23 @@
 quatf
 quatf_make(float x, float y, float z, float w)
 {
-	return (quatf){x, y, z, w};
+	quatf q;
+	quat_x(q) = x;
+	quat_y(q) = y;
+	quat_z(q) = z;
+	quat_w(q) = w;
+	return q;
 }
 
 quatd
 quatd_make(double x, double y, double z, double w)
 {
-	return (quatd){x, y, z, w};
+	quatd q;
+	quat_x(q) = x;
+	quat_y(q) = y;
+	quat_z(q) = z;
+	quat_w(q) = w;
+	return q;
 }
 
 quatf
