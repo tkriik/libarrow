@@ -14,6 +14,7 @@
 		- [Vector size conversion functions](#vector-type-conversion-functions)
 	- [Matrix](#matrix)
 		- [Matrix types](#matrix-types)
+		- [General matrix indexing macros](#general-matrix-indexing-macros)
 		- [2x2 matrix indexing macros](#2x2-matrix-indexing-macros)
 		- [3x3 matrix indexing macros](#3x3-matrix-indexing-macros)
 		- [4x4 matrix indexing macros](#4x4-matrix-indexing-macros)
