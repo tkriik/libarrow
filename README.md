@@ -60,9 +60,6 @@ Those using Clang or GCC may pass an additional compilation flag, `-D_ARROW_VECT
 ## Status
 The vector and matrix modules are nearing completion while the quaternion module is still well underway. No comprehensive tests and benchmarks have been written either. I would not recommend using this library yet.
 
-## Notes
-* I am by no means an expert on linear algebra. Let me know if you find errors and/or have any suggestions on improving this library.
-
 ## Reference
 ### Vector
 #### Vector types
