@@ -1,6 +1,5 @@
 #include <math.h>
 
-#include "basic.h"
 #include "matrix.h"
 
 mat2f

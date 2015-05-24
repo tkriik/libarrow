@@ -1,6 +1,5 @@
 #include <math.h>
 
-#include "basic.h"
 #include "vector.h"
 
 vec2f

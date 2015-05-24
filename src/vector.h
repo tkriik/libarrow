@@ -1,6 +1,7 @@
 #ifndef _ARROW_VECTOR_H_
 #define _ARROW_VECTOR_H_
 
+#include "basic.h"
 #include "types.h"
 
 /* Vector constructors. */

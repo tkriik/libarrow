@@ -1,6 +1,5 @@
 #include <math.h>
 
-#include "basic.h"
 #include "matrix.h"
 #include "quaternion.h"
 #include "vector.h"

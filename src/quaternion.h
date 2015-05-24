@@ -1,6 +1,7 @@
 #ifndef _ARROW_QUATERNION_H_
 #define _ARROW_QUATERNION_H_
 
+#include "basic.h"
 #include "types.h"
 #include "vector.h"
 
