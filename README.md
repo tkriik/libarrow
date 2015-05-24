@@ -515,6 +515,26 @@ corresponding to the imaginary part and the w-component equal to the real part.
 | `quatf_zero(void)`				| `quatf`	| Constructs a zero single-precision quaternion.
 | `quatd_zero(void)`				| `quatd`	| Constructs a zero double-precision quaternion.
 
+#### Element-wise quaternion arithmetic
+| Function prototype				| Return value	| Description
+| --------					| --------	| --------
+| `quatf_add(quatf, quatf)`			| `quatf`	| Returns the sum quaternion of two single-precision quaternions.
+| `quatd_add(quatd, quatd)`			| `quatd`	| Returns the sum quaternion of two double-precision quaternions.
+| `quatf_sub(quatf, quatf)`			| `quatf`	| Returns the difference quaternion between two single-precision quaternions.
+| `quatd_sub(quatd, quatd)`			| `quatd`	| Returns the difference quaternion between two double-precision quaternions.
+| `quatf_mul(quatf, quatf)`			| `quatf`	| Returns the product quaternion of two single-precision quaternions.
+| `quatd_mul(quatd, quatd)`			| `quatd`	| Returns the product quaternion of two double-precision quaternions.
+| `quatf_div(quatf, quatf)`			| `quatf`	| Returns the quotient quaternion between two single-precision quaternions.
+| `quatd_div(quatd, quatd)`			| `quatd`	| Returns the quotient quaternion between two double-precision quaternions.
+| `quatf_add_scalar(quatf, quatf)`		| `quatf`	| Returns the sum quaternion of a single-precision quaternion and a scalar.
+| `quatd_add_scalar(quatd, quatd)`		| `quatd`	| Returns the sum quaternion of a double-precision quaternion and a scalar.
+| `quatf_sub_scalar(quatf, quatf)`		| `quatf`	| Returns the difference quaternion between a single-precision quaternion and a scalar.
+| `quatd_sub_scalar(quatd, quatd)`		| `quatd`	| Returns the difference quaternion between a double-precision quaternion and a scalar.
+| `quatf_mul_scalar(quatf, quatf)`		| `quatf`	| Returns the product quaternion of a single-precision quaternion and a scalar.
+| `quatd_mul_scalar(quatd, quatd)`		| `quatd`	| Returns the product quaternion of a double-precision quaternion and a scalar.
+| `quatf_div_scalar(quatf, quatf)`		| `quatf`	| Returns the quotient quaternion between a single-precision quaternion and a scalar.
+| `quatd_div_scalar(quatd, quatd)`		| `quatd`	| Returns the quotient quaternion between a double-precision quaternion and a scalar.
+
 #### General quaternion functions
 | Function prototype				| Return value	| Description
 | --------					| --------	| --------
