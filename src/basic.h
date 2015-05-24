@@ -1,11 +1,7 @@
 #ifndef _ARROW_BASIC_H_
 #define _ARROW_BASIC_H_
 
-#ifndef _ARROW_VECTORIZED
-#include "types_standard.h"
-#else
-#include "types_vectorized.h"
-#endif /* _ARROW_VECTORIZED */
+#include "types.h"
 
 vec2f vec2f_add(vec2f, vec2f);
 vec2d vec2d_add(vec2d, vec2d);

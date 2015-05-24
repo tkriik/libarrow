@@ -24,7 +24,6 @@ typedef double	quatd __attribute__ ((ext_vector_type(4)));
 
 #elif defined(__GNUC__)
 
-/* GCC 8-byte vectors misbehave on 32-bit platforms. */
 typedef float	vec2f __attribute__ ((vector_size(16)));
 typedef float	vec2f __attribute__ ((vector_size(8)));
 typedef double	vec2d __attribute__ ((vector_size(16)));
