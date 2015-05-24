@@ -226,10 +226,15 @@ The vector and matrix modules are nearing completion while the quaternion module
 | `mat4f`               | 4x4 single-precision matrix.	| 64			| 64
 | `mat4d`               | 4x4 double-precision matrix.	| 128			| 128
 
+#### General matrix indexing macros
+| Macro definition	| Description
+| --------		| --------
+| `mat_i(m, i)`		| Index to the value at cell `i` in an arbitrarily sized row-major ordered matrix.
+
 #### 2x2 matrix indexing macros
 | Macro definition      | Description
 | --------              | --------
-| `mat2_i(m, i, j)`     | Index to the value at row `i`, column `j` in a 2x2 matrix `m`.
+| `mat2_i(m, r, c)`     | Index to the value at row `r`, column `c` in a 2x2 matrix `m`.
 | `mat2_11(m)`          | Index to the value at row 1, column 1 in a 2x2 matrix `m`.
 | `mat2_12(m)`          | Index to the value at row 1, column 2 in a 2x2 matrix `m`.
 | `mat2_21(m)`          | Index to the value at row 2, column 1 in a 2x2 matrix `m`.
@@ -238,7 +243,7 @@ The vector and matrix modules are nearing completion while the quaternion module
 #### 3x3 matrix indexing macros
 | Macro definition      | Description
 | --------              | --------
-| `mat3_i(m, i, j)`     | Index to the value at row `i`, column `j` in a 3x3 matrix `m`.
+| `mat3_i(m, r, c)`     | Index to the value at row `r`, column `c` in a 3x3 matrix `m`.
 | `mat3_11(m)`          | Index to the value at row 1, column 1 in a 3x3 matrix `m`.
 | `mat3_12(m)`          | Index to the value at row 1, column 2 in a 3x3 matrix `m`.
 | `mat3_13(m)`          | Index to the value at row 1, column 3 in a 3x3 matrix `m`.
@@ -252,7 +257,7 @@ The vector and matrix modules are nearing completion while the quaternion module
 #### 4x4 matrix indexing macros
 | Macro definition      | Description
 | --------              | --------
-| `mat4_i(m, i, j)`     | Index to the value at row `i`, column `j` in a 4x4 matrix `m`.
+| `mat4_i(m, r, c)`     | Index to the value at row `r`, column `c` in a 4x4 matrix `m`.
 | `mat4_11(m)`          | Index to the value at row 1, column 1 in a 4x4 matrix `m`.
 | `mat4_12(m)`          | Index to the value at row 1, column 2 in a 4x4 matrix `m`.
 | `mat4_13(m)`          | Index to the value at row 1, column 3 in a 4x4 matrix `m`.
