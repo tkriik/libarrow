@@ -28,6 +28,7 @@
 		- [Quaternion types](#quaternion-types)
 		- [Quaternion indexing macros](#quaternion-indexing-macros)
 		- [Quaternion constructors](#quaternion-constructors)
+		- [Element-wise quaternion arithmetic](#element-wise-quaternion-arithmetic)
 		- [General quaternion functions](#general-quaternion-functions)
 		- [Quaternion size conversion functions](#quaternion-size-conversion-functions)
 		- [Quaternion type conversion functions](#quaternion-vector-conversion-functions)
