@@ -131,6 +131,58 @@ The vector and matrix modules are nearing completion while the quaternion module
 | `vec4f_zero(void)`				| `vec4f`	| Constructs a zero 4D single-precision vector.
 | `vec4d_zero(void)`				| `vec4d`	| Constructs a zero 4D double-precision vector.
 
+#### Element-wise vector arithmetic
+| Function prototype				| Return value	| Description
+| --------					| --------	| --------
+| `vec2f_add(vec2f, vec2f)`			| `vec2f`	| Returns the sum vector of two 2D single-precision vectors.
+| `vec2d_add(vec2d, vec2d)`			| `vec2d`	| Returns the sum vector of two 2D double-precision vectors.
+| `vec3f_add(vec3f, vec3f)`			| `vec3f`	| Returns the sum vector of two 3D single-precision vectors.
+| `vec3d_add(vec3d, vec3d)`			| `vec3d`	| Returns the sum vector of two 3D double-precision vectors.
+| `vec4f_add(vec4f, vec4f)`			| `vec4f`	| Returns the sum vector of two 4D single-precision vectors.
+| `vec4d_add(vec4d, vec4d)`			| `vec4d`	| Returns the sum vector of two 4D double-precision vectors.
+| `vec2f_sub(vec2f, vec2f)`			| `vec2f`	| Returns the difference vector between two 2D single-precision vectors.
+| `vec2d_sub(vec2d, vec2d)`			| `vec2d`	| Returns the difference vector between two 2D double-precision vectors.
+| `vec3f_sub(vec3f, vec3f)`			| `vec3f`	| Returns the difference vector between two 3D single-precision vectors.
+| `vec3d_sub(vec3d, vec3d)`			| `vec3d`	| Returns the difference vector between two 3D double-precision vectors.
+| `vec4f_sub(vec4f, vec4f)`			| `vec4f`	| Returns the difference vector between two 4D single-precision vectors.
+| `vec4d_sub(vec4d, vec4d)`			| `vec4d`	| Returns the difference vector between two 4D double-precision vectors.
+| `vec2f_mul(vec2f, vec2f)`			| `vec2f`	| Returns the product vector of two 2D single-precision vectors.
+| `vec2d_mul(vec2d, vec2d)`			| `vec2d`	| Returns the product vector of two 2D double-precision vectors.
+| `vec3f_mul(vec3f, vec3f)`			| `vec3f`	| Returns the product vector of two 3D single-precision vectors.
+| `vec3d_mul(vec3d, vec3d)`			| `vec3d`	| Returns the product vector of two 3D double-precision vectors.
+| `vec4f_mul(vec4f, vec4f)`			| `vec4f`	| Returns the product vector of two 4D single-precision vectors.
+| `vec4d_mul(vec4d, vec4d)`			| `vec4d`	| Returns the product vector of two 4D double-precision vectors.
+| `vec2f_div(vec2f, vec2f)`			| `vec2f`	| Returns the quotient vector between two 2D single-precision vectors.
+| `vec2d_div(vec2d, vec2d)`			| `vec2d`	| Returns the quotient vector between two 2D double-precision vectors.
+| `vec3f_div(vec3f, vec3f)`			| `vec3f`	| Returns the quotient vector between two 3D single-precision vectors.
+| `vec3d_div(vec3d, vec3d)`			| `vec3d`	| Returns the quotient vector between two 3D double-precision vectors.
+| `vec4f_div(vec4f, vec4f)`			| `vec4f`	| Returns the quotient vector between two 4D single-precision vectors.
+| `vec4d_div(vec4d, vec4d)`			| `vec4d`	| Returns the quotient vector between two 4D double-precision vectors.
+| `vec2f_add_scalar(vec2f, vec2f)`		| `vec2f`	| Returns the sum vector of a 2D single-precision vector and a scalar.
+| `vec2d_add_scalar(vec2d, vec2d)`		| `vec2d`	| Returns the sum vector of a 2D double-precision vector and a scalar.
+| `vec3f_add_scalar(vec3f, vec3f)`		| `vec3f`	| Returns the sum vector of a 3D single-precision vector and a scalar.
+| `vec3d_add_scalar(vec3d, vec3d)`		| `vec3d`	| Returns the sum vector of a 3D double-precision vector and a scalar.
+| `vec4f_add_scalar(vec4f, vec4f)`		| `vec4f`	| Returns the sum vector of a 4D single-precision vector and a scalar.
+| `vec4d_add_scalar(vec4d, vec4d)`		| `vec4d`	| Returns the sum vector of a 4D double-precision vector and a scalar.
+| `vec2f_sub_scalar(vec2f, vec2f)`		| `vec2f`	| Returns the difference vector between a 2D single-precision vector and a scalar.
+| `vec2d_sub_scalar(vec2d, vec2d)`		| `vec2d`	| Returns the difference vector between a 2D double-precision vector and a scalar.
+| `vec3f_sub_scalar(vec3f, vec3f)`		| `vec3f`	| Returns the difference vector between a 3D single-precision vector and a scalar.
+| `vec3d_sub_scalar(vec3d, vec3d)`		| `vec3d`	| Returns the difference vector between a 3D double-precision vector and a scalar.
+| `vec4f_sub_scalar(vec4f, vec4f)`		| `vec4f`	| Returns the difference vector between a 4D single-precision vector and a scalar.
+| `vec4d_sub_scalar(vec4d, vec4d)`		| `vec4d`	| Returns the difference vector between a 4D double-precision vector and a scalar.
+| `vec2f_mul_scalar(vec2f, vec2f)`		| `vec2f`	| Returns the product vector of a 2D single-precision vector and a scalar.
+| `vec2d_mul_scalar(vec2d, vec2d)`		| `vec2d`	| Returns the product vector of a 2D double-precision vector and a scalar.
+| `vec3f_mul_scalar(vec3f, vec3f)`		| `vec3f`	| Returns the product vector of a 3D single-precision vector and a scalar.
+| `vec3d_mul_scalar(vec3d, vec3d)`		| `vec3d`	| Returns the product vector of a 3D double-precision vector and a scalar.
+| `vec4f_mul_scalar(vec4f, vec4f)`		| `vec4f`	| Returns the product vector of a 4D single-precision vector and a scalar.
+| `vec4d_mul_scalar(vec4d, vec4d)`		| `vec4d`	| Returns the product vector of a 4D double-precision vector and a scalar.
+| `vec2f_div_scalar(vec2f, vec2f)`		| `vec2f`	| Returns the quotient vector between a 2D single-precision vector and a scalar.
+| `vec2d_div_scalar(vec2d, vec2d)`		| `vec2d`	| Returns the quotient vector between a 2D double-precision vector and a scalar.
+| `vec3f_div_scalar(vec3f, vec3f)`		| `vec3f`	| Returns the quotient vector between a 3D single-precision vector and a scalar.
+| `vec3d_div_scalar(vec3d, vec3d)`		| `vec3d`	| Returns the quotient vector between a 3D double-precision vector and a scalar.
+| `vec4f_div_scalar(vec4f, vec4f)`		| `vec4f`	| Returns the quotient vector between a 4D single-precision vector and a scalar.
+| `vec4d_div_scalar(vec4d, vec4d)`		| `vec4d`	| Returns the quotient vector between a 4D double-precision vector and a scalar.
+
 #### General vector functions
 | Function prototype				| Return value	| Description
 | --------					| --------	| --------
@@ -314,6 +366,58 @@ The vector and matrix modules are nearing completion while the quaternion module
 | `mat3d_ident(void)`                           	| `mat3d`       | Constructs a 3x3 double-precision identity matrix.
 | `mat4f_ident(void)`                           	| `mat4f`       | Constructs a 4x4 single-precision identity matrix.
 | `mat4d_ident(void)`                           	| `mat4d`       | Constructs a 4x4 double-precision identity matrix.
+
+#### Element-wise matrix arithmetic
+| Function prototype				| Return value	| Description
+| --------					| --------	| --------
+| `mat2f_add(mat2f, mat2f)`			| `mat2f`	| Returns the sum matrix of two 2x2 single-precision matrices.
+| `mat2d_add(mat2d, mat2d)`			| `mat2d`	| Returns the sum matrix of two 2x2 double-precision matrices.
+| `mat3f_add(mat3f, mat3f)`			| `mat3f`	| Returns the sum matrix of two 3x3 single-precision matrices.
+| `mat3d_add(mat3d, mat3d)`			| `mat3d`	| Returns the sum matrix of two 3x3 double-precision matrices.
+| `mat4f_add(mat4f, mat4f)`			| `mat4f`	| Returns the sum matrix of two 4x4 single-precision matrices.
+| `mat4d_add(mat4d, mat4d)`			| `mat4d`	| Returns the sum matrix of two 4x4 double-precision matrices.
+| `mat2f_sub(mat2f, mat2f)`			| `mat2f`	| Returns the difference matrix between two 2x2 single-precision matrices.
+| `mat2d_sub(mat2d, mat2d)`			| `mat2d`	| Returns the difference matrix between two 2x2 double-precision matrices.
+| `mat3f_sub(mat3f, mat3f)`			| `mat3f`	| Returns the difference matrix between two 3x3 single-precision matrices.
+| `mat3d_sub(mat3d, mat3d)`			| `mat3d`	| Returns the difference matrix between two 3x3 double-precision matrices.
+| `mat4f_sub(mat4f, mat4f)`			| `mat4f`	| Returns the difference matrix between two 4x4 single-precision matrices.
+| `mat4d_sub(mat4d, mat4d)`			| `mat4d`	| Returns the difference matrix between two 4x4 double-precision matrices.
+| `mat2f_mul(mat2f, mat2f)`			| `mat2f`	| Returns the product matrix of two 2x2 single-precision matrices.
+| `mat2d_mul(mat2d, mat2d)`			| `mat2d`	| Returns the product matrix of two 2x2 double-precision matrices.
+| `mat3f_mul(mat3f, mat3f)`			| `mat3f`	| Returns the product matrix of two 3x3 single-precision matrices.
+| `mat3d_mul(mat3d, mat3d)`			| `mat3d`	| Returns the product matrix of two 3x3 double-precision matrices.
+| `mat4f_mul(mat4f, mat4f)`			| `mat4f`	| Returns the product matrix of two 4x4 single-precision matrices.
+| `mat4d_mul(mat4d, mat4d)`			| `mat4d`	| Returns the product matrix of two 4x4 double-precision matrices.
+| `mat2f_div(mat2f, mat2f)`			| `mat2f`	| Returns the quotient matrix between two 2x2 single-precision matrices.
+| `mat2d_div(mat2d, mat2d)`			| `mat2d`	| Returns the quotient matrix between two 2x2 double-precision matrices.
+| `mat3f_div(mat3f, mat3f)`			| `mat3f`	| Returns the quotient matrix between two 3x3 single-precision matrices.
+| `mat3d_div(mat3d, mat3d)`			| `mat3d`	| Returns the quotient matrix between two 3x3 double-precision matrices.
+| `mat4f_div(mat4f, mat4f)`			| `mat4f`	| Returns the quotient matrix between two 4x4 single-precision matrices.
+| `mat4d_div(mat4d, mat4d)`			| `mat4d`	| Returns the quotient matrix between two 4x4 double-precision matrices.
+| `mat2f_add_scalar(mat2f, mat2f)`		| `mat2f`	| Returns the sum matrix of a 2x2 single-precision matrix and a scalar.
+| `mat2d_add_scalar(mat2d, mat2d)`		| `mat2d`	| Returns the sum matrix of a 2x2 double-precision matrix and a scalar.
+| `mat3f_add_scalar(mat3f, mat3f)`		| `mat3f`	| Returns the sum matrix of a 3x3 single-precision matrix and a scalar.
+| `mat3d_add_scalar(mat3d, mat3d)`		| `mat3d`	| Returns the sum matrix of a 3x3 double-precision matrix and a scalar.
+| `mat4f_add_scalar(mat4f, mat4f)`		| `mat4f`	| Returns the sum matrix of a 4x4 single-precision matrix and a scalar.
+| `mat4d_add_scalar(mat4d, mat4d)`		| `mat4d`	| Returns the sum matrix of a 4x4 double-precision matrix and a scalar.
+| `mat2f_sub_scalar(mat2f, mat2f)`		| `mat2f`	| Returns the difference matrix between a 2x2 single-precision matrix and a scalar.
+| `mat2d_sub_scalar(mat2d, mat2d)`		| `mat2d`	| Returns the difference matrix between a 2x2 double-precision matrix and a scalar.
+| `mat3f_sub_scalar(mat3f, mat3f)`		| `mat3f`	| Returns the difference matrix between a 3x3 single-precision matrix and a scalar.
+| `mat3d_sub_scalar(mat3d, mat3d)`		| `mat3d`	| Returns the difference matrix between a 3x3 double-precision matrix and a scalar.
+| `mat4f_sub_scalar(mat4f, mat4f)`		| `mat4f`	| Returns the difference matrix between a 4x4 single-precision matrix and a scalar.
+| `mat4d_sub_scalar(mat4d, mat4d)`		| `mat4d`	| Returns the difference matrix between a 4x4 double-precision matrix and a scalar.
+| `mat2f_mul_scalar(mat2f, mat2f)`		| `mat2f`	| Returns the product matrix of a 2x2 single-precision matrix and a scalar.
+| `mat2d_mul_scalar(mat2d, mat2d)`		| `mat2d`	| Returns the product matrix of a 2x2 double-precision matrix and a scalar.
+| `mat3f_mul_scalar(mat3f, mat3f)`		| `mat3f`	| Returns the product matrix of a 3x3 single-precision matrix and a scalar.
+| `mat3d_mul_scalar(mat3d, mat3d)`		| `mat3d`	| Returns the product matrix of a 3x3 double-precision matrix and a scalar.
+| `mat4f_mul_scalar(mat4f, mat4f)`		| `mat4f`	| Returns the product matrix of a 4x4 single-precision matrix and a scalar.
+| `mat4d_mul_scalar(mat4d, mat4d)`		| `mat4d`	| Returns the product matrix of a 4x4 double-precision matrix and a scalar.
+| `mat2f_div_scalar(mat2f, mat2f)`		| `mat2f`	| Returns the quotient matrix between a 2x2 single-precision matrix and a scalar.
+| `mat2d_div_scalar(mat2d, mat2d)`		| `mat2d`	| Returns the quotient matrix between a 2x2 double-precision matrix and a scalar.
+| `mat3f_div_scalar(mat3f, mat3f)`		| `mat3f`	| Returns the quotient matrix between a 3x3 single-precision matrix and a scalar.
+| `mat3d_div_scalar(mat3d, mat3d)`		| `mat3d`	| Returns the quotient matrix between a 3x3 double-precision matrix and a scalar.
+| `mat4f_div_scalar(mat4f, mat4f)`		| `mat4f`	| Returns the quotient matrix between a 4x4 single-precision matrix and a scalar.
+| `mat4d_div_scalar(mat4d, mat4d)`		| `mat4d`	| Returns the quotient matrix between a 4x4 double-precision matrix and a scalar.
 
 #### General matrix functions
 | Function prototype				| Return value	| Description
