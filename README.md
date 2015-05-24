@@ -1,7 +1,7 @@
 # libarrow
 - [Introduction](#introduction)
 - [Status](#status)
-- [Requirements](#requirements)
+- [Notes](#notes)
 - [Reference](#reference)
 	- [Vector](#vector)
 		- [Vector types](#vector-types)
@@ -34,9 +34,9 @@
 		- [Quaternion type conversion functions](#quaternion-vector-conversion-functions)
 
 ## Introduction
-This library aims to implement fast linear algebra computations on small fixed size floating-point vectors, matrices and quaternions.
+This library implements a small set of fixed-size spatial data types, namely vectors, matrices and quaternions, along with common linear algebra routines for each of them. The source code is fully ANSI C compatible, thus portable across most compilers.
 
-The following table describes the data types available in this library:
+The following table lists the data types available in this library:
 
 | Type name	| Description
 | --------	| --------
@@ -55,39 +55,10 @@ The following table describes the data types available in this library:
 | `quatf`	| Single-precision quaternion.
 | `quatd`	| Double-precision quaternion.
 
-For larger data types, single-precision types take half the space and offer faster computation speed.
-Double-precision data types should be used if more accuracy is required.
-
-All data types can be initialized directly:
-```C
-vec3f v = {4, -4.5, 3};
-vec3f w = {3, 1.5, -2};
-quatd q = {0.5, 0.5, 0.5, 1};
-mat3f m = {
-    1, 2, 3,
-    4, 5, 6,
-    7, 8, 9
-};
-```
-There are more ways of constructing vectors, matrices and quaternions documented in the reference.
-
-Scalar and component-wise arithmetic work as you'd expect:
-```C
-v += 1;		// v = {5, -3.5, 4}
-w *= 2;		// w = {6, 3, -4}
-v *= w;		// v = {30, -10.5, -16}
-w -= v;		// w = {-24, -6.5, -20}
-q *= q;		// q = {0.25, 0.25, 0.25, 1}
-m += 3;		// m = {4, 5, 6, 7, 8, 9, 10, 11, 12}
-```
-See [Clang's](http://clang.llvm.org/docs/LanguageExtensions.html#vectors-and-extended-vectors) or [GCC's](https://gcc.gnu.org/onlinedocs/gcc/Vector-Extensions.html) respective documentation pages for more information about vectorized data types.
+Those using Clang or GCC may pass an additional compilation flag, `-D_ARROW_VECTORIZED`, to enable the library to take advantage of the compiler's vector extension capabilities to produce faster code. See [Clang's](http://clang.llvm.org/docs/LanguageExtensions.html#vectors-and-extended-vectors) or [GCC's](https://gcc.gnu.org/onlinedocs/gcc/Vector-Extensions.html) respective documentation pages for more information about vectorized data types.
 
 ## Status
 The vector and matrix modules are nearing completion while the quaternion module is still well underway. No comprehensive tests and benchmarks have been written either. I would not recommend using this library yet.
-
-## Requirements
-* GNU Make
-* Clang or GCC with support for vector extensions.
 
 ## Notes
 * I am by no means an expert on linear algebra. Let me know if you find errors and/or have any suggestions on improving this library.
