@@ -61,6 +61,10 @@ The vector and matrix modules are nearing completion while the quaternion module
 
 ## Reference
 ### Vector
+```C
+#include "arrow/vector.h"
+```
+
 #### Vector types
 | Type name             | Description			| Size (standard)	| Size (vectorized)
 | --------              | --------			| --------		| --------
@@ -238,6 +242,10 @@ The vector and matrix modules are nearing completion while the quaternion module
 | `vec3d_to_4(vec3d)`                           | `vec4d`       | Converts a 3D double-precision vector to a 4D vector.
 
 ### Matrix
+```C
+#include "arrow/matrix.h"
+```
+
 #### Matrix types
 | Type name		| Description			| Size (standard)	| Size (vectorized)
 | --------              | --------			| --------		| --------
@@ -458,6 +466,10 @@ The vector and matrix modules are nearing completion while the quaternion module
 | `mat4f_to_d(mat4f)`				| `mat4d`	| Converts a 4x4 matrix from single- to double-precision.
 
 ### Quaternion
+```C
+#include "arrow/quaternion.h"
+```
+
 This library implements the quaternion as a 4D vector with the x-, y- and z-components
 corresponding to the imaginary part and the w-component equal to the real part.
 
