@@ -1,7 +1,6 @@
 # libarrow
 - [Introduction](#introduction)
 - [Status](#status)
-- [Notes](#notes)
 - [Reference](#reference)
 	- [Vector](#vector)
 		- [Vector types](#vector-types)
