@@ -1,5 +1,6 @@
 #include <math.h>
 
+#include "basic.h"
 #include "matrix.h"
 #include "quaternion.h"
 #include "vector.h"
@@ -8,10 +9,7 @@ quatf
 quatf_make(float x, float y, float z, float w)
 {
 	quatf q;
-	quat_x(q) = x;
-	quat_y(q) = y;
-	quat_z(q) = z;
-	quat_w(q) = w;
+	quat_x(q) = x, quat_y(q) = y, quat_z(q) = z, quat_w(q) = w;
 	return q;
 }
 
@@ -19,10 +17,7 @@ quatd
 quatd_make(double x, double y, double z, double w)
 {
 	quatd q;
-	quat_x(q) = x;
-	quat_y(q) = y;
-	quat_z(q) = z;
-	quat_w(q) = w;
+	quat_x(q) = x, quat_y(q) = y, quat_z(q) = z, quat_w(q) = w;
 	return q;
 }
 
@@ -41,14 +36,14 @@ quatd_zero(void)
 float
 quatf_dot(quatf q, quatf r)
 {
-	q *= r;
+	q = quatf_mul(q, r);
 	return quat_x(q) + quat_y(q) + quat_z(q) + quat_w(q);
 }
 
 double
 quatd_dot(quatd q, quatd r)
 {
-	q *= r;
+	q = quatd_mul(q, r);
 	return quat_x(q) + quat_y(q) + quat_z(q) + quat_w(q);
 }
 
@@ -67,13 +62,13 @@ quatd_norm(quatd q)
 quatf
 quatf_conj(quatf q)
 {
-	return q * quatf_make(-1, -1, -1, 1);
+	return quatf_mul(q, quatf_make(-1, -1, -1, 1));
 }
 
 quatd
 quatd_conj(quatd q)
 {
-	return q * quatd_make(-1, -1, -1, 1);
+	return quatd_mul(q, quatd_make(-1, -1, -1, 1));
 }
 
 quatf
@@ -82,7 +77,7 @@ quatf_inv(quatf q)
 	float d = quatf_dot(q, q);
 	if (d == 0)
 		return quatf_zero();
-	return quatf_conj(q) / d;
+	return quatf_div_scalar(quatf_conj(q), d);
 }
 
 quatd
@@ -91,7 +86,7 @@ quatd_inv(quatd q)
 	double d = quatd_dot(q, q);
 	if (d == 0)
 		return quatd_zero();
-	return quatd_conj(q) / d;
+	return quatd_div_scalar(quatd_conj(q), d);
 }
 
 quatf
@@ -100,7 +95,7 @@ quatf_unit(quatf q)
 	float d = quatf_norm(q);
 	if (d == 0)
 		return quatf_zero();
-	return q / d;
+	return quatf_div_scalar(q, d);
 }
 
 quatd
@@ -109,11 +104,11 @@ quatd_unit(quatd q)
 	double d = quatd_norm(q);
 	if (d == 0)
 		return quatd_zero();
-	return q / d;
+	return quatd_div_scalar(q, d);
 }
 
 quatf
-quatf_mul(quatf q, quatf p)
+quatf_product(quatf q, quatf p)
 {
 	return quatf_make(
 	    quat_w(q) * quat_x(p) + quat_x(q) * quat_w(p) +
@@ -131,7 +126,7 @@ quatf_mul(quatf q, quatf p)
 }
 
 quatd
-quatd_mul(quatd q, quatd p)
+quatd_product(quatd q, quatd p)
 {
 	return quatd_make(
 	    quat_w(q) * quat_x(p) + quat_x(q) * quat_w(p) +

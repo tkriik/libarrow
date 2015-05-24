@@ -87,20 +87,19 @@ The vector and matrix modules are nearing completion while the quaternion module
 * Clang or GCC with support for vector extensions.
 
 ## Notes
-* The 2D single-precision vector takes 16 bytes when compiled with GCC on a 32-bit platform due to certain x86-specific floating-point conventions.
 * I am by no means an expert on linear algebra. Let me know if you find errors and/or have any suggestions on improving this library.
 
 ## Reference
 ### Vector
 #### Vector types
-| Type name             | Size (bytes)  | Description
-| --------              | --------      | --------
-| `vec2f`               | 8/16		| 2D single-precision vector.
-| `vec2d`               | 16            | 2D double-precision vector.
-| `vec3f`               | 16            | 3D single-precision vector.
-| `vec3d`               | 32            | 3D double-precision vector.
-| `vec4f`               | 16            | 4D single-precision vector.
-| `vec4d`               | 32            | 4D double-precision vector.
+| Type name             | Description			| Size (standard)	| Size (vectorized)
+| --------              | --------			| --------		| --------
+| `vec2f`               | 2D single-precision vector.	| 8			| 8 (Clang), 16 (GCC)
+| `vec2d`               | 2D double-precision vector.	| 16			| 16
+| `vec3f`               | 3D single-precision vector.	| 12			| 16
+| `vec3d`               | 3D double-precision vector.	| 24			| 32
+| `vec4f`               | 4D single-precision vector.	| 16			| 16
+| `vec4d`               | 4D double-precision vector.	| 32			| 32
 
 #### Vector indexing macros
 | Macro definition      | Description
@@ -218,14 +217,14 @@ The vector and matrix modules are nearing completion while the quaternion module
 
 ### Matrix
 #### Matrix types
-| Type name             | Size (bytes)  | Description
-| --------              | --------      | --------
-| `mat2f`               | 16            | 2x2 single-precision matrix.
-| `mat2d`               | 32            | 2x2 double-precision matrix.
-| `mat3f`               | 64            | 3x3 single-precision matrix.
-| `mat3d`               | 128           | 3x3 double-precision matrix.
-| `mat4f`               | 64            | 4x4 single-precision matrix.
-| `mat4d`               | 128           | 4x4 double-precision matrix.
+| Type name		| Description			| Size (standard)	| Size (vectorized)
+| --------              | --------			| --------		| --------
+| `mat2f`               | 2x2 single-precision matrix.	| 16			| 16
+| `mat2d`               | 2x2 double-precision matrix.	| 32			| 32
+| `mat3f`               | 3x3 single-precision matrix.	| 36			| 64
+| `mat3d`               | 3x3 double-precision matrix.	| 72			| 128
+| `mat4f`               | 4x4 single-precision matrix.	| 64			| 64
+| `mat4d`               | 4x4 double-precision matrix.	| 128			| 128
 
 #### 2x2 matrix indexing macros
 | Macro definition      | Description
@@ -336,18 +335,18 @@ The vector and matrix modules are nearing completion while the quaternion module
 #### Matrix and vector product functions
 | Function prototype				| Return value	| Description
 | --------					| --------	| --------
-| `mat2f_mul(mat2f, mat2f)`			| `mat2f`	| Returns the product between two 2x2 single-precision matrices.
-| `mat2d_mul(mat2d, mat2d)`			| `mat2d`	| Returns the product between two 2x2 double-precision matrices.
-| `mat3f_mul(mat3f, mat3f)`			| `mat3f`	| Returns the product between two 3x3 single-precision matrices.
-| `mat3d_mul(mat3d, mat3d)`			| `mat3d`	| Returns the product between two 3x3 double-precision matrices.
-| `mat4f_mul(mat4f, mat4f)`			| `mat4f`	| Returns the product between two 4x4 single-precision matrices.
-| `mat4d_mul(mat4d, mat4d)`			| `mat4d`	| Returns the product between two 4x4 double-precision matrices.
-| `mat2f_mul_vec(mat2f, vec2f)`			| `vec2f`	| Returns the product between a 2x2 single-precision matrix and 2D vector.
-| `mat2d_mul_vec(mat2d, vec2d)`			| `vec2d`	| Returns the product between a 2x2 double-precision matrix and 2D vector.
-| `mat3f_mul_vec(mat3f, vec3f)`			| `vec3f`	| Returns the product between a 3x3 single-precision matrix and 3D vector.
-| `mat3d_mul_vec(mat3d, vec3d)`			| `vec3d`	| Returns the product between a 3x3 double-precision matrix and 3D vector.
-| `mat4f_mul_vec(mat4f, vec4f)`			| `vec4f`	| Returns the product between a 4x4 single-precision matrix and 4D vector.
-| `mat4d_mul_vec(mat4d, vec4d)`			| `vec4d`	| Returns the product between a 4x4 double-precision matrix and 4D vector.
+| `mat2f_product(mat2f, mat2f)`			| `mat2f`	| Returns the product between two 2x2 single-precision matrices.
+| `mat2d_product(mat2d, mat2d)`			| `mat2d`	| Returns the product between two 2x2 double-precision matrices.
+| `mat3f_product(mat3f, mat3f)`			| `mat3f`	| Returns the product between two 3x3 single-precision matrices.
+| `mat3d_product(mat3d, mat3d)`			| `mat3d`	| Returns the product between two 3x3 double-precision matrices.
+| `mat4f_product(mat4f, mat4f)`			| `mat4f`	| Returns the product between two 4x4 single-precision matrices.
+| `mat4d_product(mat4d, mat4d)`			| `mat4d`	| Returns the product between two 4x4 double-precision matrices.
+| `mat2f_v_product(mat2f, vec2f)`		| `vec2f`	| Returns the product between a 2x2 single-precision matrix and a 2D vector.
+| `mat2d_v_product(mat2d, vec2d)`		| `vec2d`	| Returns the product between a 2x2 double-precision matrix and a 2D vector.
+| `mat3f_v_product(mat3f, vec3f)`		| `vec3f`	| Returns the product between a 3x3 single-precision matrix and a 3D vector.
+| `mat3d_v_product(mat3d, vec3d)`		| `vec3d`	| Returns the product between a 3x3 double-precision matrix and a 3D vector.
+| `mat4f_v_product(mat4f, vec4f)`		| `vec4f`	| Returns the product between a 4x4 single-precision matrix and a 4D vector.
+| `mat4d_v_product(mat4d, vec4d)`		| `vec4d`	| Returns the product between a 4x4 double-precision matrix and a 4D vector.
 | `mat2f_tensor(vec2f, vec2f)`			| `mat2f`	| Returns the tensor product between two 2D single-precision vectors.
 | `mat2d_tensor(vec2d, vec2d)`			| `mat2d`	| Returns the tensor product between two 2D double-precision vectors.
 | `mat3f_tensor(vec3f, vec3f)`			| `mat3f`	| Returns the tensor product between two 3D single-precision vectors.
@@ -384,10 +383,10 @@ This library implements the quaternion as a 4D vector with the x-, y- and z-comp
 corresponding to the imaginary part and the w-component equal to the real part.
 
 #### Quaternion types
-| Type name		| Size (bytes)  | Description
-| --------		| --------      | --------
-| `quatf`		| 16		| Single-precision quaternion.
-| `quatd`		| 32		| Double-precision quaternion.
+| Type name		| Description			| Size (standard)	| Size (vectorized)
+| --------		| --------			| --------		| --------
+| `quatf`		| Single-precision quaternion.	| 16			| 16
+| `quatd`		| Double-precision quaternion.	| 32			| 32
 
 #### Quaternion indexing macros
 | Macro definition      | Description
@@ -418,8 +417,8 @@ corresponding to the imaginary part and the w-component equal to the real part.
 | `quatd_norm(quatd)`				| `double`	| Returns the norm of a double-precision quaternion.
 | `quatf_unit(quatf)`				| `quatf`	| Returns a normalized quaternion from a single-precision quaternion.
 | `quatd_unit(quatd)`				| `quatd`	| Returns a normalized quaternion from a double-precision quaternion.
-| `quatf_mul(quatf, quatf)`			| `quatf`	| Returns the product between two single-precision quaternions.
-| `quatd_mul(quatd, quatd)`			| `quatd`	| Returns the product between two double-precision quaternions.
+| `quatf_product(quatf, quatf)`			| `quatf`	| Returns the product between two single-precision quaternions.
+| `quatd_product(quatd, quatd)`			| `quatd`	| Returns the product between two double-precision quaternions.
 | `quatf_exp(quatf)`				| `quatf`	| Returns the exponential of a single-precision quaternion. (UNAVAILABLE)
 | `quatd_exp(quatd)`				| `quatd`	| Returns the exponential of a double-precision quaternion. (UNAVAILABLE)
 | `quatf_log(quatf)`				| `quatf`	| Returns the logarithm of a single-precision quaternion. (UNAVAILABLE)

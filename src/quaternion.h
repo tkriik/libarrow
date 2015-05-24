@@ -4,12 +4,6 @@
 #include "types.h"
 #include "vector.h"
 
-/* Quaternion indexing macros. */
-#define quat_x(q) ((q)[0])
-#define quat_y(q) ((q)[1])
-#define quat_z(q) ((q)[2])
-#define quat_w(q) ((q)[3])
-
 /* Quaternion constuctors. */
 quatf	quatf_make(float, float, float, float);
 quatd	quatd_make(double, double, double, double);
@@ -33,8 +27,8 @@ quatd	quatd_inv(quatd);
 quatf	quatf_unit(quatf);
 quatd	quatd_unit(quatd);
 
-quatf	quatf_mul(quatf, quatf);
-quatd	quatd_mul(quatd, quatd);
+quatf	quatf_product(quatf, quatf);
+quatd	quatd_product(quatd, quatd);
 
 /* Quaternion size conversion functions. */
 quatf	quatd_to_f(quatd);

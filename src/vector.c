@@ -1,13 +1,13 @@
 #include <math.h>
 
+#include "basic.h"
 #include "vector.h"
 
 vec2f
 vec2f_make(float x, float y)
 {
 	vec2f v;
-	vec_x(v) = x;
-	vec_y(v) = y;
+	vec_x(v) = x, vec_y(v) = y;
 	return v;
 }
 
@@ -15,8 +15,7 @@ vec2d
 vec2d_make(double x, double y)
 {
 	vec2d v;
-	vec_x(v) = x;
-	vec_y(v) = y;
+	vec_x(v) = x, vec_y(v) = y;
 	return v;
 }
 
@@ -24,9 +23,7 @@ vec3f
 vec3f_make(float x, float y, float z)
 {
 	vec3f v;
-	vec_x(v) = x;
-	vec_y(v) = y;
-	vec_z(v) = z;
+	vec_x(v) = x, vec_y(v) = y, vec_z(v) = z;
 	return v;
 }
 
@@ -34,9 +31,7 @@ vec3d
 vec3d_make(double x, double y, double z)
 {
 	vec3d v;
-	vec_x(v) = x;
-	vec_y(v) = y;
-	vec_z(v) = z;
+	vec_x(v) = x, vec_y(v) = y, vec_z(v) = z;
 	return v;
 }
 
@@ -44,10 +39,7 @@ vec4f
 vec4f_make(float x, float y, float z, float w)
 {
 	vec4f v;
-	vec_x(v) = x;
-	vec_y(v) = y;
-	vec_z(v) = z;
-	vec_w(v) = w;
+	vec_x(v) = x, vec_y(v) = y, vec_z(v) = z, vec_w(v) = w;
 	return v;
 }
 
@@ -55,10 +47,7 @@ vec4d
 vec4d_make(double x, double y, double z, double w)
 {
 	vec4d v;
-	vec_x(v) = x;
-	vec_y(v) = y;
-	vec_z(v) = z;
-	vec_w(v) = w;
+	vec_x(v) = x, vec_y(v) = y, vec_z(v) = z, vec_w(v) = w;
 	return v;
 }
 
@@ -137,42 +126,42 @@ vec4d_zero(void)
 float
 vec2f_dot(vec2f v, vec2f w)
 {
-	vec2f u = v * w;
+	vec2f u = vec2f_mul(v, w);
 	return vec_x(u) + vec_y(u);
 }
 
 double
 vec2d_dot(vec2d v, vec2d w)
 {
-	vec2d u = v * w;
+	vec2d u = vec2d_mul(v, w);
 	return vec_x(u) + vec_y(u);
 }
 
 float
 vec3f_dot(vec3f v, vec3f w)
 {
-	vec3f u = v * w;
+	vec3f u = vec3f_mul(v, w);
 	return vec_x(u) + vec_y(u) + vec_z(u);
 }
 
 double
 vec3d_dot(vec3d v, vec3d w)
 {
-	vec3d u = v * w;
+	vec3d u = vec3d_mul(v, w);
 	return vec_x(u) + vec_y(u) + vec_z(u);
 }
 
 float
 vec4f_dot(vec4f v, vec4f w)
 {
-	vec4f u = v * w;
+	vec4f u = vec4f_mul(v, w);
 	return vec_x(u) + vec_y(u) + vec_z(u) + vec_w(u);
 }
 
 double
 vec4d_dot(vec4d v, vec4d w)
 {
-	vec4d u = v * w;
+	vec4d u = vec4d_mul(v, w);
 	return vec_x(u) + vec_y(u) + vec_z(u) + vec_w(u);
 }
 
@@ -272,7 +261,7 @@ vec2f_unit(vec2f v)
 	float n = vec2f_norm(v);
 	if (n == 0)
 		return v;
-	return v / n;
+	return vec2f_div_scalar(v, n);
 }
 
 vec2d
@@ -281,7 +270,7 @@ vec2d_unit(vec2d v)
 	double n = vec2d_norm(v);
 	if (n == 0)
 		return v;
-	return v / n;
+	return vec2d_div_scalar(v, n);
 }
 
 vec3f
@@ -290,7 +279,7 @@ vec3f_unit(vec3f v)
 	float n = vec3f_norm(v);
 	if (n == 0)
 		return v;
-	return v / n;
+	return vec3f_div_scalar(v, n);
 }
 
 vec3d
@@ -299,7 +288,7 @@ vec3d_unit(vec3d v)
 	double n = vec3d_norm(v);
 	if (n == 0)
 		return v;
-	return v / n;
+	return vec3d_div_scalar(v, n);
 }
 
 vec4f
@@ -308,7 +297,7 @@ vec4f_unit(vec4f v)
 	float n = vec4f_norm(v);
 	if (n == 0)
 		return v;
-	return v / n;
+	return vec4f_div_scalar(v, n);
 }
 
 vec4d
@@ -317,7 +306,7 @@ vec4d_unit(vec4d v)
 	double n = vec4d_norm(v);
 	if (n == 0)
 		return v;
-	return v / n;
+	return vec4d_div_scalar(v, n);
 }
 
 vec2f
@@ -326,7 +315,7 @@ vec2f_vproject(vec2f v, vec2f w)
 	float d = vec2f_dot(w, w);
 	if (d == 0)
 		return w;
-	return w * (vec2f_dot(v, w) / d);
+	return vec2f_mul_scalar(w, vec2f_dot(v, w) / d);
 }
 
 vec2d
@@ -335,7 +324,7 @@ vec2d_vproject(vec2d v, vec2d w)
 	double d = vec2d_dot(w, w);
 	if (d == 0)
 		return w;
-	return w * (vec2d_dot(v, w) / d);
+	return vec2d_mul_scalar(w, vec2d_dot(v, w) / d);
 }
 
 vec3f
@@ -344,7 +333,7 @@ vec3f_vproject(vec3f v, vec3f w)
 	float d = vec3f_dot(w, w);
 	if (d == 0)
 		return w;
-	return w * (vec3f_dot(v, w) / d);
+	return vec3f_mul_scalar(w, vec3f_dot(v, w) / d);
 }
 
 vec3d
@@ -353,7 +342,7 @@ vec3d_vproject(vec3d v, vec3d w)
 	double d = vec3d_dot(w, w);
 	if (d == 0)
 		return w;
-	return w * (vec3d_dot(v, w) / d);
+	return vec3d_mul_scalar(w, vec3d_dot(v, w) / d);
 }
 
 vec4f
@@ -362,7 +351,7 @@ vec4f_vproject(vec4f v, vec4f w)
 	float d = vec4f_dot(w, w);
 	if (d == 0)
 		return w;
-	return w * (vec4f_dot(v, w) / d);
+	return vec4f_mul_scalar(w, vec4f_dot(v, w) / d);
 }
 
 vec4d
@@ -371,7 +360,7 @@ vec4d_vproject(vec4d v, vec4d w)
 	double d = vec4d_dot(w, w);
 	if (d == 0)
 		return w;
-	return w * (vec4d_dot(v, w) / d);
+	return vec4d_mul_scalar(w, vec4d_dot(v, w) / d);
 }
 
 float

@@ -3,12 +3,6 @@
 
 #include "types.h"
 
-/* Vector indexing macros. */
-#define vec_x(v) ((v)[0])
-#define vec_y(v) ((v)[1])
-#define vec_z(v) ((v)[2])
-#define vec_w(v) ((v)[3])
-
 /* Vector constructors. */
 vec2f	vec2f_make(float, float);
 vec2d	vec2d_make(double, double);

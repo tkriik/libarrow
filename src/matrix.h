@@ -4,43 +4,6 @@
 #include "types.h"
 #include "vector.h"
 
-/* Matrix indexing macros. */
-#define mat2_i(m, i, j) ((m)[(i) * 2 + (j)])
-#define mat3_i(m, i, j) ((m)[(i) * 3 + (j)])
-#define mat4_i(m, i, j) ((m)[(i) * 4 + (j)])
-
-#define mat2_11(m) ((m)[0])
-#define mat2_12(m) ((m)[1])
-#define mat2_21(m) ((m)[2])
-#define mat2_22(m) ((m)[3])
-
-#define mat3_11(m) ((m)[0])
-#define mat3_12(m) ((m)[1])
-#define mat3_13(m) ((m)[2])
-#define mat3_21(m) ((m)[3])
-#define mat3_22(m) ((m)[4])
-#define mat3_23(m) ((m)[5])
-#define mat3_31(m) ((m)[6])
-#define mat3_32(m) ((m)[7])
-#define mat3_33(m) ((m)[8])
-
-#define mat4_11(m) ((m)[0])
-#define mat4_12(m) ((m)[1])
-#define mat4_13(m) ((m)[2])
-#define mat4_14(m) ((m)[3])
-#define mat4_21(m) ((m)[4])
-#define mat4_22(m) ((m)[5])
-#define mat4_23(m) ((m)[6])
-#define mat4_24(m) ((m)[7])
-#define mat4_31(m) ((m)[8])
-#define mat4_32(m) ((m)[9])
-#define mat4_33(m) ((m)[10])
-#define mat4_34(m) ((m)[11])
-#define mat4_41(m) ((m)[12])
-#define mat4_42(m) ((m)[13])
-#define mat4_43(m) ((m)[14])
-#define mat4_44(m) ((m)[15])
-
 /* Matrix constructors. */
 mat2f	mat2f_make(
 	    float, float,
@@ -125,19 +88,19 @@ float	mat4f_det(mat4f);
 double	mat4d_det(mat4d);
 
 /* Matrix and vector product functions. */
-mat2f	mat2f_mul(mat2f, mat2f);
-mat2d	mat2d_mul(mat2d, mat2d);
-mat3f	mat3f_mul(mat3f, mat3f);
-mat3d	mat3d_mul(mat3d, mat3d);
-mat4f	mat4f_mul(mat4f, mat4f);
-mat4d	mat4d_mul(mat4d, mat4d);
+mat2f	mat2f_product(mat2f, mat2f);
+mat2d	mat2d_product(mat2d, mat2d);
+mat3f	mat3f_product(mat3f, mat3f);
+mat3d	mat3d_product(mat3d, mat3d);
+mat4f	mat4f_product(mat4f, mat4f);
+mat4d	mat4d_product(mat4d, mat4d);
 
-vec2f	mat2f_mul_vec(mat2f, vec2f);
-vec2d	mat2d_mul_vec(mat2d, vec2d);
-vec3f	mat3f_mul_vec(mat3f, vec3f);
-vec3d	mat3d_mul_vec(mat3d, vec3d);
-vec4f	mat4f_mul_vec(mat4f, vec4f);
-vec4d	mat4d_mul_vec(mat4d, vec4d);
+vec2f	mat2f_v_product(mat2f, vec2f);
+vec2d	mat2d_v_product(mat2d, vec2d);
+vec3f	mat3f_v_product(mat3f, vec3f);
+vec3d	mat3d_v_product(mat3d, vec3d);
+vec4f	mat4f_v_product(mat4f, vec4f);
+vec4d	mat4d_v_product(mat4d, vec4d);
 
 mat2f	mat2f_tensor(vec2f, vec2f);
 mat2d	mat2d_tensor(vec2d, vec2d);
