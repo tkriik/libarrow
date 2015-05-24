@@ -259,7 +259,7 @@ The vector and matrix modules are nearing completion while the quaternion module
 #### General matrix indexing macros
 | Macro definition	| Description
 | --------		| --------
-| `mat_i(m, i)`		| Index to the value at cell `i` in an arbitrarily sized row-major ordered matrix.
+| `mat_i(m, i)`		| Index to the value at cell `i` in an arbitrarily sized row-major ordered matrix `m`.
 
 #### 2x2 matrix indexing macros
 | Macro definition      | Description
