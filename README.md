@@ -413,7 +413,7 @@ The vector and matrix modules are nearing completion while the quaternion module
 | `mat3d_trace(mat3d)`				| `double`	| Returns the trace of a 3x3 double-precision matrix.
 | `mat4f_trace(mat4f)`				| `float`	| Returns the trace of a 4x4 single-precision matrix.
 | `mat4d_trace(mat4d)`				| `double`	| Returns the trace of a 4x4 double-precision matrix.
-| `mat2f_det(mat2f)`				| `float`	| Returns the trace of a 2x2 single-precision matrix.
+| `mat2f_det(mat2f)`				| `float`	| Returns the determinant of a 2x2 single-precision matrix.
 | `mat2d_det(mat2d)`				| `double`	| Returns the determinant of a 2x2 double-precision matrix.
 | `mat3f_det(mat3f)`				| `float`	| Returns the determinant of a 3x3 single-precision matrix.
 | `mat3d_det(mat3d)`				| `double`	| Returns the determinant of a 3x3 double-precision matrix.
