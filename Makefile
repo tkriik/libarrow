@@ -1,35 +1,34 @@
-NAME=		arrow
 MAJOR=		0
 MINOR=		1
 VERSION=	$(MAJOR).$(MINOR)
 
-CC=		clang
+CC=		cc
 CFLAGS=		-O2 -ansi -pedantic -march=native -Wall -Wextra -Werror
 LDFLAGS=	-Wl,-lm
 
-SRCDIR=		src
-OBJDIR=		obj
-LIBDIR=		lib
+SOURCES=	basic.c	\
+		vector.c \
+		matrix.c \
+		quaternion.c
 
-SOURCES=	$(wildcard $(SRCDIR)/*.c)
-OBJECTS=	$(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o, $(SOURCES))
+OBJECTS=	basic.o \
+		vector.o \
+		matrix.o \
+		quaternion.o
 
-SLIB=		lib$(NAME).a
-DLIB=		lib$(NAME).so.$(VERSION)
+SLIB=		libarrow.a
+DLIB=		libarrow.so.$(VERSION)
 
 all: $(DLIB) $(SLIB)
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.c
-	mkdir -p $(OBJDIR)
-	$(CC) $(CFLAGS) -c -fPIC -o $@ $<
-
 $(DLIB): $(OBJECTS)
-	mkdir -p $(LIBDIR)
-	$(CC) -shared -o $(LIBDIR)/$(DLIB) $(OBJECTS)
+	$(CC) -shared -o $(DLIB) $(OBJECTS)
 
 $(SLIB): $(OBJECTS)
-	mkdir -p $(LIBDIR)
-	ar cr $(LIBDIR)/$(SLIB) $(OBJECTS)
+	ar cr $(SLIB) $(OBJECTS)
+
+$(OBJECTS): $(SOURCES)
+	$(CC) $(CFLAGS) -c -fPIC $(SOURCES)
 
 clean:
-	rm -f $(OBJECTS) $(LIBDIR)/$(DLIB) $(LIBDIR)/$(SLIB)
+	rm -f $(OBJECTS) $(SLIB) $(DLIB)

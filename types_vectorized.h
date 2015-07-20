@@ -25,7 +25,6 @@ typedef double	quatd __attribute__ ((ext_vector_type(4)));
 #elif defined(__GNUC__)
 
 typedef float	vec2f __attribute__ ((vector_size(16)));
-typedef float	vec2f __attribute__ ((vector_size(8)));
 typedef double	vec2d __attribute__ ((vector_size(16)));
 typedef float	vec3f __attribute__ ((vector_size(16)));
 typedef double	vec3d __attribute__ ((vector_size(32)));
